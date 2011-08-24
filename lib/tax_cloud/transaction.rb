@@ -31,9 +31,7 @@ module TaxCloud
         'destination' => destination.to_hash
       }.merge(TaxCloud.auth_params)
 
-      response = TaxCloud.client.request :lookup do
-        soap.body = request_params
-      end
+      response = TaxCloud.client.request :lookup, :body => request_params
 
       # In the event that a cart_id wasn't specified, TaxCloud will give you one
       self.cart_id = response[:lookup_response][:lookup_result][:cart_id] if response[:lookup_response][:lookup_result][:cart_id]
@@ -53,9 +51,7 @@ module TaxCloud
         'dateAuthorized' => options[:date_authorized]
       }.merge(TaxCloud.auth_params)
 
-      response = TaxCloud.client.request :authorized do
-        soap.body = request_params
-      end
+      response = TaxCloud.client.request :authorized, :body => request_params
     end
 
     # Complete the transaction. The <tt>order_id</tt> passed into <tt>captured</tt> must match the <tt>order_id</tt> that was passed into <tt>authorized</tt>.
@@ -71,9 +67,7 @@ module TaxCloud
         'dateCaptured' => options[:date_captured]
       }.merge(TaxCloud.auth_params)
 
-      response = TaxCloud.client.request :captured do
-        soap.body = request_params
-      end
+      response = TaxCloud.client.request :captured, :body => request_params
     end
 
     # Combines the <tt>authorized</tt> and <tt>captured</tt> methods into a single call
@@ -91,10 +85,7 @@ module TaxCloud
         'dateCaptured' => options[:date_captured]
       }.merge(TaxCloud.auth_params)
 
-      response = TaxCloud.client.request :authorized_with_capture do
-        soap.body = request_params
-      end
+      response = TaxCloud.client.request :authorized_with_capture, :body => request_params
     end
-
   end
 end

@@ -1,4 +1,5 @@
 require 'savon'
+require 'savon_xml_override'
 require 'tax_cloud/version'
 require 'tax_cloud/transaction'
 require 'tax_cloud/address'
