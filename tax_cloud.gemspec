@@ -17,9 +17,9 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency 'savon', '~> 0.9.6'
+  s.add_runtime_dependency "savon", ["0.9.6"]
 
   # Development depencies
-  s.add_development_dependency 'rake', '0.9.2'
-  s.add_development_dependency 'horo'
+  s.add_development_dependency "rake", [">= 0.9.2"]
+  s.add_development_dependency "horo"
 end
