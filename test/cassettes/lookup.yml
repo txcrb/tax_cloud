@@ -1,0 +1,32 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://api.taxcloud.net:443/1.0/TaxCloud.asmx
+    body: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://taxcloud.net" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:Lookup><ins0:customerID>1212</ins0:customerID><ins0:cartID>1152</ins0:cartID><ins0:cartItems><ins0:CartItem><wsdl:Index>0</wsdl:Index><wsdl:ItemID>SKU-TEST</wsdl:ItemID><wsdl:TIC>00000</wsdl:TIC><wsdl:Price>50.0</wsdl:Price><wsdl:Qty>1</wsdl:Qty></ins0:CartItem><ins0:CartItem><wsdl:Index>1</wsdl:Index><wsdl:ItemID>SKU-TEST1</wsdl:ItemID><wsdl:TIC>00000</wsdl:TIC><wsdl:Price>50.0</wsdl:Price><wsdl:Qty>1</wsdl:Qty></ins0:CartItem></ins0:cartItems><ins0:origin><ins0:Address1>888 6th Ave</ins0:Address1><ins0:Address2 xsi:nil="true"/><ins0:City>New York</ins0:City><ins0:State>NY</ins0:State><ins0:Zip5>10001</ins0:Zip5><ins0:Zip4 xsi:nil="true"/></ins0:origin><ins0:destination><ins0:Address1>888 6th Ave</ins0:Address1><ins0:Address2 xsi:nil="true"/><ins0:City>New York</ins0:City><ins0:State>NY</ins0:State><ins0:Zip5>10001</ins0:Zip5><ins0:Zip4 xsi:nil="true"/></ins0:destination><ins0:apiLoginID>api-login-id</ins0:apiLoginID><ins0:apiKey>api-key</ins0:apiKey></ins0:Lookup></env:Body></env:Envelope>
+    headers: 
+      soapaction: 
+      - "\"http://taxcloud.net/Lookup\""
+      content-type: 
+      - text/xml;charset=UTF-8
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      cache-control: 
+      - private, max-age=0
+      content-type: 
+      - text/xml; charset=utf-8
+      server: 
+      - Microsoft-IIS/7.0
+      x-aspnet-version: 
+      - 2.0.50727
+      x-powered-by: 
+      - TaxCloud
+      date: 
+      - Sat, 17 Sep 2011 19:22:00 GMT
+      content-length: 
+      - "870"
+    body: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><LookupResponse xmlns="http://taxcloud.net"><LookupResult><ResponseType>Informational</ResponseType><Messages><ResponseMessage><ResponseType>Informational</ResponseType><Message>The transaction occurred in a non-SSUTA State.  TaxCloud will not collect or remit the tax amount for this transaction.</Message></ResponseMessage></Messages><CartID>1152</CartID><CartItemsResponse><CartItemResponse><CartItemIndex>0</CartItemIndex><TaxAmount>4.4375</TaxAmount></CartItemResponse><CartItemResponse><CartItemIndex>1</CartItemIndex><TaxAmount>4.4375</TaxAmount></CartItemResponse></CartItemsResponse></LookupResult></LookupResponse></soap:Body></soap:Envelope>
+    http_version: "1.1"

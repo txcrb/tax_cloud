@@ -22,4 +22,6 @@ Gem::Specification.new do |s|
   # Development depencies
   s.add_development_dependency(%q<rake>, [">= 0.9.2"])
   s.add_development_dependency(%q<horo>, [">= 1.0.3"])
+  s.add_development_dependency(%q<vcr>, [">= 1.11.3"])
+  s.add_development_dependency(%q<webmock>, [">= 1.7.6"])
 end
