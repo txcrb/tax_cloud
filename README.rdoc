@@ -28,6 +28,11 @@ After you've authorized and captured the transaction via your merchant account, 
   transaction.order_id = 100
   transaction.authorized_with_capture # return Savon response object
 
+Later, you may need to mark some cart items as returned. TaxCloud will ignore any cart items that you don't include
+    transaction.order_id = 100
+    transaction.cart_items << TaxCloud::CartItem.new(:index => 0, :item_id => 'SKU-100', :tic => TaxCloud::TaxCodes::GENERAL, :price => 10.00, :quantity => 1)
+    transaction.returned # return Savon response object
+
 === Todo
 * Instead of returning Savon response objects, it should return TransactionLookupResponse, TransactionAuthorizedResponse, TransactionCapturedResponse, etc.
 * Add all tax codes to TaxCloud::TaxCodes

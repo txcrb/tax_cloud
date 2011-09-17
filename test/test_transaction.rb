@@ -36,4 +36,11 @@ class TestTransaction < Test::Unit::TestCase
     assert_equal 'OK', result[:authorized_with_capture_response][:authorized_with_capture_result][:response_type]
   end
 
+  def test_returned
+    @transaction.lookup
+    @transaction.authorized_with_capture
+    result = @transaction.returned
+    assert_equal 'OK', result[:returned_response][:returned_result][:response_type]
+  end
+
 end
