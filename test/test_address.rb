@@ -16,13 +16,23 @@ class TestAddress < Test::Unit::TestCase
     assert_equal nil, @address.zip4
   end
 
-  def test_address_verify
+  def test_address_respond_to_verify
     assert_respond_to @address, :verify
-    verify = @address.verify
-    assert_equal '0', verify[:verify_address_response][:verify_address_result][:err_number]
-    bad_address = TaxCloud::Address.new :address1 => '10001 Test Street', :city => 'New York', :state => 'New York', :zip5 => '99999'
-    verify = bad_address.verify
-    assert_not_equal '0', verify[:verify_address_response][:verify_address_result][:err_number]
+  end
+
+  def test_verify_good_address
+    VCR.use_cassette('verify good address') do
+      verify = @address.verify
+      assert_equal '0', verify[:verify_address_response][:verify_address_result][:err_number]
+    end
+  end
+
+  def test_verify_bad_address
+    VCR.use_cassette('verify bad address') do
+      bad_address = TaxCloud::Address.new :address1 => '10001 Test Street', :city => 'New York', :state => 'New York', :zip5 => '99999'
+      verify = bad_address.verify
+      assert_not_equal '0', verify[:verify_address_response][:verify_address_result][:err_number]
+    end
   end
 
 end
