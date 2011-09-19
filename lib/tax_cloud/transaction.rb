@@ -87,5 +87,20 @@ module TaxCloud
 
       response = TaxCloud.client.request :authorized_with_capture, :body => request_params
     end
+
+    # Marks any included cart items as returned.
+    #
+    # === Options
+    # * <tt>returned_date</tt> - The date the return occured. Default is today.
+    def returned(options = {})
+      options = { :returned_date => Date.today }.merge(options)
+      request_params = {
+        'orderID' => order_id,
+        'cartItems' => { 'CartItem' => cart_items.map(&:to_hash) },
+        'returnedDate' => options[:returned_date]
+      }.merge(TaxCloud.auth_params)
+
+      TaxCloud.client.request :returned, :body => request_params
+    end
   end
 end
