@@ -7,21 +7,19 @@ Gem::Specification.new do |s|
   s.authors     = ["Drew Tempelmeyer"]
   s.email       = ["drewtemp@gmail.com"]
   s.homepage    = "https://github.com/drewtempelmeyer/tax_cloud"
-  s.summary     = %q{Calculate sales tax using the TaxCloud.net API}
+  s.summary     = %q{Calculate sales tax using TaxCloud}
   s.description = %q{Calculate sales tax using the TaxCloud.net API}
 
-  s.rubyforge_project = "tax_cloud"
-
+  s.required_rubygems_version = '>= 1.3.6'
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency(%q<savon>, ['0.9.6'])
+  s.add_runtime_dependency 'savon', '0.9.6'
 
-  # Development depencies
-  s.add_development_dependency(%q<rake>, [">= 0.9.2"])
-  s.add_development_dependency(%q<horo>, [">= 1.0.3"])
-  s.add_development_dependency(%q<vcr>, [">= 1.11.3"])
-  s.add_development_dependency(%q<webmock>, [">= 1.7.6"])
+  # Development dependencies
+  s.add_development_dependency 'rake', '>= 0.9.2'
+  s.add_development_dependency 'rdoc', '>= 2.5.0'
+  s.add_development_dependency 'vcr', '>= 1.11.3'
+  s.add_development_dependency 'webmock', '>= 1.7.6'
 end

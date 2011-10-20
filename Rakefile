@@ -8,15 +8,12 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = false
 end
 
-Rake::RDocTask.new do |rd|
+RDoc::Task.new do |rd|
   README = 'README.rdoc'
   rd.main = README
   rd.rdoc_files.include(README, "lib/**/*.rb")
   rd.rdoc_dir = 'doc'
-  rd.title = 'TaxCloud'
-  rd.options << '-f' << 'horo'
-  rd.options << '-c' << 'utf-8'
-  rd.options << '-m' << README
+  rd.title = 'tax_cloud'
 end
 
 
