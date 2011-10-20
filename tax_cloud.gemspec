@@ -4,6 +4,7 @@ require "tax_cloud/version"
 Gem::Specification.new do |s|
   s.name        = "tax_cloud"
   s.version     = TaxCloud::VERSION
+  s.date        = %q{2011-10-20}
   s.authors     = ["Drew Tempelmeyer"]
   s.email       = ["drewtemp@gmail.com"]
   s.homepage    = "https://github.com/drewtempelmeyer/tax_cloud"

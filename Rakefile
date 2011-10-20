@@ -2,6 +2,8 @@ require 'bundler/gem_tasks'
 require 'rake/testtask'
 require 'rdoc/task'
 
+gemspec = eval(File.read(Dir["*.gemspec"].first))
+
 Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
   test.pattern = 'test/test_*.rb'
@@ -16,4 +18,7 @@ RDoc::Task.new do |rd|
   rd.title = 'tax_cloud'
 end
 
-
+desc "Validate the gemspec"
+task :gemspec do
+  puts gemspec.validate
+end
