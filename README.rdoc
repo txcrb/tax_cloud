@@ -5,7 +5,7 @@ tax\_cloud allows you to easily integrate with TaxCloud's API.
 
 === Setup
 Add the gem to your Gemfile
-  gem 'tax_cloud', '~> 0.1.0'
+  gem 'tax_cloud', '~> 0.1.5'
 
 Configure your environment. For example, create an initializer in Rails in *config/initializers/tax_cloud.rb*
   TaxCloud.configure do |config|
