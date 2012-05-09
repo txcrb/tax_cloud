@@ -8,7 +8,6 @@ module TaxCloud
       attrs.each do |sym, val|
         self.send "#{sym}=", val
       end
-      super
     end
 
     # Verify the address via TaxCloud

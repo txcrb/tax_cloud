@@ -16,7 +16,6 @@ module TaxCloud
       attrs.each do |sym, val|
         self.send "#{sym}=", val
       end
-      super
     end
 
     # Convert the object to a usable hash for SOAP requests
