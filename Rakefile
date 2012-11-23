@@ -22,3 +22,7 @@ desc "Validate the gemspec"
 task :gemspec do
   puts gemspec.validate
 end
+
+load 'vcr/tasks/vcr.rake'
+
+task :default => :test
