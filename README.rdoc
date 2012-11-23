@@ -16,12 +16,29 @@ Configure your environment. For example, create an initializer in Rails in *conf
 
 === Using TaxCloud
 Define the destination and origin addresses using <tt>TaxCloud::Address</tt>.
-  origin = TaxCloud::Address.new(:address1 => '123 Fake Street', :city => 'New York', :state => 'NY', :zip5 => '10001')
-  destination = TaxCloud::Address.new(:address1 => '239 Hollywood Drive', :city => 'Beverly Hills', :state => 'CA', :zip5 => '90210')
+  origin = TaxCloud::Address.new(
+    :address1 => '123 Fake Street', 
+    :city => 'New York', 
+    :state => 'NY', 
+    :zip5 => '10001')
+  destination = TaxCloud::Address.new(
+    :address1 => '239 Hollywood Drive', 
+    :city => 'Beverly Hills',
+    :state => 'CA', 
+    :zip5 => '90210')
 
 Create your Transaction and set up your cart items
-  transaction = TaxCloud::Transaction.new(:customer_id => '1', :cart_id => '1', :origin => origin, :destination => destination)
-  transaction.cart_items << TaxCloud::CartItem.new(:index => 0, :item_id => 'SKU-100', :tic => TaxCloud::TaxCodes::GENERAL, :price => 10.00, :quantity => 1)
+  transaction = TaxCloud::Transaction.new(
+    :customer_id => '1', 
+    :cart_id => '1', 
+    :origin => origin, 
+    :destination => destination)
+  transaction.cart_items << TaxCloud::CartItem.new(
+    :index => 0, 
+    :item_id => 'SKU-100', 
+    :tic => TaxCloud::TaxCodes::GENERAL, 
+    :price => 10.00, 
+    :quantity => 1)
   lookup = transaction.lookup # this will return a Savon response object
 
 After you've authorized and captured the transaction via your merchant account, you should do the same with TaxCloud for maintaining accurate tax information.
@@ -30,7 +47,12 @@ After you've authorized and captured the transaction via your merchant account, 
 
 Later, you may need to mark some cart items as returned. TaxCloud will ignore any cart items that you don't include
     transaction.order_id = 100
-    transaction.cart_items << TaxCloud::CartItem.new(:index => 0, :item_id => 'SKU-100', :tic => TaxCloud::TaxCodes::GENERAL, :price => 10.00, :quantity => 1)
+    transaction.cart_items << TaxCloud::CartItem.new(
+      :index => 0, 
+      :item_id => 'SKU-100', 
+      :tic => TaxCloud::TaxCodes::GENERAL, 
+      :price => 10.00, 
+      :quantity => 1)
     transaction.returned # return Savon response object
 
 === Running Tests

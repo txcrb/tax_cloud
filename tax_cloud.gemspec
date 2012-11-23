@@ -19,8 +19,8 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'savon', '0.9.6'
 
   # Development dependencies
-  s.add_development_dependency 'rake', '>= 0.9.2'
+  s.add_development_dependency 'rake', '~> 10.0'
   s.add_development_dependency 'rdoc', '>= 2.5.0'
-  s.add_development_dependency 'vcr', '>= 1.11.3'
+  s.add_development_dependency 'vcr', '~> 2.3'
   s.add_development_dependency 'webmock', '>= 1.7.6'
 end

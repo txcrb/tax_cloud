@@ -1,94 +1,128 @@
---- 
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :post
-    uri: https://api.taxcloud.net:443/1.0/TaxCloud.asmx
-    body: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://taxcloud.net" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:Lookup><ins0:customerID>8062</ins0:customerID><ins0:cartID>1097</ins0:cartID><ins0:cartItems><ins0:CartItem><wsdl:Index>0</wsdl:Index><wsdl:ItemID>SKU-TEST</wsdl:ItemID><wsdl:TIC>00000</wsdl:TIC><wsdl:Price>50.0</wsdl:Price><wsdl:Qty>1</wsdl:Qty></ins0:CartItem><ins0:CartItem><wsdl:Index>1</wsdl:Index><wsdl:ItemID>SKU-TEST1</wsdl:ItemID><wsdl:TIC>00000</wsdl:TIC><wsdl:Price>50.0</wsdl:Price><wsdl:Qty>1</wsdl:Qty></ins0:CartItem></ins0:cartItems><ins0:origin><ins0:Address1>888 6th Ave</ins0:Address1><ins0:Address2 xsi:nil="true"/><ins0:City>New York</ins0:City><ins0:State>NY</ins0:State><ins0:Zip5>10001</ins0:Zip5><ins0:Zip4 xsi:nil="true"/></ins0:origin><ins0:destination><ins0:Address1>888 6th Ave</ins0:Address1><ins0:Address2 xsi:nil="true"/><ins0:City>New York</ins0:City><ins0:State>NY</ins0:State><ins0:Zip5>10001</ins0:Zip5><ins0:Zip4 xsi:nil="true"/></ins0:destination><ins0:apiLoginID>api-login-id</ins0:apiLoginID><ins0:apiKey>api-key</ins0:apiKey></ins0:Lookup></env:Body></env:Envelope>
-    headers: 
-      soapaction: 
-      - "\"http://taxcloud.net/Lookup\""
-      content-type: 
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.taxcloud.net/1.0/TaxCloud.asmx
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://taxcloud.net"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:Lookup><ins0:customerID>8062</ins0:customerID><ins0:cartID>1097</ins0:cartID><ins0:cartItems><ins0:CartItem><wsdl:Index>0</wsdl:Index><wsdl:ItemID>SKU-TEST</wsdl:ItemID><wsdl:TIC>00000</wsdl:TIC><wsdl:Price>50.0</wsdl:Price><wsdl:Qty>1</wsdl:Qty></ins0:CartItem><ins0:CartItem><wsdl:Index>1</wsdl:Index><wsdl:ItemID>SKU-TEST1</wsdl:ItemID><wsdl:TIC>00000</wsdl:TIC><wsdl:Price>50.0</wsdl:Price><wsdl:Qty>1</wsdl:Qty></ins0:CartItem></ins0:cartItems><ins0:origin><ins0:Address1>888
+        6th Ave</ins0:Address1><ins0:Address2 xsi:nil="true"/><ins0:City>New York</ins0:City><ins0:State>NY</ins0:State><ins0:Zip5>10001</ins0:Zip5><ins0:Zip4
+        xsi:nil="true"/></ins0:origin><ins0:destination><ins0:Address1>888 6th Ave</ins0:Address1><ins0:Address2
+        xsi:nil="true"/><ins0:City>New York</ins0:City><ins0:State>NY</ins0:State><ins0:Zip5>10001</ins0:Zip5><ins0:Zip4
+        xsi:nil="true"/></ins0:destination><ins0:apiLoginID>api-login-id</ins0:apiLoginID><ins0:apiKey>api-key</ins0:apiKey></ins0:Lookup></env:Body></env:Envelope>
+    headers:
+      Soapaction:
+      - ! '"http://taxcloud.net/Lookup"'
+      Content-Type:
       - text/xml;charset=UTF-8
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      cache-control: 
+    headers:
+      Cache-Control:
       - private, max-age=0
-      content-type: 
+      Content-Type:
       - text/xml; charset=utf-8
-      server: 
+      Server:
       - Microsoft-IIS/7.0
-      x-aspnet-version: 
+      X-Aspnet-Version:
       - 2.0.50727
-      x-powered-by: 
+      X-Powered-By:
       - TaxCloud
-      date: 
+      Date:
       - Sat, 17 Sep 2011 19:21:58 GMT
-      content-length: 
-      - "870"
-    body: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><LookupResponse xmlns="http://taxcloud.net"><LookupResult><ResponseType>Informational</ResponseType><Messages><ResponseMessage><ResponseType>Informational</ResponseType><Message>The transaction occurred in a non-SSUTA State.  TaxCloud will not collect or remit the tax amount for this transaction.</Message></ResponseMessage></Messages><CartID>1097</CartID><CartItemsResponse><CartItemResponse><CartItemIndex>0</CartItemIndex><TaxAmount>4.4375</TaxAmount></CartItemResponse><CartItemResponse><CartItemIndex>1</CartItemIndex><TaxAmount>4.4375</TaxAmount></CartItemResponse></CartItemsResponse></LookupResult></LookupResponse></soap:Body></soap:Envelope>
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :post
-    uri: https://api.taxcloud.net:443/1.0/TaxCloud.asmx
-    body: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://taxcloud.net" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:Authorized><ins0:customerID>8062</ins0:customerID><ins0:cartID>1097</ins0:cartID><ins0:orderID>3260</ins0:orderID><ins0:dateAuthorized>2011-09-17</ins0:dateAuthorized><ins0:apiLoginID>api-login-id</ins0:apiLoginID><ins0:apiKey>api-key</ins0:apiKey></ins0:Authorized></env:Body></env:Envelope>
-    headers: 
-      soapaction: 
-      - "\"http://taxcloud.net/Authorized\""
-      content-type: 
+      Content-Length:
+      - '870'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><LookupResponse
+        xmlns="http://taxcloud.net"><LookupResult><ResponseType>Informational</ResponseType><Messages><ResponseMessage><ResponseType>Informational</ResponseType><Message>The
+        transaction occurred in a non-SSUTA State.  TaxCloud will not collect or remit
+        the tax amount for this transaction.</Message></ResponseMessage></Messages><CartID>1097</CartID><CartItemsResponse><CartItemResponse><CartItemIndex>0</CartItemIndex><TaxAmount>4.4375</TaxAmount></CartItemResponse><CartItemResponse><CartItemIndex>1</CartItemIndex><TaxAmount>4.4375</TaxAmount></CartItemResponse></CartItemsResponse></LookupResult></LookupResponse></soap:Body></soap:Envelope>
+    http_version: '1.1'
+  recorded_at: Fri, 23 Nov 2012 15:41:40 GMT
+- request:
+    method: post
+    uri: https://api.taxcloud.net/1.0/TaxCloud.asmx
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://taxcloud.net"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:Authorized><ins0:customerID>8062</ins0:customerID><ins0:cartID>1097</ins0:cartID><ins0:orderID>3260</ins0:orderID><ins0:dateAuthorized>2011-09-17</ins0:dateAuthorized><ins0:apiLoginID>api-login-id</ins0:apiLoginID><ins0:apiKey>api-key</ins0:apiKey></ins0:Authorized></env:Body></env:Envelope>
+    headers:
+      Soapaction:
+      - ! '"http://taxcloud.net/Authorized"'
+      Content-Type:
       - text/xml;charset=UTF-8
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      cache-control: 
+    headers:
+      Cache-Control:
       - private, max-age=0
-      content-type: 
+      Content-Type:
       - text/xml; charset=utf-8
-      server: 
+      Server:
       - Microsoft-IIS/7.0
-      x-aspnet-version: 
+      X-Aspnet-Version:
       - 2.0.50727
-      x-powered-by: 
+      X-Powered-By:
       - TaxCloud
-      date: 
+      Date:
       - Sat, 17 Sep 2011 19:21:59 GMT
-      content-length: 
-      - "395"
-    body: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><AuthorizedResponse xmlns="http://taxcloud.net"><AuthorizedResult><ResponseType>OK</ResponseType><Messages /></AuthorizedResult></AuthorizedResponse></soap:Body></soap:Envelope>
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :post
-    uri: https://api.taxcloud.net:443/1.0/TaxCloud.asmx
-    body: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://taxcloud.net" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:Captured><wsdl:customerID>8062</wsdl:customerID><wsdl:cartID>1097</wsdl:cartID><ins0:orderID>3260</ins0:orderID><wsdl:dateCaptured>2011-09-17T00:00:00+00:00</wsdl:dateCaptured><ins0:apiLoginID>api-login-id</ins0:apiLoginID><ins0:apiKey>api-key</ins0:apiKey></ins0:Captured></env:Body></env:Envelope>
-    headers: 
-      soapaction: 
-      - "\"http://taxcloud.net/Captured\""
-      content-type: 
+      Content-Length:
+      - '395'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><AuthorizedResponse
+        xmlns="http://taxcloud.net"><AuthorizedResult><ResponseType>OK</ResponseType><Messages
+        /></AuthorizedResult></AuthorizedResponse></soap:Body></soap:Envelope>
+    http_version: '1.1'
+  recorded_at: Fri, 23 Nov 2012 15:41:40 GMT
+- request:
+    method: post
+    uri: https://api.taxcloud.net/1.0/TaxCloud.asmx
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://taxcloud.net"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:Captured><wsdl:customerID>8062</wsdl:customerID><wsdl:cartID>1097</wsdl:cartID><ins0:orderID>3260</ins0:orderID><wsdl:dateCaptured>2011-09-17T00:00:00+00:00</wsdl:dateCaptured><ins0:apiLoginID>api-login-id</ins0:apiLoginID><ins0:apiKey>api-key</ins0:apiKey></ins0:Captured></env:Body></env:Envelope>
+    headers:
+      Soapaction:
+      - ! '"http://taxcloud.net/Captured"'
+      Content-Type:
       - text/xml;charset=UTF-8
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      cache-control: 
+    headers:
+      Cache-Control:
       - private, max-age=0
-      content-type: 
+      Content-Type:
       - text/xml; charset=utf-8
-      server: 
+      Server:
       - Microsoft-IIS/7.0
-      x-aspnet-version: 
+      X-Aspnet-Version:
       - 2.0.50727
-      x-powered-by: 
+      X-Powered-By:
       - TaxCloud
-      date: 
+      Date:
       - Sat, 17 Sep 2011 19:21:59 GMT
-      content-length: 
-      - "387"
-    body: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><CapturedResponse xmlns="http://taxcloud.net"><CapturedResult><ResponseType>OK</ResponseType><Messages /></CapturedResult></CapturedResponse></soap:Body></soap:Envelope>
-    http_version: "1.1"
+      Content-Length:
+      - '387'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><CapturedResponse
+        xmlns="http://taxcloud.net"><CapturedResult><ResponseType>OK</ResponseType><Messages
+        /></CapturedResult></CapturedResponse></soap:Body></soap:Envelope>
+    http_version: '1.1'
+  recorded_at: Fri, 23 Nov 2012 15:41:40 GMT
+recorded_with: VCR 2.3.0
