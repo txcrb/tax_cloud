@@ -9,7 +9,6 @@ require 'tax_cloud/cart_item'
 require 'tax_cloud/tax_codes'
 require 'tax_cloud/configuration'
 require 'tax_cloud/client'
-require 'hash'
 
 I18n.load_path << File.join(File.dirname(__FILE__), "config", "locales", "en.yml")
 
@@ -38,15 +37,7 @@ module TaxCloud
     # Method to define and retrieve the SOAP methods
     def client
       check_configuration!
-      @@client ||= TaxCloud::Client.new(self.configuration)
-    end
-
-    # Authorization hash to use with all SOAP requests
-    def auth_params
-      {
-        'apiLoginID' => configuration.api_login_id,
-        'apiKey' => configuration.api_key
-      }
+      @@client ||= TaxCloud::Client.new
     end
 
     private

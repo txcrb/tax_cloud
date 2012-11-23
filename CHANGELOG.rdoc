@@ -1,7 +1,6 @@
 === 0.1.5 (Next Release)
 
-* Raise `TextCloud::Errors::MissingConfigError` when TaxCloud.configure has not been called - @dblock.
-* Raise `TextCloud::Errors::MissingConfigOptionError` when TextCloud is not configured with an ID and API key - @dblock.
+* Raise specialized configuration and SOAP errors - @dblock.
 * Fixed compatibility with Ruby 1.8.7 and 1.9.3, removed super from constructors for classes which inherit from Object - @gfmurphy.
 
 === 0.1.4 (10/20/2011)
