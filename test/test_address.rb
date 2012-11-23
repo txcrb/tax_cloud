@@ -1,6 +1,6 @@
 require 'helper'
 
-class TestAddress < Test::Unit::TestCase
+class TestAddress < TestSetup
 
   def setup
     super

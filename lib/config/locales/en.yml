@@ -1,0 +1,21 @@
+en:
+  taxcloud:
+    errors:
+      messages:
+        missing_config:
+          message: "Missing configuration."
+          summary: "TaxCloud requires an API login ID and key."
+          resolution: "Create a TaxCloud merchant account at http://www.taxcloud.net.
+            Add a website to your TaxCloud account. This will generate an API ID and 
+            API Key that you will need to use the service. Configure the TaxCloud
+            gem. For example, add the following to `config/initializers/tax_cloud.rb`.\n
+            \_\_TaxCloud.configure do |config|\n
+            \_\_\_config.api_login_id = 'your_tax_cloud_api_login_id'\n
+            \_\_\_config.api_key = 'your_tax_cloud_api_key'\n
+            \_\_\_config.usps_username = 'your_usps_username' # optional\n
+            \_\_end\n"
+        missing_config_option:
+          message: "Missing configuration option: %{name}."
+          summary: "A configuration option was not provided when configuration TaxCloud."
+          resolution: "Review your TaxCloud.configure code. Are you using an environment
+          variable that has not been set?"
