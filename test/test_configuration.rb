@@ -8,7 +8,7 @@ class TestConfiguration < Test::Unit::TestCase
 
   def test_missing_configuration
     assert_raise TaxCloud::Errors::MissingConfig do
-      response = TaxCloud.client.request :dummy, :body => {}
+      TaxCloud.client.request :dummy, :body => {}
     end
   end
 
@@ -17,7 +17,7 @@ class TestConfiguration < Test::Unit::TestCase
       config.api_key = 'taxcloud_api_key'
     end
     assert_raise TaxCloud::Errors::MissingConfigOption do
-      response = TaxCloud.client.request :dummy, :body => {}
+      TaxCloud.client.request :dummy, :body => {}
     end
   end
 
@@ -26,7 +26,7 @@ class TestConfiguration < Test::Unit::TestCase
       config.api_login_id = 'taxcloud_api_login_id'
     end
     assert_raise TaxCloud::Errors::MissingConfigOption do
-      response = TaxCloud.client.request :dummy, :body => {}
+      TaxCloud.client.request :dummy, :body => {}
     end
   end
 

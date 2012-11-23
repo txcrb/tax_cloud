@@ -17,5 +17,9 @@ en:
         missing_config_option:
           message: "Missing configuration option: %{name}."
           summary: "A configuration option was not provided when configuration TaxCloud."
-          resolution: "Review your TaxCloud.configure code. Are you using an environment
+          resolution: "Review your `TaxCloud.configure` code. Are you using an environment
           variable that has not been set?"
+        soap_error:
+          message: "%{message}"
+          summary: "The server returned a %{code} error."
+          resolution: "Review the parameters passed to the request."

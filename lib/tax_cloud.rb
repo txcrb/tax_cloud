@@ -8,6 +8,7 @@ require 'tax_cloud/address'
 require 'tax_cloud/cart_item'
 require 'tax_cloud/tax_codes'
 require 'tax_cloud/configuration'
+require 'tax_cloud/client'
 require 'hash'
 
 I18n.load_path << File.join(File.dirname(__FILE__), "config", "locales", "en.yml")
@@ -37,9 +38,7 @@ module TaxCloud
     # Method to define and retrieve the SOAP methods
     def client
       check_configuration!
-      @@client ||= Savon::Client.new do
-        wsdl.document = TaxCloud::WSDL_URL
-      end
+      @@client ||= TaxCloud::Client.new(self.configuration)
     end
 
     # Authorization hash to use with all SOAP requests
