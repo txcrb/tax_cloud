@@ -12,12 +12,11 @@ module TaxCloud
 
     # Verify the address via TaxCloud
     def verify
-      request_params = {
-        'apiLoginId' => TaxCloud.configuration.api_login_id,
-        'apiKey' => TaxCloud.configuration.api_key,
-        'uspsUserID' => TaxCloud.configuration.usps_username
-      }.merge(to_hash.downcase_keys!)
-      response = TaxCloud.client.request :verify_address, :body => request_params
+      params = to_hash.downcase_keys
+      params = params.merge({ 
+        'uspsUserID' => TaxCloud.configuration.usps_username 
+      }) if TaxCloud.configuration.usps_username
+      response = TaxCloud.client.request :verify_address, params
     end
 
     # Convert the object to a usable hash for SOAP requests
