@@ -8,6 +8,7 @@ module TaxCloud
       attr_accessor :cart_id, :cart_items
 
       response_type "lookup_response/lookup_result/response_type"
+      error_message "lookup_response/lookup_result/messages/response_message/message"
 
       def initialize(savon_response)
         super savon_response

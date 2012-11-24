@@ -34,7 +34,7 @@ class TestTransaction < TestSetup
     VCR.use_cassette('authorized') do
       @transaction.lookup
       result = @transaction.authorized
-      assert_equal 'OK', result[:authorized_response][:authorized_result][:response_type]
+      assert_equal 'OK', result
     end
   end
 
@@ -43,7 +43,7 @@ class TestTransaction < TestSetup
       @transaction.lookup
       @transaction.authorized
       result = @transaction.captured
-      assert_equal 'OK', result[:captured_response][:captured_result][:response_type]
+      assert_equal 'OK', result
     end
   end
 
@@ -51,7 +51,7 @@ class TestTransaction < TestSetup
     VCR.use_cassette('authorized_with_capture') do
       @transaction.lookup
       result = @transaction.authorized_with_capture
-      assert_equal 'OK', result[:authorized_with_capture_response][:authorized_with_capture_result][:response_type]
+      assert_equal 'OK', result
     end
   end
 
@@ -60,7 +60,7 @@ class TestTransaction < TestSetup
       @transaction.lookup
       @transaction.authorized_with_capture
       result = @transaction.returned
-      assert_equal 'OK', result[:returned_response][:returned_result][:response_type]
+      assert_equal 'OK', result
     end
   end
 

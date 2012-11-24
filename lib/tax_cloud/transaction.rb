@@ -49,6 +49,7 @@ module TaxCloud
       }
 
       response = TaxCloud.client.request :authorized, request_params
+      TaxCloud::Responses::Authorized.parse response
     end
 
     # Complete the transaction. The <tt>order_id</tt> passed into <tt>captured</tt> must match the <tt>order_id</tt> that was passed into <tt>authorized</tt>.
@@ -65,6 +66,7 @@ module TaxCloud
       }
 
       response = TaxCloud.client.request :captured, request_params
+      TaxCloud::Responses::Captured.parse response
     end
 
     # Combines the <tt>authorized</tt> and <tt>captured</tt> methods into a single call
@@ -83,6 +85,7 @@ module TaxCloud
       }
 
       response = TaxCloud.client.request :authorized_with_capture, request_params
+      TaxCloud::Responses::AuthorizedWithCapture.parse response
     end
 
     # Marks any included cart items as returned.
@@ -97,7 +100,8 @@ module TaxCloud
         'returnedDate' => options[:returned_date]
       }
 
-      TaxCloud.client.request :returned, request_params
+      response = TaxCloud.client.request :returned, request_params
+      TaxCloud::Responses::Returned.parse response
     end
   end
 end

@@ -11,7 +11,7 @@ class TestTransaction < TestSetup
   end
 
   def test_lookup_non_ssuta_state
-    VCR.use_cassette('lookup_non_ssuta_state') do
+    VCR.use_cassette('lookup_ny') do
       result = @transaction.lookup
       assert_instance_of TaxCloud::Responses::Lookup, result
       assert_equal '708', result.cart_id

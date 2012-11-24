@@ -51,7 +51,10 @@ module TaxCloud
 
         def parse!
           if self.dsl[:response_type]
-            return true if match(self.dsl[:response_type]) == "OK"
+            case match(self.dsl[:response_type])
+            when "OK", "Informational" then
+              return true
+            end
           elsif self.dsl[:error_number]
             return true if match(self.dsl[:error_number]) == "0"
           end
