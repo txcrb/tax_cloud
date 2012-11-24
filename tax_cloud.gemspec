@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'savon', '0.9.6'
   s.add_runtime_dependency 'i18n', '~> 0.6'
+  s.add_runtime_dependency 'active_support'
 
   # Development dependencies
   s.add_development_dependency 'rake', '~> 10.0'
