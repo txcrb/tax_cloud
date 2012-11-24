@@ -1,5 +1,6 @@
 require 'savon'
 require 'i18n'
+require 'hash'
 require 'savon_xml_override'
 require 'tax_cloud/version'
 require 'tax_cloud/errors'

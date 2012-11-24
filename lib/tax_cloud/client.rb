@@ -5,7 +5,7 @@ module TaxCloud
       super TaxCloud::WSDL_URL
     end
 
-    def request(method, body)
+    def request(method, body = {})
       safe do
         super method, :body => body.merge(auth_params)
       end

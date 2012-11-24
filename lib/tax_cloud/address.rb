@@ -12,7 +12,7 @@ module TaxCloud
 
     # Verify the address via TaxCloud
     def verify
-      params = to_hash
+      params = to_hash.downcase_keys
       params = params.merge({ 
         'uspsUserID' => TaxCloud.configuration.usps_username 
       }) if TaxCloud.configuration.usps_username
@@ -22,12 +22,12 @@ module TaxCloud
     # Convert the object to a usable hash for SOAP requests
     def to_hash
       {
-        'address1' => address1,
-        'address2' => address2,
-        'city' => city,
-        'state' => state,
-        'zip5' => zip5,
-        'zip4' => zip4
+        'Address1' => address1,
+        'Address2' => address2,
+        'City' => city,
+        'State' => state,
+        'Zip5' => zip5,
+        'Zip4' => zip4
       }
     end
 
