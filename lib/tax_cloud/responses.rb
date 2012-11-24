@@ -1,3 +1,5 @@
 require 'tax_cloud/responses/base'
 require 'tax_cloud/responses/ping'
 require 'tax_cloud/responses/verify_address'
+require 'tax_cloud/responses/cart_item'
+require 'tax_cloud/responses/lookup'

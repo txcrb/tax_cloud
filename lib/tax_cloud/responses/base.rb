@@ -37,28 +37,27 @@ module TaxCloud
         end
       end
 
-      private
-
-        def match(chain)
-          current_value = raw
-          chain.split("/").each do |key|
-            current_value = current_value[key.to_sym]
-            next if current_value
-            raise TaxCloud::Errors::UnexpectedSoapResponse.new(raw, key, chain)
-          end
-          current_value
+      def match(chain)
+        current_value = raw
+        chain.split("/").each do |key|
+          current_value = current_value[key.to_sym]
+          next if current_value
+          raise TaxCloud::Errors::UnexpectedSoapResponse.new(raw, key, chain)
         end
+        current_value
+      end
+
+      private
 
         def parse!
           if self.dsl[:response_type]
             return true if match(self.dsl[:response_type]) == "OK"
           elsif self.dsl[:error_number]
             return true if match(self.dsl[:error_number]) == "0"
-          else
-            raise "missing response_type or error_number dsl"
           end
-          raise "missing error_message dsl" unless self.dsl[:error_message]
-          raise TaxCloud::Errors::ApiError.new(match(self.dsl[:error_message]), raw)
+          if self.dsl[:error_message]
+            raise TaxCloud::Errors::ApiError.new(match(self.dsl[:error_message]), raw)
+          end
         end
 
     end

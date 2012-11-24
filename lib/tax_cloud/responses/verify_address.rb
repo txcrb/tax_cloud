@@ -13,7 +13,7 @@ module TaxCloud
         # @return [ TaxCloud::Address ] A verified address.
         def parse(savon_response)
           response = self.new(savon_response)
-          result = response.raw[:verify_address_response][:verify_address_result]
+          result = response.match("verify_address_response/verify_address_result")
           result.delete(:err_number)
           TaxCloud::Address.new result
         end

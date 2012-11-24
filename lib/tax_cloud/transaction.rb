@@ -32,10 +32,7 @@ module TaxCloud
       }
 
       response = TaxCloud.client.request :lookup, request_params
-
-      # In the event that a cart_id wasn't specified, TaxCloud will give you one
-      self.cart_id = response[:lookup_response][:lookup_result][:cart_id] if response[:lookup_response][:lookup_result][:cart_id]
-      return response
+      TaxCloud::Responses::Lookup.parse response
     end
 
     # Once a purchase has been made and payment has been authorized, this method must be called. A matching Lookup call must have been made before this is called.

@@ -4,18 +4,29 @@ class TestTransaction < TestSetup
 
   def setup
     super
-    origin = TaxCloud::Address.new :address1 => '888 6th Ave', :city => 'New York', :state => 'NY', :zip5 => '10001'
-    destination = TaxCloud::Address.new :address1 => '888 6th Ave', :city => 'New York', :state => 'NY', :zip5 => '10001'
+    origin = TaxCloud::Address.new(:address1 => '162 East Avenue', :address2 => 'Third Floor', :city => 'Norwalk', :state => 'CT', :zip5 => '06851')
+    destination = TaxCloud::Address.new(:address1 => '3121 West Government Way', :address2 => 'Suite 2B', :city => 'Seattle', :state => 'WA', :zip5 => '98199')
     cart_items = []
     cart_items << TaxCloud::CartItem.new(:index => 0, :item_id => 'SKU-TEST', :tic => TaxCloud::TaxCodes::GENERAL, :quantity => 1, :price => 50.00)
-    cart_items << TaxCloud::CartItem.new(:index => 1, :item_id => 'SKU-TEST1', :tic => TaxCloud::TaxCodes::GENERAL, :quantity => 1, :price => 50.00)
-    @transaction = TaxCloud::Transaction.new(:customer_id => rand(9999), :cart_id => rand(9999), :order_id => rand(9999), :cart_items => cart_items, :origin => origin, :destination => destination)
+    cart_items << TaxCloud::CartItem.new(:index => 1, :item_id => 'SKU-TEST1', :tic => TaxCloud::TaxCodes::GENERAL, :quantity => 1, :price => 100.00)
+    @transaction = TaxCloud::Transaction.new(:customer_id => 42, :cart_id => 708, :order_id => 2361, :cart_items => cart_items, :origin => origin, :destination => destination)
   end
 
   def test_lookup
     VCR.use_cassette('lookup') do
-      result = @transaction.lookup[:lookup_response][:lookup_result]
-      result[:cart_items_response][:cart_item_response].each { |item| assert_not_nil item[:tax_amount] }
+      result = @transaction.lookup
+      assert_instance_of TaxCloud::Responses::Lookup, result
+      assert_equal '708', result.cart_id
+      assert_equal 2, result.cart_items.count
+      result.cart_items.first.tap do |item|
+        assert_equal 0, item.cart_item_index
+        assert_equal 4.75, item.tax_amount
+      end
+      result.cart_items.last.tap do |item|
+        assert_equal 1, item.cart_item_index
+        assert_equal 9.5, item.tax_amount
+      end
+      assert_equal 14.25, result.tax_amount
     end
   end
 
