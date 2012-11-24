@@ -2,23 +2,21 @@
 module TaxCloud
   module Errors
 
-    # This error is raised when TaxCloud returns 
-    # an unexpected SOAP response.
+    # Raised when TaxCloud returns an unexpected SOAP response.
     class UnexpectedSoapResponse < TaxCloudError
 
       # Create the new error.
-      #
-      # @example Create the error.
-      #   UnexpectedSoapResponse.new(raw, key, *chain)
-      #
-      # @since 1.0.0
-      def initialize(raw, key, *chain)
+      # @param [ String ] raw Raw data from the SOAP response.
+      # @param [ String ] key Expected key in the SOAP response.
+      # @param [ String ] chain Complete SOAP response chain in which the key could not be found.
+      def initialize(raw, key, chain)
         super(compose_message("unexpected_soap_response", {
           :key => key,
           :raw => raw,
-          :chain => Array(chain).join("/")
+          :chain => chain
         }))
       end
+
     end
   end
 end

@@ -1,5 +1,7 @@
 module TaxCloud
   module Responses
+
+    # A base TaxCloud SOAP response.
     class Base
       
       attr_accessor :raw
@@ -18,6 +20,10 @@ module TaxCloud
 
         def error_message(value)
           self.set_dsl(:error_message, value)
+        end
+
+        def error_number(value)
+          self.set_dsl(:error_number, value)
         end
 
         def set_dsl(key, value)
@@ -44,9 +50,14 @@ module TaxCloud
         end
 
         def parse!
-          raise "missing response_type dsl" unless self.dsl[:response_type]
+          if self.dsl[:response_type]
+            return true if match(self.dsl[:response_type]) == "OK"
+          elsif self.dsl[:error_number]
+            return true if match(self.dsl[:error_number]) == "0"
+          else
+            raise "missing response_type or error_number dsl"
+          end
           raise "missing error_message dsl" unless self.dsl[:error_message]
-          return true if match(self.dsl[:response_type]) == "OK"
           raise TaxCloud::Errors::ApiError.new(match(self.dsl[:error_message]), raw)
         end
 

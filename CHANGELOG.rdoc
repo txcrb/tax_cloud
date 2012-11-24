@@ -2,6 +2,7 @@
 
 * Raise specialized configuration and SOAP errors - @dblock.
 * Added <tt>TaxCloud::Client.ping</tt> - @dblock.
+* Returning a verified address from <tt>TaxCloud::Address.verify</tt> -@dblock.
 * Fixed compatibility with Ruby 1.8.7 and 1.9.3, removed super from constructors for classes which inherit from <tt>Object</tt> - @gfmurphy.
 
 === 0.1.4 (10/20/2011)

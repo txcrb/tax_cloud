@@ -2,15 +2,10 @@
 module TaxCloud
   module Errors
 
-    # This error is raised when TaxCloud returns an error from an API.
+    # Raised when TaxCloud returns an error from an API.
+    # @param [ String ] message Error message.
+    # @param [ String ] raw Raw data from the SOAP response.
     class ApiError < TaxCloudError
-
-      # Create the new error.
-      #
-      # @example Create the error.
-      #   ApiError.new(message, raw)
-      #
-      # @since 1.0.0
       def initialize(message, raw)
         super(compose_message("api_error", {
           :message => message,
@@ -18,5 +13,6 @@ module TaxCloud
         }))
       end
     end
+
   end
 end
