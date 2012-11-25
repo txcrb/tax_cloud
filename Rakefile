@@ -13,15 +13,19 @@ end
 RDoc::Task.new do |rd|
   README = 'README.rdoc'
   rd.main = README
-  rd.rdoc_files.include(README, "lib/**/*.rb")
+  rd.rdoc_files.include(README, 'CHANGELOG.rdoc', "lib/**/*.rb")
   rd.rdoc_dir = 'doc'
   rd.title = 'tax_cloud'
 end
 
-desc "Validate the gemspec"
+desc "Validate the gemspec."
 task :gemspec do
   puts gemspec.validate
 end
+
+load 'lib/tasks/tax_cloud.rake'
+load 'lib/tasks/tax_codes.rake'
+load 'lib/tasks/tax_code_groups.rake'
 
 load 'vcr/tasks/vcr.rake'
 

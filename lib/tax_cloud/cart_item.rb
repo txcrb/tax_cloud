@@ -9,14 +9,8 @@ module TaxCloud
   # * <tt>tic</tt> - The taxable information code. See <tt>TaxCloud::TaxCodes</tt>.
   # * <tt>price</tt> - The price of the item. All prices are USD. Do not include currency symbol.
   # * <tt>quantity</tt> - The total number of items.
-  class CartItem
+  class CartItem < Record
     attr_accessor :index, :item_id, :tic, :price, :quantity
-
-    def initialize(attrs = {})
-      attrs.each do |sym, val|
-        self.send "#{sym}=", val
-      end
-    end
 
     # Convert the object to a usable hash for SOAP requests
     def to_hash

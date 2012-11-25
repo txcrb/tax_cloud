@@ -10,15 +10,13 @@ module TaxCloud
   # * <tt>order_id</tt> - The order ID for <tt>authorized</tt>, <tt>captured</tt>, and <tt>authorzied_with_captured</tt> methods.
   # * <tt>origin</tt> - The <tt>Address</tt> of which the shipment originates.
   # * <tt>destination</tt> - The <tt>Address</tt> of which the shipment arrives.
-  class Transaction
+  class Transaction < Record
     attr_accessor :customer_id, :cart_id, :cart_items, :order_id, :origin, :destination
 
     # Creates a new <tt>Transaction</tt> object with the given parameters
     def initialize(params = {})
       params = { :cart_items => [] }.merge(params)
-      params.each do |key, value|
-        self.send "#{key}=", value
-      end
+      super params
     end
 
     # Lookup the tax rate for the transaction. The returned information is based on the originating address, destination address, and cart items.
