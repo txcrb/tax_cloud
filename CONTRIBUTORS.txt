@@ -8,8 +8,8 @@ Lead Developers
   * GitHub: drewtempelmeyer
 
 * Daniel Doubrovkine
-  * GitHub: dblock
   * Twitter: @dblockdotorg
+  * GitHub: dblock
 
 Contributors
 =======================
