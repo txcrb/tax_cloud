@@ -32,10 +32,7 @@ module TaxCloud
       }
 
       response = TaxCloud.client.request :lookup, request_params
-
-      # In the event that a cart_id wasn't specified, TaxCloud will give you one
-      self.cart_id = response[:lookup_response][:lookup_result][:cart_id] if response[:lookup_response][:lookup_result][:cart_id]
-      return response
+      TaxCloud::Responses::Lookup.parse response
     end
 
     # Once a purchase has been made and payment has been authorized, this method must be called. A matching Lookup call must have been made before this is called.
@@ -52,6 +49,7 @@ module TaxCloud
       }
 
       response = TaxCloud.client.request :authorized, request_params
+      TaxCloud::Responses::Authorized.parse response
     end
 
     # Complete the transaction. The <tt>order_id</tt> passed into <tt>captured</tt> must match the <tt>order_id</tt> that was passed into <tt>authorized</tt>.
@@ -68,6 +66,7 @@ module TaxCloud
       }
 
       response = TaxCloud.client.request :captured, request_params
+      TaxCloud::Responses::Captured.parse response
     end
 
     # Combines the <tt>authorized</tt> and <tt>captured</tt> methods into a single call
@@ -86,6 +85,7 @@ module TaxCloud
       }
 
       response = TaxCloud.client.request :authorized_with_capture, request_params
+      TaxCloud::Responses::AuthorizedWithCapture.parse response
     end
 
     # Marks any included cart items as returned.
@@ -100,7 +100,8 @@ module TaxCloud
         'returnedDate' => options[:returned_date]
       }
 
-      TaxCloud.client.request :returned, request_params
+      response = TaxCloud.client.request :returned, request_params
+      TaxCloud::Responses::Returned.parse response
     end
   end
 end
