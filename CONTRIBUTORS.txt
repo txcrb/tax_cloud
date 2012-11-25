@@ -1,0 +1,17 @@
+tax_cloud Contributors
+
+Lead Developers
+=======================
+* Drew Tempelmeyer
+  * Twitter: @tempelmeyer
+  * App.net: @tempelmeyer
+  * GitHub: drewtempelmeyer
+
+Contributors
+=======================
+* Daniel Morrison
+  * GitHub: danielmorrison
+
+* Daniel Doubrovkine
+  * GitHub: dblock
+
