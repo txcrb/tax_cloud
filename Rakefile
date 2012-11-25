@@ -18,10 +18,14 @@ RDoc::Task.new do |rd|
   rd.title = 'tax_cloud'
 end
 
-desc "Validate the gemspec"
+desc "Validate the gemspec."
 task :gemspec do
   puts gemspec.validate
 end
+
+load 'lib/tasks/tax_cloud.rake'
+load 'lib/tasks/tax_codes.rake'
+load 'lib/tasks/tax_code_groups.rake'
 
 load 'vcr/tasks/vcr.rake'
 

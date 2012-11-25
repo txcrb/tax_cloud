@@ -12,7 +12,11 @@ require 'tax_cloud/transaction'
 require 'tax_cloud/address'
 require 'tax_cloud/cart_item'
 require 'tax_cloud/tax_code'
+require 'tax_cloud/tax_code_group'
 require 'tax_cloud/tax_codes'
+require 'tax_cloud/tax_code_constants'
+require 'tax_cloud/tax_code_groups'
+require 'tax_cloud/tax_code_group_constants'
 require 'tax_cloud/configuration'
 require 'tax_cloud/client'
 
@@ -28,6 +32,10 @@ module TaxCloud
 
   class << self
     attr_accessor :configuration
+
+    def configured?
+      !! self.configuration
+    end
 
     # Configure the variables
     def configure

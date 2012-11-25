@@ -10,9 +10,9 @@ class TestTaxCode < TestSetup
 
   def test_lookup
     VCR.use_cassette('get_tics') do
-      tic = TaxCloud::TaxCodes[TaxCloud::TaxCodes::HANDLING_FEE]
-      assert_equal TaxCloud::TaxCodes::HANDLING_FEE, tic.ticid
-      assert_equal "Handling, crating, packing, preparation for mailing or delivery, and similar charges", tic.description
+      tax_code = TaxCloud::TaxCodes[TaxCloud::TaxCodes::DIRECT_MAIL_RELATED]
+      assert_equal TaxCloud::TaxCodes::DIRECT_MAIL_RELATED, tax_code.ticid
+      assert_equal "Direct-mail related", tax_code.description
     end
   end
 
