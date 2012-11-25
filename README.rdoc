@@ -75,6 +75,21 @@ Later, you may need to mark some cart items as returned. TaxCloud will ignore an
       :quantity => 1)
     transaction.returned # returns "OK" or raises an error
 
+=== Verifying Addresses
+
+TaxCloud[http://www.taxcloud.com] optionally integrates with the USPS Address API. An address can be verified, which can also yield a 9-digit zip code that helps determine a more accurate tax rate.
+
+    address = TaxCloud::Address.new({ 
+      :address1 => '888 6th Ave', 
+      :city => 'New York', 
+      :state => 'New York', 
+      :zip5 => '10001' 
+    })
+
+    verified_address = address.verify
+    verified_address.zip5 # 10001
+    verified_address.zip4 # 3502
+
 === Tax Codes
 TaxCloud[http://www.taxcloud.com] maintains a list of all Taxability Information Codes or TICs, which can be found at https://taxcloud.net/tic.
 
