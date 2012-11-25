@@ -3,14 +3,16 @@ namespace :tax_cloud do
   desc "Generate tax codes."
   task :tax_codes => :configure do
     filename = "lib/tax_cloud/tax_code_constants.rb"
-    File.open filename, "wt" do |f|
 
-      f.write "module TaxCloud\n"
-      f.write "  class TaxCodes\n"
-      f.write "\n"
+    begin
+      groups = TaxCloud::TaxCode::Groups.all.values
 
-      begin
-        TaxCloud::TaxCode::Groups.all.values.each do |group|
+      File.open filename, "wt" do |f|
+        f.write "module TaxCloud\n"
+        f.write "  class TaxCodes\n"
+        f.write "\n"
+
+        groups.each do |group|
           f.write "    \# #{group.description}\n"
           group.tax_codes.values.each do |tic|
             code = tic.description.upcase
@@ -21,12 +23,16 @@ namespace :tax_cloud do
           end
           f.write "\n"
         end
-      ensure
+
         f.write "  end\n"
         f.write "end\n"
       end
-    end
-    puts "Done, #{filename}."
-  end
 
+      puts "Done, #{filename}."
+    rescue => e
+      puts "ERROR: Unable to generate a new list of tax codes."
+      puts e
+    end
+
+  end
 end
