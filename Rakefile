@@ -13,7 +13,7 @@ end
 RDoc::Task.new do |rd|
   README = 'README.rdoc'
   rd.main = README
-  rd.rdoc_files.include(README, 'CHANGELOG.rdoc', "lib/**/*.rb")
+  rd.rdoc_files.include(README, 'CHANGELOG.rdoc', 'LICENSE.rdoc', "lib/**/*.rb")
   rd.rdoc_dir = 'doc'
   rd.title = 'tax_cloud'
 end
