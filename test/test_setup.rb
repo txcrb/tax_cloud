@@ -1,5 +1,9 @@
 class TestSetup < Test::Unit::TestCase
 
+  def default_test
+    # placeholder to avoid error under Ruby 1.8.7
+  end
+
   def setup
     TaxCloud.configure do |config|
       config.api_login_id = ENV['TAXCLOUD_API_LOGIN_ID'] || 'taxcloud_api_login_id'

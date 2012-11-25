@@ -38,7 +38,7 @@ module TaxCloud
       #
       # @return [ String ] A localized error message string.
       def translate(key, options)
-        ::I18n.translate("#{BASE_KEY}.#{key}", { locale: :en }.merge(options)).strip
+        ::I18n.translate("#{BASE_KEY}.#{key}", { :locale => :en }.merge(options)).strip
       end
 
       # Create the problem.
