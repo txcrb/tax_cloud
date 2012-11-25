@@ -11,6 +11,10 @@ module TaxCloud
       end
     end
 
+    def ping
+      TaxCloud::Responses::Ping.parse request(:ping)
+    end
+
     private
 
       # Authorization hash to use with all SOAP requests

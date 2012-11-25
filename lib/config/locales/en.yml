@@ -23,3 +23,12 @@ en:
           message: "%{message}"
           summary: "The server returned a %{code} error."
           resolution: "Review the parameters passed to the request."
+        unexpected_soap_response:
+          message: "Expected a value for `%{key}` in `%{chain}` in the TaxCloud response."
+          summary: "TaxCloud returned an unexpected response: `%{raw}`."
+          resolution: "This is possibly a bug in the tax_cloud gem.\n
+          Please report it in https://github.com/drewtempelmeyer/tax_cloud/issues."
+        api_error:
+          message: "%{message}"
+          summary: "The TaxCloud server returned an error in the response: `%{raw}`"
+          resolution: "Check the request parameters."

@@ -2,17 +2,13 @@
 module TaxCloud
   module Errors
 
-    # This error is raised from any failed SOAP operation.
+    # Raised from any failed SOAP operation.
     class SoapError < TaxCloudError
-
+      
       attr_reader :fault
 
       # Create the new error.
-      #
-      # @example Create the error.
-      #   SoapError.new
-      #
-      # @since 1.0.0
+      # @param [ Hash ] e SOAP response.
       def initialize(e)
         @fault = e
         e.to_hash.tap do |fault|

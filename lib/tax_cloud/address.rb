@@ -16,7 +16,8 @@ module TaxCloud
       params = params.merge({ 
         'uspsUserID' => TaxCloud.configuration.usps_username 
       }) if TaxCloud.configuration.usps_username
-      response = TaxCloud.client.request :verify_address, params
+      response = TaxCloud.client.request(:verify_address, params)
+      TaxCloud::Responses::VerifyAddress.parse(response)
     end
 
     # Convert the object to a usable hash for SOAP requests

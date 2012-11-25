@@ -7,7 +7,7 @@ http_interactions:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://taxcloud.net"
-        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:Lookup><ins0:customerID>9860</ins0:customerID><ins0:cartID>941</ins0:cartID><ins0:cartItems><ins0:CartItem><wsdl:Index>0</wsdl:Index><wsdl:ItemID>SKU-TEST</wsdl:ItemID><wsdl:TIC>00000</wsdl:TIC><wsdl:Price>50.0</wsdl:Price><wsdl:Qty>1</wsdl:Qty></ins0:CartItem><ins0:CartItem><wsdl:Index>1</wsdl:Index><wsdl:ItemID>SKU-TEST1</wsdl:ItemID><wsdl:TIC>00000</wsdl:TIC><wsdl:Price>50.0</wsdl:Price><wsdl:Qty>1</wsdl:Qty></ins0:CartItem></ins0:cartItems><ins0:origin><ins0:Address1>888
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:Lookup><ins0:customerID>42</ins0:customerID><ins0:cartID>708</ins0:cartID><ins0:cartItems><ins0:CartItem><wsdl:Index>0</wsdl:Index><wsdl:ItemID>SKU-TEST</wsdl:ItemID><wsdl:TIC>00000</wsdl:TIC><wsdl:Price>50.0</wsdl:Price><wsdl:Qty>1</wsdl:Qty></ins0:CartItem><ins0:CartItem><wsdl:Index>1</wsdl:Index><wsdl:ItemID>SKU-TEST1</wsdl:ItemID><wsdl:TIC>00000</wsdl:TIC><wsdl:Price>50.0</wsdl:Price><wsdl:Qty>1</wsdl:Qty></ins0:CartItem></ins0:cartItems><ins0:origin><ins0:Address1>888
         6th Ave</ins0:Address1><ins0:Address2 xsi:nil="true"/><ins0:City>New York</ins0:City><ins0:State>NY</ins0:State><ins0:Zip5>10001</ins0:Zip5><ins0:Zip4
         xsi:nil="true"/></ins0:origin><ins0:destination><ins0:Address1>888 6th Ave</ins0:Address1><ins0:Address2
         xsi:nil="true"/><ins0:City>New York</ins0:City><ins0:State>NY</ins0:State><ins0:Zip5>10001</ins0:Zip5><ins0:Zip4
@@ -52,7 +52,7 @@ http_interactions:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://taxcloud.net"
-        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:AuthorizedWithCapture><ins0:customerID>9860</ins0:customerID><ins0:cartID>941</ins0:cartID><ins0:orderID>9393</ins0:orderID><ins0:dateAuthorized>2011-09-17</ins0:dateAuthorized><ins0:dateCaptured>2011-09-17</ins0:dateCaptured><ins0:apiLoginID>api-login-id</ins0:apiLoginID><ins0:apiKey>api-key</ins0:apiKey></ins0:AuthorizedWithCapture></env:Body></env:Envelope>
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:AuthorizedWithCapture><ins0:customerID>42</ins0:customerID><ins0:cartID>708</ins0:cartID><ins0:orderID>2361</ins0:orderID><ins0:dateAuthorized>2011-09-17</ins0:dateAuthorized><ins0:dateCaptured>2011-09-17</ins0:dateCaptured><ins0:apiLoginID>api-login-id</ins0:apiLoginID><ins0:apiKey>api-key</ins0:apiKey></ins0:AuthorizedWithCapture></env:Body></env:Envelope>
     headers:
       Soapaction:
       - ! '"http://taxcloud.net/AuthorizedWithCapture"'
@@ -92,7 +92,7 @@ http_interactions:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://taxcloud.net"
-        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:Returned><ins0:orderID>9393</ins0:orderID><ins0:cartItems><ins0:CartItem><wsdl:Index>0</wsdl:Index><wsdl:ItemID>SKU-TEST</wsdl:ItemID><wsdl:TIC>00000</wsdl:TIC><wsdl:Price>50.0</wsdl:Price><wsdl:Qty>1</wsdl:Qty></ins0:CartItem><ins0:CartItem><wsdl:Index>1</wsdl:Index><wsdl:ItemID>SKU-TEST1</wsdl:ItemID><wsdl:TIC>00000</wsdl:TIC><wsdl:Price>50.0</wsdl:Price><wsdl:Qty>1</wsdl:Qty></ins0:CartItem></ins0:cartItems><ins0:returnedDate>2011-09-17</ins0:returnedDate><ins0:apiLoginID>api-login-id</ins0:apiLoginID><ins0:apiKey>api-key</ins0:apiKey></ins0:Returned></env:Body></env:Envelope>
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:Returned><ins0:orderID>2361</ins0:orderID><ins0:cartItems><ins0:CartItem><wsdl:Index>0</wsdl:Index><wsdl:ItemID>SKU-TEST</wsdl:ItemID><wsdl:TIC>00000</wsdl:TIC><wsdl:Price>50.0</wsdl:Price><wsdl:Qty>1</wsdl:Qty></ins0:CartItem><ins0:CartItem><wsdl:Index>1</wsdl:Index><wsdl:ItemID>SKU-TEST1</wsdl:ItemID><wsdl:TIC>00000</wsdl:TIC><wsdl:Price>50.0</wsdl:Price><wsdl:Qty>1</wsdl:Qty></ins0:CartItem></ins0:cartItems><ins0:returnedDate>2011-09-17</ins0:returnedDate><ins0:apiLoginID>api-login-id</ins0:apiLoginID><ins0:apiKey>api-key</ins0:apiKey></ins0:Returned></env:Body></env:Envelope>
     headers:
       Soapaction:
       - ! '"http://taxcloud.net/Returned"'
