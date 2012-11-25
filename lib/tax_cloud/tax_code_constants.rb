@@ -1,15 +1,15 @@
 module TaxCloud
   class TaxCodes
 
-    # Administrative 
+    # Administrative
     GIFT_CARD_CERTIFICATE = 10005 # Gift Card/Certificate
     CHARGES_BY_THE_SELLER_FOR_ANY_SERVICES_NECESSARY_TO_COMPLETE_THE_SALE_OTHER_THAN_DELIVERY_AND_INSTALLATION = 10010 # Charges by the seller for any services necessary to complete the sale other than delivery and installation
     INSTALLATION_CHARGES = 10040 # Installation charges
-    VALUE_OF_TRADE_IN = 10060 # Value of trade-in   
+    VALUE_OF_TRADE_IN = 10060 # Value of trade-in
     TELECOMMUNICATION_NONRECURRING_CHARGES = 10070 # Telecommunication nonrecurring charges
     HANDLING_CRATING_PACKING_PREPARATION_FOR_MAILING_OR_DELIVERY_AND_SIMILAR_CHARGES = 11000 # Handling, crating, packing, preparation for mailing or delivery, and similar charges
     TRANSPORTATION_SHIPPING_POSTAGE_AND_SIMILAR_CHARGES = 11010 # Transportation, shipping, postage, and similar charges
-    HANDLING_CRATING_PACKING_PREPARATION_FOR_MAILING_OR_DELIVERY_AND_SIMILAR_CHARGES_FOR_DIRECT_MAIL = 11020 # Handling, crating, packing, preparation for mailing or delivery, and similar charges for direct mail  
+    HANDLING_CRATING_PACKING_PREPARATION_FOR_MAILING_OR_DELIVERY_AND_SIMILAR_CHARGES_FOR_DIRECT_MAIL = 11020 # Handling, crating, packing, preparation for mailing or delivery, and similar charges for direct mail
     TRANSPORTATION_SHIPPING_AND_SIMILAR_CHARGES_FOR_DIRECT_MAIL = 11021 # Transportation, shipping, and similar charges for direct mail
     POSTAGE_FOR_DIRECT_MAIL = 11022 # Postage for direct mail
     POSTAGE_DELIVERY = 11099 # Postage/Delivery
@@ -88,12 +88,12 @@ module TaxCloud
     PREPARED_FOOD = 41000 # Prepared Food
     FOOD_SOLD_WITHOUT_EATING_UTENSILS_PROVIDED_BY_THE_SELLER_WHOSE_PRIMARY_NAICS_CLASSIFICATION_IS_MANUFACTURING_IN_SECTOR_EXCEPT_SUBSECTOR_BAKERIES = 41010 # Food sold without eating utensils provided by the seller whose primary NAICS classification is manufacturing in sector 311, except subsector 3118 (bakeries)
     FOOD_SOLD_WITHOUT_EATING_UTENSILS_PROVIDED_BY_THE_SELLER_IN_AN_UNHEATED_STATE_BY_WEIGHT_OR_VOLUME_AS_A_SINGLE_ITEM = 41020 # Food sold without eating utensils provided by the seller in an unheated state by weight or volume as a single item
-    BAKERY_ITEMS_SOLD_WITHOUT_EATING_UTENSILS_PROVIDED_BY_THE_SELLER_INCLUDING_BREAD_ROLLS_BUNS_BISCUITS_BAGELS_CROISSANTS_PASTRIES_DONUTS_DANISH_CAKES_TORTES_PIES_TARTS_MUFFINS_BARS_COOKIES_TORTILLAS = 41030 # Bakery items sold without eating utensils provided by the seller, including bread, rolls, buns, biscuits, bagels, croissants, pastries, donuts, Danish, cakes, tortes, pies, tarts, muffins, bars, cookies, tortillas 
+    BAKERY_ITEMS_SOLD_WITHOUT_EATING_UTENSILS_PROVIDED_BY_THE_SELLER_INCLUDING_BREAD_ROLLS_BUNS_BISCUITS_BAGELS_CROISSANTS_PASTRIES_DONUTS_DANISH_CAKES_TORTES_PIES_TARTS_MUFFINS_BARS_COOKIES_TORTILLAS = 41030 # Bakery items sold without eating utensils provided by the seller, including bread, rolls, buns, biscuits, bagels, croissants, pastries, donuts, Danish, cakes, tortes, pies, tarts, muffins, bars, cookies, tortillas
 
     # Drugs
     DRUGS_PHARMACEUTICALS = 51000 # Drugs/Pharmaceuticals
     HUMAN_USE = 51001 # Human use
-    ANIMAL_VETERINARY_USE = 51002 # Animal/Veterinary use 
+    ANIMAL_VETERINARY_USE = 51002 # Animal/Veterinary use
     DRUGS_FOR_HUMAN_USE_WITHOUT_A_PRESCRIPTION = 51010 # Drugs for human use without a prescription
     DRUGS_FOR_HUMAN_USE_WITH_A_PRESCRIPTION = 51020 # Drugs for human use with a prescription
     DRUGS_FOR_ANIMAL_USE_WITHOUT_A_PRESCRIPTION = 51030 # Drugs for animal use without a prescription
@@ -112,9 +112,9 @@ module TaxCloud
     OVER_THE_COUNTER_DRUGS_FOR_ANIMAL_USE_WITH_A_PRESCRIPTION = 51160 # Over-the-counter drugs for animal use with a prescription
     GROOMING_AND_HYGIENE_PRODUCTS_FOR_HUMAN_USE = 51170 # Grooming and hygiene products for human use
     GROOMING_AND_HYGIENE_PRODUCTS_FOR_ANIMAL_USE = 51180 # Grooming and hygiene products for animal use
-    DRUGS_FOR_HUMAN_USE_TO_HOSPITALS = 51190 # Drugs for human use to hospitals   
+    DRUGS_FOR_HUMAN_USE_TO_HOSPITALS = 51190 # Drugs for human use to hospitals
     DRUGS_FOR_HUMAN_USE_TO_OTHER_MEDICAL_FACILITIES = 51195 # Drugs for human use to other medical facilities
-    PRESCRIPTION_DRUGS_FOR_HUMAN_USE_TO_HOSPITALS = 51200 # Prescription drugs for human use to hospitals 
+    PRESCRIPTION_DRUGS_FOR_HUMAN_USE_TO_HOSPITALS = 51200 # Prescription drugs for human use to hospitals
     PRESCRIPTION_DRUGS_FOR_HUMAN_USE_TO_OTHER_MEDICAL_FACILITIES = 51205 # Prescription drugs for human use to other medical facilities
     DRUGS_FOR_ANIMAL_USE_TO_VETERINARY_HOSPITALS_AND_OTHER_ANIMAL_MEDICAL_FACILITIES = 51210 # Drugs for animal use to veterinary hospitals and other animal medical facilities
     PRESCRIPTION_DRUGS_FOR_ANIMAL_USE_TO_HOSPITALS_AND_OTHER_ANIMAL_MEDICAL_FACILITIES = 51220 # Prescription drugs for animal use to hospitals and other animal medical facilities
@@ -171,7 +171,7 @@ module TaxCloud
     ENTERAL_FEEDING_SYSTEMS_WITH_A_PRESCRIPTION_PAID_FOR_BY_MEDICAID = 52410 # Enteral feeding systems with a prescription paid for by Medicaid
     ENTERAL_FEEDING_SYSTEMS_WITH_A_PRESCRIPTION_REIMBURSED_BY_MEDICAID = 52420 # Enteral feeding systems with a prescription reimbursed by Medicaid
     ENTERAL_FEEDING_SYSTEMS_FOR_HOME_USE_WITHOUT_A_PRESCRIPTION = 52430 # Enteral feeding systems for home use without a prescription
-    ENTERAL_FEEDING_SYSTEMS_FOR_HOME_USE_WITH_A_PRESCRIPTION = 52440 # Enteral feeding systems for home use with a prescription 
+    ENTERAL_FEEDING_SYSTEMS_FOR_HOME_USE_WITH_A_PRESCRIPTION = 52440 # Enteral feeding systems for home use with a prescription
     ENTERAL_FEEDING_SYSTEMS_FOR_HOME_USE_WITH_A_PRESCRIPTION_PAID_FOR_BY_MEDICARE = 52450 # Enteral feeding systems for home use with a prescription paid for by Medicare
     ENTERAL_FEEDING_SYSTEMS_FOR_HOME_USE_WITH_A_PRESCRIPTION_REIMBURSED_BY_MEDICARE = 52460 # Enteral feeding systems for home use with a prescription reimbursed by Medicare
     ENTERAL_FEEDING_SYSTEMS_FOR_HOME_USE_WITH_A_PRESCRIPTION_PAID_FOR_BY_MEDICAID = 52470 # Enteral feeding systems for home use with a prescription paid for by Medicaid
