@@ -7,11 +7,12 @@ Lead Developers
   * App.net: @tempelmeyer
   * GitHub: drewtempelmeyer
 
+* Daniel Doubrovkine
+  * GitHub: dblock
+  * Twitter: @dblockdotorg
+
 Contributors
 =======================
 * Daniel Morrison
   * GitHub: danielmorrison
-
-* Daniel Doubrovkine
-  * GitHub: dblock
 
