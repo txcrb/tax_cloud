@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/drewtempelmeyer/tax_cloud"
   s.summary     = %q{Calculate sales tax using TaxCloud}
   s.description = %q{Calculate sales tax using the TaxCloud.net API}
+  s.licenses    = ["MIT"]
 
   s.required_rubygems_version = '>= 1.3.6'
   s.files         = `git ls-files`.split("\n")
