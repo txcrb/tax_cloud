@@ -29,9 +29,9 @@ module TaxCloud
         'cartItems' => { 'CartItem' => cart_items.map(&:to_hash) },
         'origin' => origin.to_hash,
         'destination' => destination.to_hash
-      }.merge(TaxCloud.auth_params)
+      }
 
-      response = TaxCloud.client.request :lookup, :body => request_params
+      response = TaxCloud.client.request :lookup, request_params
 
       # In the event that a cart_id wasn't specified, TaxCloud will give you one
       self.cart_id = response[:lookup_response][:lookup_result][:cart_id] if response[:lookup_response][:lookup_result][:cart_id]
@@ -49,9 +49,9 @@ module TaxCloud
         'cartID' => cart_id,
         'orderID' => order_id,
         'dateAuthorized' => options[:date_authorized]
-      }.merge(TaxCloud.auth_params)
+      }
 
-      response = TaxCloud.client.request :authorized, :body => request_params
+      response = TaxCloud.client.request :authorized, request_params
     end
 
     # Complete the transaction. The <tt>order_id</tt> passed into <tt>captured</tt> must match the <tt>order_id</tt> that was passed into <tt>authorized</tt>.
@@ -65,9 +65,9 @@ module TaxCloud
         'cartID' => cart_id,
         'orderID' => order_id,
         'dateCaptured' => options[:date_captured]
-      }.merge(TaxCloud.auth_params)
+      }
 
-      response = TaxCloud.client.request :captured, :body => request_params
+      response = TaxCloud.client.request :captured, request_params
     end
 
     # Combines the <tt>authorized</tt> and <tt>captured</tt> methods into a single call
@@ -83,9 +83,9 @@ module TaxCloud
         'orderID' => order_id,
         'dateAuthorized' => options[:date_authorized],
         'dateCaptured' => options[:date_captured]
-      }.merge(TaxCloud.auth_params)
+      }
 
-      response = TaxCloud.client.request :authorized_with_capture, :body => request_params
+      response = TaxCloud.client.request :authorized_with_capture, request_params
     end
 
     # Marks any included cart items as returned.
@@ -98,9 +98,9 @@ module TaxCloud
         'orderID' => order_id,
         'cartItems' => { 'CartItem' => cart_items.map(&:to_hash) },
         'returnedDate' => options[:returned_date]
-      }.merge(TaxCloud.auth_params)
+      }
 
-      TaxCloud.client.request :returned, :body => request_params
+      TaxCloud.client.request :returned, request_params
     end
   end
 end

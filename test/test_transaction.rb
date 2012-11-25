@@ -1,6 +1,6 @@
 require 'helper'
 
-class TestTransaction < Test::Unit::TestCase
+class TestTransaction < TestSetup
 
   def setup
     super
