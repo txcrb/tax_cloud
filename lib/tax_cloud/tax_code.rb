@@ -1,7 +1,11 @@
-module TaxCloud
-  # A TIC is a Taxability Information Code.
-  # See https://taxcloud.net/tic/
+module TaxCloud #:nodoc:
+  # A TIC (Taxability Information Code), otherwise known as a Tax Code.
+  # 
+  # See https://taxcloud.net/tic.
   class TaxCode < Record
-    attr_accessor :ticid, :description
+    # Tax code ID.
+    attr_accessor :ticid
+    # Tax code description.
+    attr_accessor :description
   end
 end

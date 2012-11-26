@@ -1,11 +1,12 @@
-module TaxCloud
+module TaxCloud #:nodoc:
   class TaxCodes
 
+    # General purpose tax code.
     GENERAL = 00000
 
     class << self
 
-      # All Tax Codes
+      # All tax codes
       def all
         @tax_codes ||= begin
           response = TaxCloud.client.request :get_ti_cs
@@ -15,6 +16,9 @@ module TaxCloud
       end
 
       # Lookup a tax code by ID.
+      #
+      # === Parameters
+      # [ticid] Tax code ID.
       def [](ticid)
         all[ticid]
       end

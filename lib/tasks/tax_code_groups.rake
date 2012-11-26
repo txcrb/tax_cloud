@@ -10,15 +10,17 @@ namespace :tax_cloud do
       File.open filename, "wt" do |f|
         f.write "module TaxCloud\n"
         f.write "  class TaxCode\n"
-        f.write "   class Groups\n"
-        f.write "\n"
+        f.write "    # Tax Code Groups.\n"
+        f.write "    class Groups\n"
 
         groups.each do |group|
+          puts " #{group.description}"
           code = group.description.upcase
           code.gsub! /[^A-Z0-9]/, '_'
           code.gsub! /_$/, ''
           code.gsub! /\_+/, '_'
-          f.write "      #{code} = #{group.group_id} \# #{group.description}\n"
+          f.write "      \# #{group.description}\n"
+          f.write "      #{code} = #{group.group_id}\n"
         end
 
         f.write "    end\n"

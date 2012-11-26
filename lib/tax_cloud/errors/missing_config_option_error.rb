@@ -1,12 +1,11 @@
 # encoding: utf-8
-module TaxCloud
-  module Errors
-
-    # Raised when a configuration option is missing.
+module TaxCloud #:nodoc:
+  module Errors #:nodoc:
+    # This error is raised when a configuration 
+    # option is missing.
     class MissingConfigOption < TaxCloudError
-      
-      # Create the new error.
-      # @param [ Symbol, String ] name The attempted config option name.
+      # === Parameters
+      # [name] The attempted config option name.
       def initialize(name)
         super(
           compose_message(
@@ -14,8 +13,7 @@ module TaxCloud
             { :name => name }
           )
         )
-      end
-      
+      end      
     end
   end
 end

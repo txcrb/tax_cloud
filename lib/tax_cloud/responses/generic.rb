@@ -1,12 +1,17 @@
-module TaxCloud
-  module Responses
+module TaxCloud #:nodoc:
+  module Responses #:nodoc:
 
-    # Response to a generic TaxCloud API.
+    # A generic response to a TaxCloud API call.
     class Generic < Base
 
+      # Response key.
       class_attribute :key
 
       class << self
+
+        # Set the response key.
+        # === Parameters
+        # [key] Response key.
         def response_key(key)
           self.key = key
           response_type "#{key}_response/#{key}_result/response_type"
@@ -14,7 +19,11 @@ module TaxCloud
         end
 
         # Parse a TaxCloud response.
-        # @return [ String ] "OK"
+        #
+        # === Parameters
+        # [savon_response] SOAP response.
+        #
+        # Usually returns "OK" or raises an error.
         def parse(savon_response)
           response = self.new(savon_response)
           response.raw["#{key}_response".to_sym]["#{key}_result".to_sym][:response_type]
