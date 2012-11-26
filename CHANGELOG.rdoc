@@ -1,5 +1,6 @@
 === 0.1.5 (Next Release)
 
+* The gem is now licensed under the MIT license - @dblock.
 * Raise specialized configuration and SOAP errors - @dblock.
 * Added <tt>TaxCloud::Client.ping</tt> - @dblock.
 * Returning a verified <tt>TaxCloud::Address</tt> from <tt>TaxCloud::Address.verify</tt> - @dblock.

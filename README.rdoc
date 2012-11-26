@@ -12,7 +12,7 @@ A TaxCloud[http://www.taxcloud.com] API ID and API key are required, along with 
 3. Get access to the USPS Address API at https://www.usps.com/business/webtools.htm. The API will provide a 9-digit zip code, which allows TaxCloud[http://www.taxcloud.com] to determine the most accurate rate.
 
 === Setup
-Add the gem to your Gemfile
+Add the gem to your Gemfile.
 
     gem 'tax_cloud', '~> 0.1.5'
 
@@ -28,30 +28,30 @@ Configure your environment. For example, create an initializer in Rails in <tt>c
 Define the destination and origin addresses using <tt>TaxCloud::Address</tt>.
 
     origin = TaxCloud::Address.new(
-      :address1 => '162 East Avenue', 
-      :address2 => 'Third Floor', 
-      :city => 'Norwalk', 
-      :state => 'CT', 
+      :address1 => '162 East Avenue',
+      :address2 => 'Third Floor',
+      :city => 'Norwalk',
+      :state => 'CT',
       :zip5 => '06851')
     destination = TaxCloud::Address.new(
-      :address1 => '3121 West Government Way', 
-      :address2 => 'Suite 2B', 
+      :address1 => '3121 West Government Way',
+      :address2 => 'Suite 2B',
       :city => 'Seattle',
-      :state => 'WA', 
+      :state => 'WA',
       :zip5 => '98199')
 
 Create your Transaction and set up your cart items
 
     transaction = TaxCloud::Transaction.new(
-      :customer_id => '1', 
-      :cart_id => '1', 
-      :origin => origin, 
+      :customer_id => '1',
+      :cart_id => '1',
+      :origin => origin,
       :destination => destination)
     transaction.cart_items << TaxCloud::CartItem.new(
-      :index => 0, 
-      :item_id => 'SKU-100', 
-      :tic => TaxCloud::TaxCodes::GENERAL, 
-      :price => 10.00, 
+      :index => 0,
+      :item_id => 'SKU-100',
+      :tic => TaxCloud::TaxCodes::GENERAL,
+      :price => 10.00,
       :quantity => 1)
     lookup = transaction.lookup # this will return a TaxCloud::Responses::Lookup instance
     lookup.tax_amount # total tax amount
@@ -68,10 +68,10 @@ Later, you may need to mark some cart items as returned. TaxCloud will ignore an
 
     transaction.order_id = 100
     transaction.cart_items << TaxCloud::CartItem.new(
-      :index => 0, 
-      :item_id => 'SKU-100', 
-      :tic => TaxCloud::TaxCodes::GENERAL, 
-      :price => 10.00, 
+      :index => 0,
+      :item_id => 'SKU-100',
+      :tic => TaxCloud::TaxCodes::GENERAL,
+      :price => 10.00,
       :quantity => 1)
     transaction.returned # returns "OK" or raises an error
 
@@ -79,11 +79,11 @@ Later, you may need to mark some cart items as returned. TaxCloud will ignore an
 
 TaxCloud[http://www.taxcloud.com] optionally integrates with the USPS Address API. An address can be verified, which can also yield a 9-digit zip code that helps determine a more accurate tax rate.
 
-    address = TaxCloud::Address.new({ 
-      :address1 => '888 6th Ave', 
-      :city => 'New York', 
-      :state => 'New York', 
-      :zip5 => '10001' 
+    address = TaxCloud::Address.new({
+      :address1 => '888 6th Ave',
+      :city => 'New York',
+      :state => 'New York',
+      :zip5 => '10001'
     })
 
     verified_address = address.verify
@@ -127,4 +127,8 @@ Tax code constants are defined in <tt>tax_code_constants.rb</tt> and tax code gr
 * Fix.
 * Commit.
 * Submit pull request.
+
+=== License
+
+This gem is licened under the MIT license.
 
