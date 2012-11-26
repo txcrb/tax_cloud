@@ -1,25 +1,31 @@
-module TaxCloud
+module TaxCloud #:nodoc:
   # Lookup tax rate, authorize, and capture the information to be logged into TaxCloud.
   #
   # *Note:* The Transaction must not change between the <tt>lookup</tt> and <tt>authorization</tt> method calls.
-  #
-  # === Attributes
-  # * <tt>customer_id</tt> - Your defined customer ID for the <tt>Transaction</tt>.
-  # * <tt>cart_id</tt> - Your defined cart ID for the order.
-  # * <tt>cart_items</tt> - Array of <tt>CartItem</tt>s.
-  # * <tt>order_id</tt> - The order ID for <tt>authorized</tt>, <tt>captured</tt>, and <tt>authorzied_with_captured</tt> methods.
-  # * <tt>origin</tt> - The <tt>Address</tt> of which the shipment originates.
-  # * <tt>destination</tt> - The <tt>Address</tt> of which the shipment arrives.
   class Transaction < Record
-    attr_accessor :customer_id, :cart_id, :cart_items, :order_id, :origin, :destination
+    # User-defined customer ID for the <tt>Transaction</tt>.
+    attr_accessor :customer_id
+    # User-defined cart ID for the order.
+    attr_accessor :cart_id
+    # Array of <tt>CartItem</tt>s.
+    attr_accessor :cart_items
+    # The order ID for <tt>authorized</tt>, <tt>captured</tt>, and <tt>authorzied_with_captured</tt> methods.
+    attr_accessor :order_id
+    # The <tt>Address</tt> of which the shipment originates.
+    attr_accessor :origin
+    # The <tt>Address</tt> of which the shipment arrives.
+    attr_accessor :destination
 
-    # Creates a new <tt>Transaction</tt> object with the given parameters
+    # Create a new transaction.
+    # === Parameters
+    # [params] Transaction params.
     def initialize(params = {})
       params = { :cart_items => [] }.merge(params)
       super params
     end
 
-    # Lookup the tax rate for the transaction. The returned information is based on the originating address, destination address, and cart items.
+    # Lookup the tax rate for the transaction. 
+    # The returned information is based on the originating address, destination address, and cart items.
     def lookup
       request_params = {
         'customerID' => customer_id,
@@ -53,7 +59,7 @@ module TaxCloud
     # Complete the transaction. The <tt>order_id</tt> passed into <tt>captured</tt> must match the <tt>order_id</tt> that was passed into <tt>authorized</tt>.
     #
     # === Options
-    # * <tt>date_captured</tt> - The time the transaction was captured. Default is today.
+    # [date_captured] The time the transaction was captured. Default is today.
     def captured(options = {})
       options = { :date_captured => Date.today }.merge(options)
       request_params = {
@@ -70,8 +76,8 @@ module TaxCloud
     # Combines the <tt>authorized</tt> and <tt>captured</tt> methods into a single call
     #
     # === Options
-    # * <tt>date_authorized</tt> - The date the transaction was authorized. Default is today.
-    # * <tt>date_captured</tt> - The date the transaction was captured. Default is today.
+    # [date_authorized] The date the transaction was authorized. Default is today.
+    # [date_captured] - The date the transaction was captured. Default is today.
     def authorized_with_capture(options = {})
       options = { :date_authorized => Date.today, :date_captured => Date.today }.merge(options)
       request_params = {
@@ -89,7 +95,7 @@ module TaxCloud
     # Marks any included cart items as returned.
     #
     # === Options
-    # * <tt>returned_date</tt> - The date the return occured. Default is today.
+    # [returned_date] The date the return occured. Default is today.
     def returned(options = {})
       options = { :returned_date => Date.today }.merge(options)
       request_params = {
