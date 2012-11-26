@@ -1,6 +1,7 @@
 module TaxCloud
   class TaxCode
    class Groups
+
       ADMINISTRATIVE = 1 # Administrative 
       CLOTHING_AND_RELATED_PRODUCTS = 2 # Clothing and Related Products
       SCHOOL_RELATED_PRODUCTS = 3 # School Related Products

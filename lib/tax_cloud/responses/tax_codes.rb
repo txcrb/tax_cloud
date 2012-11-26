@@ -17,7 +17,7 @@ module TaxCloud
           tax_codes.map do |tax_code|
             TaxCloud::TaxCode.new({ 
               :ticid => tax_code[:ticid].to_i,
-              :description => tax_code[:description] 
+              :description => tax_code[:description].strip
             })
           end
         end

@@ -98,8 +98,6 @@ Tax code constants are defined in <tt>tax_code_constants.rb</tt> and tax code gr
     TAXCLOUD_API_LOGIN_ID=... TAXCLOUD_API_KEY=... TAXCLOUD_USPS_USERNAME=... tax_cloud:tax_codes
     TAXCLOUD_API_LOGIN_ID=... TAXCLOUD_API_KEY=... TAXCLOUD_USPS_USERNAME=... tax_cloud:tax_code_groups
 
-The tax code constants may require a bit of cleanup, including removing of a few duplicate definitions.
-
 === Running Tests
 * VCR and WebMock are used to replay requests and avoid hitting the API each time. To refresh the mocks, simply delete the <tt>test/cassettes</tt> directory.
 * Run tests.

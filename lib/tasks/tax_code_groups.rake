@@ -29,7 +29,8 @@ namespace :tax_cloud do
       puts "Done, #{filename}."
     rescue => e
       puts "ERROR: Unable to generate a new list of tax codes."
-      puts e
+      puts e.message
+      raise e
     end
   end
 
