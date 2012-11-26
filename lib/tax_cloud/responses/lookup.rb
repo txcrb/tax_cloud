@@ -1,15 +1,22 @@
-module TaxCloud
-  module Responses
+module TaxCloud #:nodoc:
+  module Responses #:nodoc:
 
-    # Response to a TaxCloud Lookup.
-    # https://api.taxcloud.net/1.0/TaxCloud.asmx?op=Lookup
+    # Response to a TaxCloud Lookup API call.
+    #
+    # See https://api.taxcloud.net/1.0/TaxCloud.asmx?op=Lookup.
     class Lookup < Base
 
-      attr_accessor :cart_id, :cart_items
+      # Cart ID.
+      attr_accessor :cart_id
+
+      # Cart items.
+      attr_accessor :cart_items
 
       response_type "lookup_response/lookup_result/response_type"
       error_message "lookup_response/lookup_result/messages/response_message/message"
 
+      # === Parameters
+      # [savon_response] SOAP response.
       def initialize(savon_response)
         super savon_response
         self.cart_id = match("lookup_response/lookup_result/cart_id")
@@ -24,6 +31,7 @@ module TaxCloud
         end
       end
 
+      # Total tax amount in this cart.
       def tax_amount
         cart_items.inject(0) { |acc, item| acc + item.tax_amount }
       end

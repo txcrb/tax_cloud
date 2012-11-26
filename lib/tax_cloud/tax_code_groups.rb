@@ -1,10 +1,11 @@
-module TaxCloud
+module TaxCloud #:nodoc:
   class TaxCode
+    # A TaxCloud::TaxCode::Group organizes tax codes in a logical group. 
     class Groups
       
       class << self
 
-        # All Tax Code Groups
+        # All tax code groups.
         def all
           @tax_code_groups ||= begin
             response = TaxCloud.client.request :get_tic_groups
@@ -14,6 +15,9 @@ module TaxCloud
         end
 
         # Lookup a tax code group by ID.
+        #
+        # === Parameters
+        # [group_id] Group ID.
         def [](group_id)
           all[group_id]
         end

@@ -1,8 +1,13 @@
-module TaxCloud
-  # A group of Taxability Information Codes.
-  # See https://taxcloud.net/tic/
+module TaxCloud #:nodoc:
+  # A group of tax codes.
+  #
+  # See https://taxcloud.net/tic.
   class TaxCodeGroup < Record
-    attr_accessor :group_id, :description
+
+    # Group ID.
+    attr_accessor :group_id
+    # Group description.
+    attr_accessor :description
 
     # All Tax Codes in this group.
     def tax_codes
@@ -14,6 +19,9 @@ module TaxCloud
     end
 
     # Lookup a tax code by ID.
+    #
+    # === Parameters
+    # [ticid] Tax code ID.
     def [](ticid)
       tax_codes[ticid]
     end
