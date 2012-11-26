@@ -1,14 +1,15 @@
 # encoding: utf-8
-module TaxCloud
-  module Errors
-
-    # Raised from any failed SOAP operation.
+module TaxCloud #:nodoc:
+  module Errors #:nodoc:
+    # This error is raised when a SOAP call fails.
     class SoapError < TaxCloudError
-      
+
+      # Original SOAP failt.
       attr_reader :fault
 
       # Create the new error.
-      # @param [ Hash ] e SOAP response.
+      # === Parameters
+      # [e] SOAP response.
       def initialize(e)
         @fault = e
         e.to_hash.tap do |fault|

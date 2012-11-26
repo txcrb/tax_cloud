@@ -11,11 +11,13 @@ namespace :tax_cloud do
       end]
       File.open filename, "wt" do |f|
         f.write "module TaxCloud\n"
+        f.write "  # Tax Codes.\n"
         f.write "  class TaxCodes\n"
         f.write "\n"
         codes = {}
         groups_and_tax_codes.each_pair do |group, tax_codes|
-          f.write "    \# #{group.description}\n"
+          puts " #{group.description}"
+          f.write "    \# #{group.description}\n\n"
           tax_codes.each do |tax_code|
             code = tax_code.description.upcase
             code.gsub! /[^A-Z0-9]/, '_'
@@ -24,7 +26,8 @@ namespace :tax_cloud do
             # avoid duplicates
             code_id = codes[code] ? "#{code}_#{codes[code]}" : code
             codes[code] = (codes[code] || 0) + 1
-            f.write "    #{code_id} = #{tax_code.ticid} \# #{tax_code.description}\n"
+            f.write "    \# #{group.description}: #{tax_code.description}\n"
+            f.write "    #{code_id} = #{tax_code.ticid}\n"
           end
           f.write "\n"
         end

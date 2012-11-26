@@ -1,9 +1,23 @@
-module TaxCloud
-  # An address
+module TaxCloud #:nodoc:
+  # An <tt>Address</tt> defines an address in the United States.
   class Address < Record
-    attr_accessor :address1, :address2, :city, :state, :zip5, :zip4
 
-    # Verify the address via TaxCloud
+    # First line of address.
+    attr_accessor :address1
+    # Second line of adress.
+    attr_accessor :address2
+    # City.
+    attr_accessor :city
+    # State.
+    attr_accessor :state
+    # 5-digit Zip Code.
+    attr_accessor :zip5
+    # 4-digit Zip Code.
+    attr_accessor :zip4
+
+    # Verify this address.
+    #
+    # Returns a verified TaxCloud::Address.
     def verify
       params = to_hash.downcase_keys
       params = params.merge({ 
@@ -13,7 +27,7 @@ module TaxCloud
       TaxCloud::Responses::VerifyAddress.parse(response)
     end
 
-    # Convert the object to a usable hash for SOAP requests
+    # Convert the object to a usable hash for SOAP requests.
     def to_hash
       {
         'Address1' => address1,

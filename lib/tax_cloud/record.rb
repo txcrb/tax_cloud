@@ -1,6 +1,10 @@
-module TaxCloud
-  # A generic record.
+module TaxCloud #:nodoc:
+  # A generic TaxCloud record.
   class Record
+    # Initialize the record.
+    #
+    # === Parameters
+    # [attrs] Attributes defined for this record.
     def initialize(attrs = {})
       attrs.each do |sym, val|
         self.send "#{sym}=", val

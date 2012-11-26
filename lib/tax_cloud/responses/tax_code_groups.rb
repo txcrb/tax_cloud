@@ -1,7 +1,8 @@
-module TaxCloud
-  module Responses
+module TaxCloud #:nodoc:
+  module Responses #:nodoc:
 
-    # Response to a TaxCloud getTICGroups.
+    # Response to a TaxCloud getTICGroups API call.
+    #
     # https://api.taxcloud.net/1.0/TaxCloud.asmx?op=GetTICGroups
     class TaxCodeGroups < Base
 
@@ -10,7 +11,11 @@ module TaxCloud
 
       class << self
         # Parse a TaxCloud response.
-        # @return [ Array ] An array of Tax Code Groups.
+        #
+        # === Parameters        
+        # [savon_response] SOAP response.
+        #
+        # Returns an array of Tax Code Groups.
         def parse(savon_response)
           response = self.new(savon_response)
           tax_code_groups = response.match("get_tic_groups_response/get_tic_groups_result/tic_groups/tic_group")

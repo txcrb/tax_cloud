@@ -6,5 +6,7 @@ Savon.configure do |config|
   config.log = false
 end
 
+HTTPI.log = false
+
 require 'vcr_setup'
 require 'test_setup'
