@@ -89,6 +89,7 @@ TaxCloud[http://www.taxcloud.com] optionally integrates with the USPS Address AP
     verified_address = address.verify
     verified_address.zip5 # 10001
     verified_address.zip4 # 3502
+    verified_address.zip # 10001-3502
 
 === Tax Codes
 TaxCloud[http://www.taxcloud.com] maintains a list of all Taxability Information Codes or TICs, which can be found at https://taxcloud.net/tic.

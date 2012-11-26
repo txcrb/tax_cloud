@@ -16,3 +16,5 @@ Contributors
 * Daniel Morrison
   * GitHub: danielmorrison
 
+* George F Murphy
+  * GitHub: gfmurphy
