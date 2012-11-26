@@ -16,6 +16,16 @@ class TestAddress < TestSetup
     assert_equal nil, @address.zip4
   end
 
+  def test_zip
+    assert_equal '10001', @address.zip
+    # 9-digit zip
+    @address.zip4 = '1234'
+    assert_equal '10001-1234', @address.zip
+    # only 4-digit zip, which is invalid
+    @address.zip5 = nil
+    assert_equal nil, @address.zip
+  end
+
   def test_address_respond_to_verify
     assert_respond_to @address, :verify
   end
