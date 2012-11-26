@@ -17,7 +17,7 @@ module TaxCloud
           tax_code_groups.map do |tax_code_group|
             TaxCloud::TaxCodeGroup.new({ 
               :group_id => tax_code_group[:group_id].to_i,
-              :description => tax_code_group[:description] 
+              :description => tax_code_group[:description].strip
             })
           end
         end

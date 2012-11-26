@@ -6,32 +6,36 @@ namespace :tax_cloud do
 
     begin
       groups = TaxCloud::TaxCode::Groups.all.values
-
+      groups_and_tax_codes = Hash[groups.map do |group|
+        [ group, group.tax_codes.values ]
+      end]
       File.open filename, "wt" do |f|
         f.write "module TaxCloud\n"
         f.write "  class TaxCodes\n"
         f.write "\n"
-
-        groups.each do |group|
+        codes = {}
+        groups_and_tax_codes.each_pair do |group, tax_codes|
           f.write "    \# #{group.description}\n"
-          group.tax_codes.values.each do |tic|
-            code = tic.description.upcase
+          tax_codes.each do |tax_code|
+            code = tax_code.description.upcase
             code.gsub! /[^A-Z0-9]/, '_'
-            code.gsub! /_$/, ''
+            code.gsub! /\_+$/, ''
             code.gsub! /\_+/, '_'
-            f.write "    #{code} = #{tic.ticid} \# #{tic.description}\n"
+            # avoid duplicates
+            code_id = codes[code] ? "#{code}_#{codes[code]}" : code
+            codes[code] = (codes[code] || 0) + 1
+            f.write "    #{code_id} = #{tax_code.ticid} \# #{tax_code.description}\n"
           end
           f.write "\n"
         end
-
         f.write "  end\n"
         f.write "end\n"
       end
-
       puts "Done, #{filename}."
     rescue => e
       puts "ERROR: Unable to generate a new list of tax codes."
-      puts e
+      puts e.message
+      raise e
     end
 
   end
