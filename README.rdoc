@@ -5,11 +5,12 @@
 TaxCloud[http://www.taxcloud.com] is a free service to calculate sales tax and generate tax reports. The <tt>tax_cloud</tt> gem allows you to easily integrate with TaxCloud's API.
 
 === Getting Started
-A TaxCloud[http://www.taxcloud.com] API ID and API key are required, along with an optional USPS address API username.
+Create a TaxCloud[http://www.taxcloud.com] merchant account at http://www.taxcloud.net. Add a website to your account under Locations[https://taxcloud.net/account/locations]. This will generate an API ID and API Key that you will need to use the service.
 
-1. Create a TaxCloud[http://www.taxcloud.com] merchant account at http://www.taxcloud.net.
-2. Add a website to your TaxCloud[http://www.taxcloud.com] account. This will generate an API ID and API Key that you will need to use the service.
-3. Get access to the USPS Address API at https://www.usps.com/business/webtools.htm. The API will provide a 9-digit zip code, which allows TaxCloud[http://www.taxcloud.com] to determine the most accurate rate.
+TaxCloud[http://www.taxcloud.com] also offers an optional address verification API. To use it, you need a USPS (United States Postal Service) Address API UserID. To obtain your USPS UserID:
+1. Download and Install the USPS Shipping Assistant from http://www.usps.com/shippingassistant.
+2. Launch the USPS Shipping Assistant and go through the Shipping Assistant registration process.
+3. Once you have registered for your Shipping Assistant account, you can find your USPS Shipping Assistant UserID in the "About" box, in parentheses to the right of the name of the registered user.
 
 === Setup
 Add the gem to your Gemfile.
@@ -113,6 +114,9 @@ Tax code constants are defined in <tt>tax_code_constants.rb</tt> and tax code gr
 
     TAXCLOUD_API_LOGIN_ID=... TAXCLOUD_API_KEY=... TAXCLOUD_USPS_USERNAME=... tax_cloud:tax_codes
     TAXCLOUD_API_LOGIN_ID=... TAXCLOUD_API_KEY=... TAXCLOUD_USPS_USERNAME=... tax_cloud:tax_code_groups
+
+=== Tax States
+TaxCloud manages a list of states in which you can calculate sales tax. The default setup will only have SSUTA (Streamlined Sales and Use Tax Agreement) states enabled. All other states will return $0 for tax values. To enable other states, go to https://taxcloud.net/account/states. You can find more information about SSUTA here[http://www.streamlinedsalestax.org/index.php?page=About-Us].
 
 === Running Tests
 * VCR and WebMock are used to replay requests and avoid hitting the API each time. To refresh the mocks, simply delete the <tt>test/cassettes</tt> directory.
