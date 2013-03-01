@@ -10,6 +10,7 @@ module TaxCloud #:nodoc:
     # Array of <tt>CartItem</tt>s.
     attr_accessor :cart_items
     # The order ID for <tt>authorized</tt>, <tt>captured</tt>, and <tt>authorzied_with_captured</tt> methods.
+    # The order ID for <tt>authorized</tt>, <tt>captured</tt>, and <tt>authorized_with_captured</tt> methods.
     attr_accessor :order_id
     # The <tt>Address</tt> of which the shipment originates.
     attr_accessor :origin
