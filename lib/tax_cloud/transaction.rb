@@ -9,7 +9,6 @@ module TaxCloud #:nodoc:
     attr_accessor :cart_id
     # Array of <tt>CartItem</tt>s.
     attr_accessor :cart_items
-    # The order ID for <tt>authorized</tt>, <tt>captured</tt>, and <tt>authorzied_with_captured</tt> methods.
     # The order ID for <tt>authorized</tt>, <tt>captured</tt>, and <tt>authorized_with_captured</tt> methods.
     attr_accessor :order_id
     # The <tt>Address</tt> of which the shipment originates.
@@ -25,7 +24,7 @@ module TaxCloud #:nodoc:
       super params
     end
 
-    # Lookup the tax rate for the transaction. 
+    # Lookup the tax rate for the transaction.
     # The returned information is based on the originating address, destination address, and cart items.
     def lookup
       request_params = {
@@ -46,11 +45,12 @@ module TaxCloud #:nodoc:
     # * <tt>date_authorized</tt> - The date the transaction was authorized. Default is today.
     def authorized(options = {})
       options = { :date_authorized => Date.today }.merge(options)
+
       request_params = {
         'customerID' => customer_id,
         'cartID' => cart_id,
         'orderID' => order_id,
-        'dateAuthorized' => options[:date_authorized]
+        'dateAuthorized' => xml_date(options[:date_authorized])
       }
 
       response = TaxCloud.client.request :authorized, request_params
@@ -67,7 +67,7 @@ module TaxCloud #:nodoc:
         'customerID' => customer_id,
         'cartID' => cart_id,
         'orderID' => order_id,
-        'dateCaptured' => options[:date_captured]
+        'dateCaptured' => xml_date(options[:date_captured])
       }
 
       response = TaxCloud.client.request :captured, request_params
@@ -85,8 +85,8 @@ module TaxCloud #:nodoc:
         'customerID' => customer_id,
         'cartID' => cart_id,
         'orderID' => order_id,
-        'dateAuthorized' => options[:date_authorized],
-        'dateCaptured' => options[:date_captured]
+        'dateAuthorized' => xml_date(options[:date_authorized]),
+        'dateCaptured' => xml_date(options[:date_captured])
       }
 
       response = TaxCloud.client.request :authorized_with_capture, request_params
@@ -102,11 +102,17 @@ module TaxCloud #:nodoc:
       request_params = {
         'orderID' => order_id,
         'cartItems' => { 'CartItem' => cart_items.map(&:to_hash) },
-        'returnedDate' => options[:returned_date]
+        'returnedDate' => xml_date(options[:returned_date])
       }
 
       response = TaxCloud.client.request :returned, request_params
       TaxCloud::Responses::Returned.parse response
+    end
+
+    private
+
+    def xml_date(val)
+      val.respond_to?(:strftime) ? val.strftime("%Y-%m-%d") : val
     end
   end
 end

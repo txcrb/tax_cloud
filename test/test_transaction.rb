@@ -9,14 +9,13 @@ class TestTransaction < TestSetup
     cart_items = []
     cart_items << TaxCloud::CartItem.new(:index => 0, :item_id => 'SKU-TEST', :tic => TaxCloud::TaxCodes::GENERAL, :quantity => 1, :price => 50.00)
     cart_items << TaxCloud::CartItem.new(:index => 1, :item_id => 'SKU-TEST1', :tic => TaxCloud::TaxCodes::GENERAL, :quantity => 1, :price => 100.00)
-    @transaction = TaxCloud::Transaction.new(:customer_id => 42, :cart_id => 708, :order_id => 2361, :cart_items => cart_items, :origin => origin, :destination => destination)
+    @transaction = TaxCloud::Transaction.new(:customer_id => 42, :cart_id => rand(18446744073709551616), :order_id => rand(18446744073709551616), :cart_items => cart_items, :origin => origin, :destination => destination)
   end
 
   def test_lookup
     VCR.use_cassette('lookup') do
       result = @transaction.lookup
       assert_instance_of TaxCloud::Responses::Lookup, result
-      assert_equal '708', result.cart_id
       assert_equal 2, result.cart_items.count
       result.cart_items.first.tap do |item|
         assert_equal 0, item.cart_item_index
