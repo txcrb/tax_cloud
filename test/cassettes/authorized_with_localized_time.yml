@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.taxcloud.net/1.0/TaxCloud.asmx
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://taxcloud.net"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:Lookup><ins0:customerID>42</ins0:customerID><ins0:cartID>2852191080421965029</ins0:cartID><ins0:cartItems><ins0:CartItem><tns:Index>0</tns:Index><tns:ItemID>SKU-TEST</tns:ItemID><tns:TIC>0</tns:TIC><tns:Price>50.0</tns:Price><tns:Qty>1</tns:Qty></ins0:CartItem><ins0:CartItem><tns:Index>1</tns:Index><tns:ItemID>SKU-TEST1</tns:ItemID><tns:TIC>0</tns:TIC><tns:Price>100.0</tns:Price><tns:Qty>1</tns:Qty></ins0:CartItem></ins0:cartItems><ins0:origin><ins0:Address1>162
+        East Avenue</ins0:Address1><ins0:Address2>Third Floor</ins0:Address2><ins0:City>Norwalk</ins0:City><ins0:State>CT</ins0:State><ins0:Zip5>06851</ins0:Zip5><ins0:Zip4
+        xsi:nil="true"/></ins0:origin><ins0:destination><ins0:Address1>3121 West Government
+        Way</ins0:Address1><ins0:Address2>Suite 2B</ins0:Address2><ins0:City>Seattle</ins0:City><ins0:State>WA</ins0:State><ins0:Zip5>98199</ins0:Zip5><ins0:Zip4
+        xsi:nil="true"/></ins0:destination><ins0:apiLoginID>api-login-id</ins0:apiLoginID><ins0:apiKey>api-key</ins0:apiKey></ins0:Lookup></env:Body></env:Envelope>
+    headers:
+      Soapaction:
+      - ! '"http://taxcloud.net/Lookup"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '1337'
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.0
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - TaxCloud
+      Date:
+      - Sat, 02 Mar 2013 04:12:52 GMT
+      Content-Length:
+      - '645'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><LookupResponse
+        xmlns="http://taxcloud.net"><LookupResult><ResponseType>OK</ResponseType><Messages
+        /><CartID>2852191080421965029</CartID><CartItemsResponse><CartItemResponse><CartItemIndex>0</CartItemIndex><TaxAmount>4.75</TaxAmount></CartItemResponse><CartItemResponse><CartItemIndex>1</CartItemIndex><TaxAmount>9.5</TaxAmount></CartItemResponse></CartItemsResponse></LookupResult></LookupResponse></soap:Body></soap:Envelope>
+    http_version: 
+  recorded_at: Sat, 02 Mar 2013 04:12:51 GMT
+- request:
+    method: post
+    uri: https://api.taxcloud.net/1.0/TaxCloud.asmx
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://taxcloud.net"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:Authorized><ins0:customerID>42</ins0:customerID><ins0:cartID>2852191080421965029</ins0:cartID><ins0:orderID>16907336367917376559</ins0:orderID><ins0:dateAuthorized>2013-02-01</ins0:dateAuthorized><ins0:apiLoginID>api-login-id</ins0:apiLoginID><ins0:apiKey>api-key</ins0:apiKey></ins0:Authorized></env:Body></env:Envelope>
+    headers:
+      Soapaction:
+      - ! '"http://taxcloud.net/Authorized"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '632'
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.0
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - TaxCloud
+      Date:
+      - Sat, 02 Mar 2013 04:12:52 GMT
+      Content-Length:
+      - '395'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><AuthorizedResponse
+        xmlns="http://taxcloud.net"><AuthorizedResult><ResponseType>OK</ResponseType><Messages
+        /></AuthorizedResult></AuthorizedResponse></soap:Body></soap:Envelope>
+    http_version: 
+  recorded_at: Sat, 02 Mar 2013 04:12:51 GMT
+recorded_with: VCR 2.4.0

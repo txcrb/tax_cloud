@@ -37,6 +37,20 @@ class TestTransaction < TestSetup
     end
   end
 
+  class LocalizedDate < Date
+    def to_s
+      strftime "%d/%m/%Y"
+    end
+  end
+
+  def test_authorized_with_localized_date
+    VCR.use_cassette('authorized_with_localized_time') do
+      @transaction.lookup
+      result = @transaction.authorized(:date_authorized => LocalizedDate.civil(2013, 2, 1))
+      assert_equal 'OK', result
+    end
+  end
+
   def test_captured
     VCR.use_cassette('captured') do
       @transaction.lookup
