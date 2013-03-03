@@ -15,7 +15,7 @@ TaxCloud[http://www.taxcloud.com] also offers an optional address verification A
 === Setup
 Add the gem to your Gemfile.
 
-    gem 'tax_cloud', '~> 0.2.0'
+    gem 'tax_cloud'
 
 Configure your environment. For example, create an initializer in Rails in <tt>config/initializers/tax_cloud.rb</tt>.
 
