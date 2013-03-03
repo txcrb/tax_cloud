@@ -5,16 +5,19 @@ Lead Developers
 * Drew Tempelmeyer
   * Twitter: @tempelmeyer
   * App.net: @tempelmeyer
-  * GitHub: drewtempelmeyer
+  * Github: drewtempelmeyer
 
 * Daniel Doubrovkine
   * Twitter: @dblockdotorg
-  * GitHub: dblock
+  * Github: dblock
 
 Contributors
 =======================
 * Daniel Morrison
-  * GitHub: danielmorrison
+  * Github: danielmorrison
 
 * George F Murphy
-  * GitHub: gfmurphy
+  * Github: gfmurphy
+
+* Bradley Schaefer
+  * Github: soulcutter

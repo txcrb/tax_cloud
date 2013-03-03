@@ -135,5 +135,6 @@ TaxCloud manages a list of states in which you can calculate sales tax. The defa
 
 === License
 
-This gem is licened under the MIT license.
+Copyright Drew Tempelmeyer and contributors, 2011-2013.
 
+This gem is licened under the MIT license.
