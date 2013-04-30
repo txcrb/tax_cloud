@@ -17,9 +17,9 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test}/*`.split("\n")
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency 'savon', '~> 1.2.0'
-  s.add_runtime_dependency 'i18n', '~> 0.6'
-  s.add_runtime_dependency 'activesupport', '~> 3.0'
+  s.add_runtime_dependency 'savon', '~> 1.2'
+  s.add_runtime_dependency 'i18n'
+  s.add_runtime_dependency 'activesupport', '>= 3.0'
 
   s.add_development_dependency 'rake', '~> 10.0'
   s.add_development_dependency 'rdoc', '>= 2.5.0'
