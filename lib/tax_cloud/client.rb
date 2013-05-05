@@ -1,22 +1,26 @@
 module TaxCloud #:nodoc:
-  # A <tt>Client</tt> communicates with the TaCloud service.
+  # A <tt>Client</tt> communicates with the TaxCloud service.
   class Client < Savon::Client
 
     # Create a new client.
     def initialize
-      super TaxCloud::WSDL_URL
+      super :wsdl => TaxCloud::WSDL_URL
     end
 
-    # Make a safe SOAP call. 
+    # Make a safe SOAP call.
     # Will raise a TaxCloud::Errors::SoapError on error.
     #
     # === Parameters
     # [method] SOAP method.
     # [body] Body content.
-    def request(method, body = {})
+    def call(method, message = {})
       safe do
-        super method, :body => body.merge(auth_params)
+        super method, :message => message.merge(auth_params)
       end
+    end
+
+    def request(method, message = {})
+      call method, message
     end
 
     # Ping the TaxCloud service.
@@ -39,7 +43,7 @@ module TaxCloud #:nodoc:
       def safe &block
         begin
           yield
-        rescue Savon::SOAP::Fault => e
+        rescue Savon::SOAPFault => e
           raise TaxCloud::Errors::SoapError.new(e)
         end
       end
