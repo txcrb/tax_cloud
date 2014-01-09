@@ -27,9 +27,9 @@ http_interactions:
       X-Powered-By:
       - TaxCloud
       Date:
-      - Sun, 25 Nov 2012 16:40:01 GMT
+      - Thu, 09 Jan 2014 16:03:25 GMT
       Content-Length:
-      - '44040'
+      - '53946'
     body:
       encoding: US-ASCII
       string: ! "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<wsdl:definitions xmlns:s=\"http://www.w3.org/2001/XMLSchema\"
@@ -395,9 +395,17 @@ http_interactions:
         type=\"tns:PingRsp\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
         \     </s:element>\r\n      <s:complexType name=\"PingRsp\">\r\n        <s:complexContent
         mixed=\"false\">\r\n          <s:extension base=\"tns:ResponseBase\" />\r\n
-        \       </s:complexContent>\r\n      </s:complexType>\r\n    </s:schema>\r\n
-        \ </wsdl:types>\r\n  <wsdl:message name=\"VerifyAddressSoapIn\">\r\n    <wsdl:part
-        name=\"parameters\" element=\"tns:VerifyAddress\" />\r\n  </wsdl:message>\r\n
+        \       </s:complexContent>\r\n      </s:complexType>\r\n      <s:element
+        name=\"VerifiedAddress\" nillable=\"true\" type=\"tns:VerifiedAddress\" />\r\n
+        \     <s:element name=\"AuthorizedRsp\" nillable=\"true\" type=\"tns:AuthorizedRsp\"
+        />\r\n      <s:element name=\"CapturedRsp\" nillable=\"true\" type=\"tns:CapturedRsp\"
+        />\r\n      <s:element name=\"GetTICGroupsRsp\" nillable=\"true\" type=\"tns:GetTICGroupsRsp\"
+        />\r\n      <s:element name=\"GetTICsRsp\" nillable=\"true\" type=\"tns:GetTICsRsp\"
+        />\r\n      <s:element name=\"DeleteCertificateRsp\" nillable=\"true\" type=\"tns:DeleteCertificateRsp\"
+        />\r\n      <s:element name=\"GetCertificatesRsp\" nillable=\"true\" type=\"tns:GetCertificatesRsp\"
+        />\r\n      <s:element name=\"PingRsp\" nillable=\"true\" type=\"tns:PingRsp\"
+        />\r\n    </s:schema>\r\n  </wsdl:types>\r\n  <wsdl:message name=\"VerifyAddressSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:VerifyAddress\" />\r\n  </wsdl:message>\r\n
         \ <wsdl:message name=\"VerifyAddressSoapOut\">\r\n    <wsdl:part name=\"parameters\"
         element=\"tns:VerifyAddressResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
         name=\"LookupForDateSoapIn\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:LookupForDate\"
@@ -445,10 +453,63 @@ http_interactions:
         />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"PingSoapIn\">\r\n    <wsdl:part
         name=\"parameters\" element=\"tns:Ping\" />\r\n  </wsdl:message>\r\n  <wsdl:message
         name=\"PingSoapOut\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:PingResponse\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:portType name=\"TaxCloudSoap\">\r\n    <wsdl:operation
-        name=\"VerifyAddress\">\r\n      <wsdl:input message=\"tns:VerifyAddressSoapIn\"
-        />\r\n      <wsdl:output message=\"tns:VerifyAddressSoapOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"LookupForDate\">\r\n      <wsdl:input message=\"tns:LookupForDateSoapIn\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"VerifyAddressHttpPostIn\">\r\n
+        \   <wsdl:part name=\"uspsUserID\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"address1\" type=\"s:string\" />\r\n    <wsdl:part name=\"address2\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"city\" type=\"s:string\" />\r\n
+        \   <wsdl:part name=\"state\" type=\"s:string\" />\r\n    <wsdl:part name=\"zip5\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"zip4\" type=\"s:string\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"VerifyAddressHttpPostOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:VerifiedAddress\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"AuthorizedHttpPostIn\">\r\n    <wsdl:part name=\"apiLoginID\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\" type=\"s:string\" />\r\n
+        \   <wsdl:part name=\"customerID\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"cartID\" type=\"s:string\" />\r\n    <wsdl:part name=\"orderID\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"dateAuthorized\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"AuthorizedHttpPostOut\">\r\n    <wsdl:part name=\"Body\"
+        element=\"tns:AuthorizedRsp\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"AuthorizedWithCaptureHttpPostIn\">\r\n
+        \   <wsdl:part name=\"apiLoginID\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"apiKey\" type=\"s:string\" />\r\n    <wsdl:part name=\"customerID\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"cartID\" type=\"s:string\" />\r\n
+        \   <wsdl:part name=\"orderID\" type=\"s:string\" />\r\n    <wsdl:part name=\"dateAuthorized\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"dateCaptured\" type=\"s:string\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"AuthorizedWithCaptureHttpPostOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:AuthorizedRsp\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"CapturedHttpPostIn\">\r\n    <wsdl:part name=\"apiLoginID\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\" type=\"s:string\" />\r\n
+        \   <wsdl:part name=\"orderID\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"CapturedHttpPostOut\">\r\n    <wsdl:part name=\"Body\"
+        element=\"tns:CapturedRsp\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetTICGroupsHttpPostIn\">\r\n
+        \   <wsdl:part name=\"apiLoginID\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"apiKey\" type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"GetTICGroupsHttpPostOut\">\r\n    <wsdl:part name=\"Body\" element=\"tns:GetTICGroupsRsp\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetTICsHttpPostIn\">\r\n
+        \   <wsdl:part name=\"apiLoginID\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"apiKey\" type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"GetTICsHttpPostOut\">\r\n    <wsdl:part name=\"Body\" element=\"tns:GetTICsRsp\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetTICsByGroupHttpPostIn\">\r\n
+        \   <wsdl:part name=\"apiLoginID\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"apiKey\" type=\"s:string\" />\r\n    <wsdl:part name=\"ticGroup\" type=\"s:string\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetTICsByGroupHttpPostOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:GetTICsRsp\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"DeleteExemptCertificateHttpPostIn\">\r\n    <wsdl:part
+        name=\"apiLoginID\" type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"certificateID\" type=\"s:string\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"DeleteExemptCertificateHttpPostOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:DeleteCertificateRsp\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetExemptCertificatesHttpPostIn\">\r\n    <wsdl:part
+        name=\"apiLoginID\" type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"customerID\" type=\"s:string\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetExemptCertificatesHttpPostOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:GetCertificatesRsp\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"PingHttpPostIn\">\r\n    <wsdl:part name=\"apiLoginID\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\" type=\"s:string\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"PingHttpPostOut\">\r\n    <wsdl:part
+        name=\"Body\" element=\"tns:PingRsp\" />\r\n  </wsdl:message>\r\n  <wsdl:portType
+        name=\"TaxCloudSoap\">\r\n    <wsdl:operation name=\"VerifyAddress\">\r\n
+        \     <wsdl:input message=\"tns:VerifyAddressSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:VerifyAddressSoapOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"LookupForDate\">\r\n      <wsdl:input message=\"tns:LookupForDateSoapIn\"
         />\r\n      <wsdl:output message=\"tns:LookupForDateSoapOut\" />\r\n    </wsdl:operation>\r\n
         \   <wsdl:operation name=\"Lookup\">\r\n      <wsdl:input message=\"tns:LookupSoapIn\"
         />\r\n      <wsdl:output message=\"tns:LookupSoapOut\" />\r\n    </wsdl:operation>\r\n
@@ -476,21 +537,45 @@ http_interactions:
         />\r\n      <wsdl:output message=\"tns:GetExemptCertificatesSoapOut\" />\r\n
         \   </wsdl:operation>\r\n    <wsdl:operation name=\"Ping\">\r\n      <wsdl:input
         message=\"tns:PingSoapIn\" />\r\n      <wsdl:output message=\"tns:PingSoapOut\"
-        />\r\n    </wsdl:operation>\r\n  </wsdl:portType>\r\n  <wsdl:binding name=\"TaxCloudSoap\"
-        type=\"tns:TaxCloudSoap\">\r\n    <soap:binding transport=\"http://schemas.xmlsoap.org/soap/http\"
-        />\r\n    <wsdl:operation name=\"VerifyAddress\">\r\n      <soap:operation
-        soapAction=\"http://taxcloud.net/VerifyAddress\" style=\"document\" />\r\n
-        \     <wsdl:input>\r\n        <soap:body use=\"literal\" />\r\n      </wsdl:input>\r\n
-        \     <wsdl:output>\r\n        <soap:body use=\"literal\" />\r\n      </wsdl:output>\r\n
-        \   </wsdl:operation>\r\n    <wsdl:operation name=\"LookupForDate\">\r\n      <soap:operation
-        soapAction=\"http://taxcloud.net/LookupForDate\" style=\"document\" />\r\n
-        \     <wsdl:input>\r\n        <soap:body use=\"literal\" />\r\n      </wsdl:input>\r\n
-        \     <wsdl:output>\r\n        <soap:body use=\"literal\" />\r\n      </wsdl:output>\r\n
-        \   </wsdl:operation>\r\n    <wsdl:operation name=\"Lookup\">\r\n      <soap:operation
-        soapAction=\"http://taxcloud.net/Lookup\" style=\"document\" />\r\n      <wsdl:input>\r\n
-        \       <soap:body use=\"literal\" />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n
-        \       <soap:body use=\"literal\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"Authorized\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/Authorized\"
+        />\r\n    </wsdl:operation>\r\n  </wsdl:portType>\r\n  <wsdl:portType name=\"TaxCloudHttpPost\">\r\n
+        \   <wsdl:operation name=\"VerifyAddress\">\r\n      <wsdl:input message=\"tns:VerifyAddressHttpPostIn\"
+        />\r\n      <wsdl:output message=\"tns:VerifyAddressHttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"Authorized\">\r\n      <wsdl:input message=\"tns:AuthorizedHttpPostIn\"
+        />\r\n      <wsdl:output message=\"tns:AuthorizedHttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"AuthorizedWithCapture\">\r\n      <wsdl:input message=\"tns:AuthorizedWithCaptureHttpPostIn\"
+        />\r\n      <wsdl:output message=\"tns:AuthorizedWithCaptureHttpPostOut\"
+        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"Captured\">\r\n
+        \     <wsdl:input message=\"tns:CapturedHttpPostIn\" />\r\n      <wsdl:output
+        message=\"tns:CapturedHttpPostOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetTICGroups\">\r\n      <wsdl:input message=\"tns:GetTICGroupsHttpPostIn\"
+        />\r\n      <wsdl:output message=\"tns:GetTICGroupsHttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetTICs\">\r\n      <wsdl:input message=\"tns:GetTICsHttpPostIn\"
+        />\r\n      <wsdl:output message=\"tns:GetTICsHttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetTICsByGroup\">\r\n      <wsdl:input message=\"tns:GetTICsByGroupHttpPostIn\"
+        />\r\n      <wsdl:output message=\"tns:GetTICsByGroupHttpPostOut\" />\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"DeleteExemptCertificate\">\r\n
+        \     <wsdl:input message=\"tns:DeleteExemptCertificateHttpPostIn\" />\r\n
+        \     <wsdl:output message=\"tns:DeleteExemptCertificateHttpPostOut\" />\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetExemptCertificates\">\r\n
+        \     <wsdl:input message=\"tns:GetExemptCertificatesHttpPostIn\" />\r\n      <wsdl:output
+        message=\"tns:GetExemptCertificatesHttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"Ping\">\r\n      <wsdl:input message=\"tns:PingHttpPostIn\"
+        />\r\n      <wsdl:output message=\"tns:PingHttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \ </wsdl:portType>\r\n  <wsdl:binding name=\"TaxCloudSoap\" type=\"tns:TaxCloudSoap\">\r\n
+        \   <soap:binding transport=\"http://schemas.xmlsoap.org/soap/http\" />\r\n
+        \   <wsdl:operation name=\"VerifyAddress\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/VerifyAddress\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"LookupForDate\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/LookupForDate\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"Lookup\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/Lookup\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"Authorized\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/Authorized\"
         style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
         />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
         />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
@@ -592,14 +677,56 @@ http_interactions:
         style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
         />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
         />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
+        \ <wsdl:binding name=\"TaxCloudHttpPost\" type=\"tns:TaxCloudHttpPost\">\r\n
+        \   <http:binding verb=\"POST\" />\r\n    <wsdl:operation name=\"VerifyAddress\">\r\n
+        \     <http:operation location=\"/VerifyAddress\" />\r\n      <wsdl:input>\r\n
+        \       <mime:content type=\"application/x-www-form-urlencoded\" />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"Authorized\">\r\n      <http:operation
+        location=\"/Authorized\" />\r\n      <wsdl:input>\r\n        <mime:content
+        type=\"application/x-www-form-urlencoded\" />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n
+        \       <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"AuthorizedWithCapture\">\r\n      <http:operation
+        location=\"/AuthorizedWithCapture\" />\r\n      <wsdl:input>\r\n        <mime:content
+        type=\"application/x-www-form-urlencoded\" />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n
+        \       <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"Captured\">\r\n      <http:operation location=\"/Captured\"
+        />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetTICGroups\">\r\n      <http:operation location=\"/GetTICGroups\"
+        />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetTICs\">\r\n      <http:operation location=\"/GetTICs\" />\r\n      <wsdl:input>\r\n
+        \       <mime:content type=\"application/x-www-form-urlencoded\" />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetTICsByGroup\">\r\n
+        \     <http:operation location=\"/GetTICsByGroup\" />\r\n      <wsdl:input>\r\n
+        \       <mime:content type=\"application/x-www-form-urlencoded\" />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"DeleteExemptCertificate\">\r\n
+        \     <http:operation location=\"/DeleteExemptCertificate\" />\r\n      <wsdl:input>\r\n
+        \       <mime:content type=\"application/x-www-form-urlencoded\" />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetExemptCertificates\">\r\n
+        \     <http:operation location=\"/GetExemptCertificates\" />\r\n      <wsdl:input>\r\n
+        \       <mime:content type=\"application/x-www-form-urlencoded\" />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"Ping\">\r\n      <http:operation
+        location=\"/Ping\" />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
         \ <wsdl:service name=\"TaxCloud\">\r\n    <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">TaxCloud
         Web Service</wsdl:documentation>\r\n    <wsdl:port name=\"TaxCloudSoap\" binding=\"tns:TaxCloudSoap\">\r\n
         \     <soap:address location=\"https://api.taxcloud.net/1.0/TaxCloud.asmx\"
         />\r\n    </wsdl:port>\r\n    <wsdl:port name=\"TaxCloudSoap12\" binding=\"tns:TaxCloudSoap12\">\r\n
         \     <soap12:address location=\"https://api.taxcloud.net/1.0/TaxCloud.asmx\"
+        />\r\n    </wsdl:port>\r\n    <wsdl:port name=\"TaxCloudHttpPost\" binding=\"tns:TaxCloudHttpPost\">\r\n
+        \     <http:address location=\"https://api.taxcloud.net/1.0/TaxCloud.asmx\"
         />\r\n    </wsdl:port>\r\n  </wsdl:service>\r\n</wsdl:definitions>"
-    http_version: 
-  recorded_at: Sun, 25 Nov 2012 16:40:50 GMT
+    http_version:
+  recorded_at: Thu, 09 Jan 2014 16:03:39 GMT
 - request:
     method: post
     uri: https://api.taxcloud.net/1.0/TaxCloud.asmx
@@ -651,6 +778,6 @@ http_interactions:
         Medical Equipment</Description></TICGroup><TICGroup><GroupID>10</GroupID><Description>Mobilty
         Enhancing Equipment</Description></TICGroup><TICGroup><GroupID>11</GroupID><Description>Prosthetic
         Devices</Description></TICGroup><TICGroup><GroupID>12</GroupID><Description>Telecommunications</Description></TICGroup></TICGroups></GetTICGroupsResult></GetTICGroupsResponse></soap:Body></soap:Envelope>
-    http_version: 
+    http_version:
   recorded_at: Sun, 25 Nov 2012 16:40:51 GMT
 recorded_with: VCR 2.3.0

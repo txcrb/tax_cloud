@@ -34,6 +34,7 @@ module TaxCloud #:nodoc:
 
       # Authorization hash to use with all SOAP requests
       def auth_params
+        return {} unless TaxCloud.configuration
         {
           'apiLoginID' => TaxCloud.configuration.api_login_id,
           'apiKey' => TaxCloud.configuration.api_key

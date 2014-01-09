@@ -1,4 +1,9 @@
 source "http://rubygems.org"
 
-# Specify your gem's dependencies in tax_cloud.gemspec
 gemspec
+
+platform :rbx do
+  gem 'rubysl', '~> 2.0'
+  gem 'racc'
+  gem 'iconv'
+end

@@ -1,3 +1,7 @@
+=== Next Release
+
+* #19: Support Savon 2 - @drewtempelmeyer.
+
 === 0.2.2 (4/29/2013)
 
 * Relaxed thirdparty gem dependency versions - @mperham.
