@@ -29,4 +29,7 @@ load 'lib/tasks/tax_code_groups.rake'
 
 load 'vcr/tasks/vcr.rake'
 
-task :default => :test
+require 'rubocop/rake_task'
+Rubocop::RakeTask.new(:rubocop)
+
+task default: [:rubocop, :test]

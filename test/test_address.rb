@@ -1,10 +1,9 @@
 require 'helper'
 
 class TestAddress < TestSetup
-
   def setup
     super
-    @address = TaxCloud::Address.new :address1 => '888 6th Ave', :city => 'New York', :state => 'New York', :zip5 => '10001'
+    @address = TaxCloud::Address.new address1: '888 6th Ave', city: 'New York', state: 'New York', zip5: '10001'
   end
 
   def test_initialize
@@ -46,11 +45,10 @@ class TestAddress < TestSetup
   def test_verify_bad_address
     e = assert_raise TaxCloud::Errors::ApiError do
       VCR.use_cassette('verify bad address') do
-        bad_address = TaxCloud::Address.new :address1 => '10001 Test Street', :city => 'New York', :state => 'New York', :zip5 => '99999'
-        verify = bad_address.verify
+        bad_address = TaxCloud::Address.new address1: '10001 Test Street', city: 'New York', state: 'New York', zip5: '99999'
+        bad_address.verify
       end
     end
-    assert_equal e.problem, "Invalid Zip Code."
+    assert_equal e.problem, 'Invalid Zip Code.'
   end
-
 end

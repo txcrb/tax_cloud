@@ -6,7 +6,7 @@ module TaxCloud #:nodoc:
     class MissingConfig < TaxCloudError
       # Create a new error.
       def initialize
-        super(compose_message("missing_config"))
+        super(compose_message('missing_config'))
       end
     end
   end

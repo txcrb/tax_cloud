@@ -1,7 +1,6 @@
 module TaxCloud
   # Tax Codes.
   class TaxCodes
-
     # Administrative
 
     # Administrative: Gift Card/Certificate
@@ -10,7 +9,7 @@ module TaxCloud
     CHARGES_BY_THE_SELLER_FOR_ANY_SERVICES_NECESSARY_TO_COMPLETE_THE_SALE_OTHER_THAN_DELIVERY_AND_INSTALLATION = 10010
     # Administrative: Installation charges
     INSTALLATION_CHARGES = 10040
-    # Administrative: Value of trade-in   
+    # Administrative: Value of trade-in
     VALUE_OF_TRADE_IN = 10060
     # Administrative: Telecommunication nonrecurring charges
     TELECOMMUNICATION_NONRECURRING_CHARGES = 10070
@@ -18,7 +17,7 @@ module TaxCloud
     HANDLING_CRATING_PACKING_PREPARATION_FOR_MAILING_OR_DELIVERY_AND_SIMILAR_CHARGES = 11000
     # Administrative: Transportation, shipping, postage, and similar charges
     TRANSPORTATION_SHIPPING_POSTAGE_AND_SIMILAR_CHARGES = 11010
-    # Administrative: Handling, crating, packing, preparation for mailing or delivery, and similar charges for direct mail  
+    # Administrative: Handling, crating, packing, preparation for mailing or delivery, and similar charges for direct mail
     HANDLING_CRATING_PACKING_PREPARATION_FOR_MAILING_OR_DELIVERY_AND_SIMILAR_CHARGES_FOR_DIRECT_MAIL = 11020
     # Administrative: Transportation, shipping, and similar charges for direct mail
     TRANSPORTATION_SHIPPING_AND_SIMILAR_CHARGES_FOR_DIRECT_MAIL = 11021
@@ -170,7 +169,7 @@ module TaxCloud
     FOOD_SOLD_WITHOUT_EATING_UTENSILS_PROVIDED_BY_THE_SELLER_WHOSE_PRIMARY_NAICS_CLASSIFICATION_IS_MANUFACTURING_IN_SECTOR_311_EXCEPT_SUBSECTOR_3118_BAKERIES = 41010
     # Prepared Food: Food sold without eating utensils provided by the seller in an unheated state by weight or volume as a single item
     FOOD_SOLD_WITHOUT_EATING_UTENSILS_PROVIDED_BY_THE_SELLER_IN_AN_UNHEATED_STATE_BY_WEIGHT_OR_VOLUME_AS_A_SINGLE_ITEM = 41020
-    # Prepared Food: Bakery items sold without eating utensils provided by the seller, including bread, rolls, buns, biscuits, bagels, croissants, pastries, donuts, Danish, cakes, tortes, pies, tarts, muffins, bars, cookies, tortillas 
+    # Prepared Food: Bakery items sold without eating utensils provided by the seller, including bread, rolls, buns, biscuits, bagels, croissants, pastries, donuts, Danish, cakes, tortes, pies, tarts, muffins, bars, cookies, tortillas
     BAKERY_ITEMS_SOLD_WITHOUT_EATING_UTENSILS_PROVIDED_BY_THE_SELLER_INCLUDING_BREAD_ROLLS_BUNS_BISCUITS_BAGELS_CROISSANTS_PASTRIES_DONUTS_DANISH_CAKES_TORTES_PIES_TARTS_MUFFINS_BARS_COOKIES_TORTILLAS = 41030
 
     # Drugs
@@ -179,7 +178,7 @@ module TaxCloud
     DRUGS_PHARMACEUTICALS = 51000
     # Drugs: Human use
     HUMAN_USE = 51001
-    # Drugs: Animal/Veterinary use 
+    # Drugs: Animal/Veterinary use
     ANIMAL_VETERINARY_USE = 51002
     # Drugs: Drugs for human use without a prescription
     DRUGS_FOR_HUMAN_USE_WITHOUT_A_PRESCRIPTION = 51010
@@ -229,11 +228,11 @@ module TaxCloud
     GROOMING_AND_HYGIENE_PRODUCTS_FOR_HUMAN_USE = 51170
     # Drugs: Grooming and hygiene products for animal use
     GROOMING_AND_HYGIENE_PRODUCTS_FOR_ANIMAL_USE = 51180
-    # Drugs: Drugs for human use to hospitals   
+    # Drugs: Drugs for human use to hospitals
     DRUGS_FOR_HUMAN_USE_TO_HOSPITALS = 51190
     # Drugs: Drugs for human use to other medical facilities
     DRUGS_FOR_HUMAN_USE_TO_OTHER_MEDICAL_FACILITIES = 51195
-    # Drugs: Prescription drugs for human use to hospitals 
+    # Drugs: Prescription drugs for human use to hospitals
     PRESCRIPTION_DRUGS_FOR_HUMAN_USE_TO_HOSPITALS = 51200
     # Drugs: Prescription drugs for human use to other medical facilities
     PRESCRIPTION_DRUGS_FOR_HUMAN_USE_TO_OTHER_MEDICAL_FACILITIES = 51205
@@ -366,7 +365,7 @@ module TaxCloud
     FOR_HOME_USE_3 = 52425
     # Durable Medical Equipment: Enteral feeding systems for home use without a prescription
     ENTERAL_FEEDING_SYSTEMS_FOR_HOME_USE_WITHOUT_A_PRESCRIPTION = 52430
-    # Durable Medical Equipment: Enteral feeding systems for home use with a prescription 
+    # Durable Medical Equipment: Enteral feeding systems for home use with a prescription
     ENTERAL_FEEDING_SYSTEMS_FOR_HOME_USE_WITH_A_PRESCRIPTION = 52440
     # Durable Medical Equipment: Enteral feeding systems for home use with a prescription paid for by Medicare
     ENTERAL_FEEDING_SYSTEMS_FOR_HOME_USE_WITH_A_PRESCRIPTION_PAID_FOR_BY_MEDICARE = 52450
@@ -557,6 +556,5 @@ module TaxCloud
     PAY_TELEPHONE_SERVICE = 61340
     # Telecommunications: Local Service as defined by state
     LOCAL_SERVICE_AS_DEFINED_BY_STATE = 61350
-
   end
 end

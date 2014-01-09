@@ -1,5 +1,4 @@
 class TestSetup < Test::Unit::TestCase
-
   def default_test
     # placeholder to avoid error under Ruby 1.8.7
   end

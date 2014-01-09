@@ -1,13 +1,12 @@
 require 'helper'
 
 class TestTransactionNy < TestSetup
-
   def setup
     super
-    origin = TaxCloud::Address.new :address1 => '888 6th Ave', :city => 'New York', :state => 'NY', :zip5 => '10001'
-    destination = TaxCloud::Address.new :address1 => '888 6th Ave', :city => 'New York', :state => 'NY', :zip5 => '10001'
-    cart_items = [ TaxCloud::CartItem.new(:index => 0, :item_id => 'SKU-TEST', :tic => TaxCloud::TaxCodes::GENERAL, :quantity => 1, :price => 50.00) ]
-    @transaction = TaxCloud::Transaction.new(:customer_id => 42, :cart_id => 708, :order_id => rand(18446744073709551616), :cart_items => cart_items, :origin => origin, :destination => destination)
+    origin = TaxCloud::Address.new address1: '888 6th Ave', city: 'New York', state: 'NY', zip5: '10001'
+    destination = TaxCloud::Address.new address1: '888 6th Ave', city: 'New York', state: 'NY', zip5: '10001'
+    cart_items = [TaxCloud::CartItem.new(index: 0, item_id: 'SKU-TEST', tic: TaxCloud::TaxCodes::GENERAL, quantity: 1, price: 50.00)]
+    @transaction = TaxCloud::Transaction.new(customer_id: 42, cart_id: 708, order_id: rand(18446744073709551616), cart_items: cart_items, origin: origin, destination: destination)
   end
 
   def test_lookup_non_ssuta_state
@@ -23,5 +22,4 @@ class TestTransactionNy < TestSetup
       assert_equal 0, result.tax_amount
     end
   end
-
 end

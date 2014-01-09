@@ -1,15 +1,14 @@
 require 'helper'
 
 class TestTransaction < TestSetup
-
   def setup
     super
-    origin = TaxCloud::Address.new(:address1 => '162 East Avenue', :address2 => 'Third Floor', :city => 'Norwalk', :state => 'CT', :zip5 => '06851')
-    destination = TaxCloud::Address.new(:address1 => '3121 West Government Way', :address2 => 'Suite 2B', :city => 'Seattle', :state => 'WA', :zip5 => '98199')
+    origin = TaxCloud::Address.new(address1: '162 East Avenue', address2: 'Third Floor', city: 'Norwalk', state: 'CT', zip5: '06851')
+    destination = TaxCloud::Address.new(address1: '3121 West Government Way', address2: 'Suite 2B', city: 'Seattle', state: 'WA', zip5: '98199')
     cart_items = []
-    cart_items << TaxCloud::CartItem.new(:index => 0, :item_id => 'SKU-TEST', :tic => TaxCloud::TaxCodes::GENERAL, :quantity => 1, :price => 50.00)
-    cart_items << TaxCloud::CartItem.new(:index => 1, :item_id => 'SKU-TEST1', :tic => TaxCloud::TaxCodes::GENERAL, :quantity => 1, :price => 100.00)
-    @transaction = TaxCloud::Transaction.new(:customer_id => 42, :cart_id => rand(18446744073709551616), :order_id => rand(18446744073709551616), :cart_items => cart_items, :origin => origin, :destination => destination)
+    cart_items << TaxCloud::CartItem.new(index: 0, item_id: 'SKU-TEST', tic: TaxCloud::TaxCodes::GENERAL, quantity: 1, price: 50.00)
+    cart_items << TaxCloud::CartItem.new(index: 1, item_id: 'SKU-TEST1', tic: TaxCloud::TaxCodes::GENERAL, quantity: 1, price: 100.00)
+    @transaction = TaxCloud::Transaction.new(customer_id: 42, cart_id: rand(18446744073709551616), order_id: rand(18446744073709551616), cart_items: cart_items, origin: origin, destination: destination)
   end
 
   def test_lookup
@@ -39,14 +38,14 @@ class TestTransaction < TestSetup
 
   class LocalizedDate < Date
     def to_s
-      strftime "%d/%m/%Y"
+      strftime '%d/%m/%Y'
     end
   end
 
   def test_authorized_with_localized_date
     VCR.use_cassette('authorized_with_localized_time') do
       @transaction.lookup
-      result = @transaction.authorized(:date_authorized => LocalizedDate.civil(2013, 2, 1))
+      result = @transaction.authorized(date_authorized: LocalizedDate.civil(2013, 2, 1))
       assert_equal 'OK', result
     end
   end
@@ -76,5 +75,4 @@ class TestTransaction < TestSetup
       assert_equal 'OK', result
     end
   end
-
 end

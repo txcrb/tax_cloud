@@ -7,7 +7,7 @@ module TaxCloud #:nodoc:
     # [attrs] Attributes defined for this record.
     def initialize(attrs = {})
       attrs.each do |sym, val|
-        self.send "#{sym}=", val
+        send "#{sym}=", val
       end
     end
   end

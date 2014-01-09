@@ -1,7 +1,6 @@
 module TaxCloud #:nodoc:
   # An <tt>Address</tt> defines an address in the United States.
   class Address < Record
-
     # First line of address.
     attr_accessor :address1
     # Second line of adress.
@@ -20,9 +19,9 @@ module TaxCloud #:nodoc:
     # Returns a verified TaxCloud::Address.
     def verify
       params = to_hash.downcase_keys
-      params = params.merge({
+      params = params.merge(
         'uspsUserID' => TaxCloud.configuration.usps_username
-      }) if TaxCloud.configuration.usps_username
+      ) if TaxCloud.configuration.usps_username
       response = TaxCloud.client.request(:verify_address, params)
       TaxCloud::Responses::VerifyAddress.parse(response)
     end
@@ -31,7 +30,7 @@ module TaxCloud #:nodoc:
     # Returns a 9-digit Zip Code, when available.
     def zip
       return nil unless zip5 && zip5.length > 0
-      [ zip5, zip4 ].select { |z| z && z.length > 0 }.join("-")
+      [zip5, zip4].select { |z| z && z.length > 0 }.join('-')
     end
 
     # Convert the object to a usable hash for SOAP requests
@@ -45,6 +44,5 @@ module TaxCloud #:nodoc:
         'Zip4' => zip4
       }
     end
-
   end
 end

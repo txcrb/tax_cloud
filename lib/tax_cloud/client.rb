@@ -1,10 +1,9 @@
 module TaxCloud #:nodoc:
   # A <tt>Client</tt> communicates with the TaxCloud service.
   class Client < Savon::Client
-
     # Create a new client.
     def initialize
-      super :wsdl => TaxCloud::WSDL_URL
+      super wsdl: TaxCloud::WSDL_URL
     end
 
     # Make a safe SOAP call.
@@ -15,7 +14,7 @@ module TaxCloud #:nodoc:
     # [body] Body content.
     def call(method, message = {})
       safe do
-        super method, :message => message.merge(auth_params)
+        super method, message: message.merge(auth_params)
       end
     end
 
@@ -32,22 +31,19 @@ module TaxCloud #:nodoc:
 
     private
 
-      # Authorization hash to use with all SOAP requests
-      def auth_params
-        return {} unless TaxCloud.configuration
-        {
-          'apiLoginID' => TaxCloud.configuration.api_login_id,
-          'apiKey' => TaxCloud.configuration.api_key
-        }
-      end
+    # Authorization hash to use with all SOAP requests
+    def auth_params
+      return {} unless TaxCloud.configuration
+      {
+        'apiLoginID' => TaxCloud.configuration.api_login_id,
+        'apiKey' => TaxCloud.configuration.api_key
+      }
+    end
 
-      def safe &block
-        begin
-          yield
-        rescue Savon::SOAPFault => e
-          raise TaxCloud::Errors::SoapError.new(e)
-        end
-      end
-
+    def safe(&block)
+      yield
+    rescue Savon::SOAPFault => e
+      raise TaxCloud::Errors::SoapError.new(e)
+    end
   end
 end

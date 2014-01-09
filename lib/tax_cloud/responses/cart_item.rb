@@ -1,11 +1,9 @@
 module TaxCloud #:nodoc:
   module Responses #:nodoc:
-
     # A single item in the response to a TaxCloud Lookup API call.
-    # 
+    #
     # See https://api.taxcloud.net/1.0/TaxCloud.asmx?op=Lookup.
     class CartItem
-
       # The index of the cart item.
       attr_accessor :cart_item_index
 
@@ -18,7 +16,6 @@ module TaxCloud #:nodoc:
         self.cart_item_index = savon_response[:cart_item_index].to_i
         self.tax_amount = savon_response[:tax_amount].to_f
       end
-
     end
   end
 end

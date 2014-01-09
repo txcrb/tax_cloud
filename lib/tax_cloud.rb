@@ -19,12 +19,11 @@ require 'tax_cloud/tax_code_group_constants'
 require 'tax_cloud/configuration'
 require 'tax_cloud/client'
 
-I18n.load_path << File.join(File.dirname(__FILE__), "config", "locales", "en.yml")
+I18n.load_path << File.join(File.dirname(__FILE__), 'config', 'locales', 'en.yml')
 
 # TaxCloud is a web service to calculate and track sales tax for your ecommerce platform. Integration is easy to use.
 # For information on configuring and using the TaxCloud API, look at the <tt>README</tt> file.
 module TaxCloud
-
   # WSDL location for TaxCloud API.
   WSDL_URL = 'https://api.taxcloud.net/1.0/?wsdl'
 
@@ -32,13 +31,12 @@ module TaxCloud
   API_VERSION = '1.0'
 
   class << self
-
     # TaxCloud gem configuration.
     attr_accessor :configuration
 
     # Returns true if the gem has been configured.
     def configured?
-      !! self.configuration
+      !!configuration
     end
 
     # Configure the gem.
@@ -50,21 +48,20 @@ module TaxCloud
     # Reset the current configuration.
     def reset!
       self.configuration = nil
+      @client = nil
     end
 
     # The configured SOAP client to the TaxCloud service.
     def client
       check_configuration!
-      @@client ||= TaxCloud::Client.new
+      @client ||= TaxCloud::Client.new
     end
 
     private
 
-      def check_configuration!
-        raise TaxCloud::Errors::MissingConfig.new unless self.configuration
-        self.configuration.check!
-      end
-
+    def check_configuration!
+      fail TaxCloud::Errors::MissingConfig.new unless self.configuration
+      self.configuration.check!
+    end
   end
-
 end

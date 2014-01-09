@@ -1,7 +1,6 @@
 module TaxCloud #:nodoc:
   # A <tt>CartItem</tt> defines a single line item for the purchase. Used to calculate the tax amount.
   class CartItem < Record
-
     # The unique index number for the line item. Must be unique for the scope of the cart.
     attr_accessor :index
     # The stock keeping unit (SKU) number.
@@ -23,6 +22,5 @@ module TaxCloud #:nodoc:
         'Qty' => quantity
       }
     end
-
   end
 end

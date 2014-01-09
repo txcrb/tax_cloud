@@ -20,7 +20,7 @@ module TaxCloud #:nodoc:
     # === Parameters
     # [params] Transaction params.
     def initialize(params = {})
-      params = { :cart_items => [] }.merge(params)
+      params = { cart_items: [] }.merge(params)
       super params
     end
 
@@ -44,7 +44,7 @@ module TaxCloud #:nodoc:
     # === Options
     # * <tt>date_authorized</tt> - The date the transaction was authorized. Default is today.
     def authorized(options = {})
-      options = { :date_authorized => Date.today }.merge(options)
+      options = { date_authorized: Date.today }.merge(options)
 
       request_params = {
         'customerID' => customer_id,
@@ -62,7 +62,7 @@ module TaxCloud #:nodoc:
     # === Options
     # [date_captured] The time the transaction was captured. Default is today.
     def captured(options = {})
-      options = { :date_captured => Date.today }.merge(options)
+      options = { date_captured: Date.today }.merge(options)
       request_params = {
         'customerID' => customer_id,
         'cartID' => cart_id,
@@ -80,7 +80,7 @@ module TaxCloud #:nodoc:
     # [date_authorized] The date the transaction was authorized. Default is today.
     # [date_captured] - The date the transaction was captured. Default is today.
     def authorized_with_capture(options = {})
-      options = { :date_authorized => Date.today, :date_captured => Date.today }.merge(options)
+      options = { date_authorized: Date.today, date_captured: Date.today }.merge(options)
       request_params = {
         'customerID' => customer_id,
         'cartID' => cart_id,
@@ -98,7 +98,7 @@ module TaxCloud #:nodoc:
     # === Options
     # [returned_date] The date the return occured. Default is today.
     def returned(options = {})
-      options = { :returned_date => Date.today }.merge(options)
+      options = { returned_date: Date.today }.merge(options)
       request_params = {
         'orderID' => order_id,
         'cartItems' => { 'CartItem' => cart_items.map(&:to_hash) },
@@ -112,7 +112,7 @@ module TaxCloud #:nodoc:
     private
 
     def xml_date(val)
-      val.respond_to?(:strftime) ? val.strftime("%Y-%m-%d") : val
+      val.respond_to?(:strftime) ? val.strftime('%Y-%m-%d') : val
     end
   end
 end
