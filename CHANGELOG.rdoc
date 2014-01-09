@@ -1,5 +1,6 @@
 === Next Release
 
+* Ruby 1.8.x is no longer supported - @dblock.
 * #19: Support Savon 2 - @drewtempelmeyer.
 
 === 0.2.2 (4/29/2013)
