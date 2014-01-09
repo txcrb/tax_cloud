@@ -23,3 +23,7 @@ NumericLiterals:
 RaiseArgs:
   # don't need to provide an exception class and message, SoapError takes care of that
   Enabled: false
+
+Encoding:
+  # missing UTF-8 comment
+  Enabled: false
