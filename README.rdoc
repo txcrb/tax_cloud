@@ -22,8 +22,12 @@ Configure your environment. For example, create an initializer in Rails in <tt>c
     TaxCloud.configure do |config|
       config.api_login_id = 'your_tax_cloud_api_login_id'
       config.api_key = 'your_tax_cloud_api_key'
-      config.usps_username = 'your_usps_username'
+      config.usps_username = 'your_usps_username' # optional
+      config.open_timeout = 1 # optional
+      config.read_timeout = 1 # optional
     end
+
+The <tt>open_timeout</tt> and <tt>read_timeout</tt> options are used to specify waiting time for the TaxCloud web service response in seconds. Default values: <tt>open_timeout = 2</tt> and <tt>read_timeout = 2</tt>.
 
 === Using TaxCloud
 Define the destination and origin addresses using <tt>TaxCloud::Address</tt>.

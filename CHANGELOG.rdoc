@@ -1,5 +1,6 @@
 === 0.3.1 (Next)
 
+* Add <tt>open_timeout</tt> and <tt>read_timeout</tt> options into configuration - @ka8725.
 * Your contribution here.
 
 === 0.3.0 (1/9/2014)
