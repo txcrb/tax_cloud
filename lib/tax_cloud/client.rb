@@ -40,7 +40,7 @@ module TaxCloud #:nodoc:
       }
     end
 
-    def safe(&block)
+    def safe(&_block)
       yield
     rescue Savon::SOAPFault => e
       raise TaxCloud::Errors::SoapError.new(e)

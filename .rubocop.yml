@@ -1,29 +1,6 @@
 AllCops:
-  Excludes:
+  Exclude:
     - vendor/**
     - bin/**
 
-LineLength:
-  Enabled: false
-
-MethodLength:
-  Enabled: false
-
-ClassLength:
-  Enabled: false
-
-Documentation:
-  # don't require classes to be documented
-  Enabled: false
-
-NumericLiterals:
-  # don't separate numeric literals with _
-  Enabled: false
-
-RaiseArgs:
-  # don't need to provide an exception class and message, SoapError takes care of that
-  Enabled: false
-
-Encoding:
-  # missing UTF-8 comment
-  Enabled: false
+inherit_from: .rubocop_todo.yml

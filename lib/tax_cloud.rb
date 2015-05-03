@@ -1,6 +1,8 @@
 require 'savon'
 require 'i18n'
 require 'hash'
+
+require 'active_support'
 require 'active_support/core_ext'
 
 require 'tax_cloud/version'
@@ -36,7 +38,7 @@ module TaxCloud
 
     # Returns true if the gem has been configured.
     def configured?
-      !!configuration
+      configuration.present?
     end
 
     # Configure the gem.

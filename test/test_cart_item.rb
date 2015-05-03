@@ -1,6 +1,6 @@
 require 'helper'
 
-class TestCartItem < Test::Unit::TestCase
+class TestCartItem < Minitest::Test
   def setup
     @cart_item = TaxCloud::CartItem.new index: 0, item_id: 'SKU-100', tic: '0000', price: 50.00, quantity: 3
   end

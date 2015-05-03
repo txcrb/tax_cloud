@@ -75,9 +75,7 @@ module TaxCloud #:nodoc:
         elsif self.dsl[:error_number]
           return true if match(self.dsl[:error_number]) == '0'
         end
-        if self.dsl[:error_message]
-          fail TaxCloud::Errors::ApiError.new(match(self.dsl[:error_message]), raw)
-        end
+        fail TaxCloud::Errors::ApiError.new(match(self.dsl[:error_message]), raw) if self.dsl[:error_message]
       end
     end
   end

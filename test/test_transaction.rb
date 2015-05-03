@@ -8,7 +8,7 @@ class TestTransaction < TestSetup
     cart_items = []
     cart_items << TaxCloud::CartItem.new(index: 0, item_id: 'SKU-TEST', tic: TaxCloud::TaxCodes::GENERAL, quantity: 1, price: 50.00)
     cart_items << TaxCloud::CartItem.new(index: 1, item_id: 'SKU-TEST1', tic: TaxCloud::TaxCodes::GENERAL, quantity: 1, price: 100.00)
-    @transaction = TaxCloud::Transaction.new(customer_id: 42, cart_id: rand(18446744073709551616), order_id: rand(18446744073709551616), cart_items: cart_items, origin: origin, destination: destination)
+    @transaction = TaxCloud::Transaction.new(customer_id: 42, cart_id: rand(18_446_744_073_709_551_616), order_id: rand(18_446_744_073_709_551_616), cart_items: cart_items, origin: origin, destination: destination)
   end
 
   def test_lookup

@@ -43,7 +43,7 @@ class TestAddress < TestSetup
   end
 
   def test_verify_bad_address
-    e = assert_raise TaxCloud::Errors::ApiError do
+    e = assert_raises TaxCloud::Errors::ApiError do
       VCR.use_cassette('verify bad address') do
         bad_address = TaxCloud::Address.new address1: '10001 Test Street', city: 'New York', state: 'New York', zip5: '99999'
         bad_address.verify
