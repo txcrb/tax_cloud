@@ -1,15 +1,14 @@
 namespace :tax_cloud do
-
-  desc "Generate tax codes."
-  task :tax_codes => :configure do
-    filename = "lib/tax_cloud/tax_code_constants.rb"
+  desc 'Generate tax codes.'
+  task tax_codes: :configure do
+    filename = 'lib/tax_cloud/tax_code_constants.rb'
 
     begin
       groups = TaxCloud::TaxCode::Groups.all.values
       groups_and_tax_codes = Hash[groups.map do |group|
-        [ group, group.tax_codes.values ]
+        [group, group.tax_codes.values]
       end]
-      File.open filename, "wt" do |f|
+      File.open filename, 'wt' do |f|
         f.write "module TaxCloud\n"
         f.write "  # Tax Codes.\n"
         f.write "  class TaxCodes\n"
@@ -36,10 +35,9 @@ namespace :tax_cloud do
       end
       puts "Done, #{filename}."
     rescue => e
-      puts "ERROR: Unable to generate a new list of tax codes."
+      puts 'ERROR: Unable to generate a new list of tax codes.'
       puts e.message
       raise e
     end
-
   end
 end

@@ -13,7 +13,7 @@ module TaxCloud #:nodoc:
                               key: key,
                               raw: raw,
                               chain: chain
-        ))
+                             ))
       end
     end
   end

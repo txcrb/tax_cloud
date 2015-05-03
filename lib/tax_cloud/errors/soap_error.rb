@@ -17,7 +17,7 @@ module TaxCloud #:nodoc:
           super(compose_message('soap_error',
                                 message: fault_string,
                                 code: fault_code
-          ))
+                               ))
         end
       end
 

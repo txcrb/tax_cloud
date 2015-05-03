@@ -1,4 +1,4 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'tax_cloud'
 require 'json'
 

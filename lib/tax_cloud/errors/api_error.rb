@@ -11,7 +11,7 @@ module TaxCloud #:nodoc:
         super(compose_message('api_error',
                               message: message,
                               raw: raw
-        ))
+                             ))
       end
     end
   end

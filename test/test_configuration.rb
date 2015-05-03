@@ -1,12 +1,12 @@
 require 'helper'
 
-class TestConfiguration < Test::Unit::TestCase
+class TestConfiguration < Minitest::Test
   def setup
     TaxCloud.reset!
   end
 
   def test_missing_configuration
-    assert_raise TaxCloud::Errors::MissingConfig do
+    assert_raises TaxCloud::Errors::MissingConfig do
       TaxCloud.client.request :dummy, body: {}
     end
   end
@@ -15,7 +15,7 @@ class TestConfiguration < Test::Unit::TestCase
     TaxCloud.configure do |config|
       config.api_key = 'taxcloud_api_key'
     end
-    assert_raise TaxCloud::Errors::MissingConfigOption do
+    assert_raises TaxCloud::Errors::MissingConfigOption do
       TaxCloud.client.request :dummy, body: {}
     end
   end
@@ -24,7 +24,7 @@ class TestConfiguration < Test::Unit::TestCase
     TaxCloud.configure do |config|
       config.api_login_id = 'taxcloud_api_login_id'
     end
-    assert_raise TaxCloud::Errors::MissingConfigOption do
+    assert_raises TaxCloud::Errors::MissingConfigOption do
       TaxCloud.client.request :dummy, body: {}
     end
   end

@@ -2,7 +2,7 @@ require 'helper'
 
 class TestClient < TestSetup
   def test_ping_with_invalid_credentials
-    assert_raise TaxCloud::Errors::ApiError do
+    assert_raises TaxCloud::Errors::ApiError do
       VCR.use_cassette('ping_with_invalid_credentials') do
         TaxCloud.client.ping
       end
@@ -10,7 +10,7 @@ class TestClient < TestSetup
   end
 
   def test_ping_with_invalid_response
-    e = assert_raise TaxCloud::Errors::UnexpectedSoapResponse do
+    e = assert_raises TaxCloud::Errors::UnexpectedSoapResponse do
       VCR.use_cassette('ping_with_invalid_response') do
         TaxCloud.client.ping
       end
