@@ -7,6 +7,15 @@ module TaxCloud #:nodoc:
     attr_accessor :api_key
     # Optional USPS username.
     attr_accessor :usps_username
+    # Savon client option open_timeout.
+    attr_accessor :open_timeout
+    # Savon client option read_timeout.
+    attr_accessor :read_timeout
+
+    def initialize
+      @open_timeout = 2
+      @read_timeout = 2
+    end
 
     # Check the configuration.
     #

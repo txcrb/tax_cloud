@@ -1,6 +1,6 @@
 require 'helper'
 
-class TestConfiguration < Minitest::Test
+class TestConfigurationRequiredKeys < Minitest::Test
   def setup
     TaxCloud.reset!
   end

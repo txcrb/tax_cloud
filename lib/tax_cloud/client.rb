@@ -3,7 +3,7 @@ module TaxCloud #:nodoc:
   class Client < Savon::Client
     # Create a new client.
     def initialize
-      super wsdl: TaxCloud::WSDL_URL
+      super client_params
     end
 
     # Make a safe SOAP call.
@@ -40,7 +40,14 @@ module TaxCloud #:nodoc:
       }
     end
 
-    def safe(&_block)
+    def client_params
+      { wsdl: TaxCloud::WSDL_URL }.tap do |params|
+        params[:open_timeout] = TaxCloud.configuration.open_timeout if TaxCloud.configuration.open_timeout
+        params[:read_timeout] = TaxCloud.configuration.read_timeout if TaxCloud.configuration.read_timeout
+      end
+    end
+
+    def safe
       yield
     rescue Savon::SOAPFault => e
       raise TaxCloud::Errors::SoapError.new(e)
