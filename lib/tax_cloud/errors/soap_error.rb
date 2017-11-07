@@ -1,4 +1,4 @@
-# encoding: utf-8
+
 module TaxCloud #:nodoc:
   module Errors #:nodoc:
     # This error is raised when a SOAP call fails.
@@ -16,8 +16,7 @@ module TaxCloud #:nodoc:
           fault_string = parse_fault(fault[:fault][:faultstring])
           super(compose_message('soap_error',
                                 message: fault_string,
-                                code: fault_code
-                               ))
+                                code: fault_code))
         end
       end
 

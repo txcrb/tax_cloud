@@ -1,4 +1,4 @@
-# encoding: utf-8
+
 module TaxCloud #:nodoc:
   module Errors #:nodoc:
     # This error is raised when TaxCloud returns an
@@ -12,8 +12,7 @@ module TaxCloud #:nodoc:
         super(compose_message('unexpected_soap_response',
                               key: key,
                               raw: raw,
-                              chain: chain
-                             ))
+                              chain: chain))
       end
     end
   end

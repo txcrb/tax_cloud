@@ -2,8 +2,7 @@ require 'helper'
 
 class TestLookupResponse < TestSetup
   class MockLookup < TaxCloud::Responses::Lookup
-    def initialize
-    end
+    def initialize; end
   end
 
   def test_tax_amount_handles_decimal_addition_properly

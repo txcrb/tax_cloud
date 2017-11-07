@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :development do
-  gem 'rubocop', '0.30.1'
+  gem 'rubocop', '~>0.51.0'
 end
 
 group :test do
@@ -13,6 +13,6 @@ group :test do
 end
 
 group :development, :test do
-  gem 'rake', '>= 0.9'
+  gem 'rake', '~>12.2.1'
   gem 'rdoc'
 end

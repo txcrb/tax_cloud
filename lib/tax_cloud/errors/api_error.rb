@@ -1,4 +1,4 @@
-# encoding: utf-8
+
 module TaxCloud #:nodoc:
   module Errors #:nodoc:
     # This error is raised when the TaxCloud service
@@ -10,8 +10,7 @@ module TaxCloud #:nodoc:
       def initialize(message, raw)
         super(compose_message('api_error',
                               message: message,
-                              raw: raw
-                             ))
+                              raw: raw))
       end
     end
   end

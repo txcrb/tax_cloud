@@ -1,7 +1,7 @@
 module TaxCloud #:nodoc:
   class TaxCodes
     # General purpose tax code.
-    GENERAL = 00000
+    GENERAL = 0o0000
 
     class << self
       # All tax codes

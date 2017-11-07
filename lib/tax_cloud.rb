@@ -27,10 +27,10 @@ I18n.load_path << File.join(File.dirname(__FILE__), 'config', 'locales', 'en.yml
 # For information on configuring and using the TaxCloud API, look at the <tt>README</tt> file.
 module TaxCloud
   # WSDL location for TaxCloud API.
-  WSDL_URL = 'https://api.taxcloud.net/1.0/?wsdl'
+  WSDL_URL = 'https://api.taxcloud.net/1.0/?wsdl'.freeze
 
   # TaxCloud API version.
-  API_VERSION = '1.0'
+  API_VERSION = '1.0'.freeze
 
   class << self
     # TaxCloud gem configuration.
@@ -62,7 +62,7 @@ module TaxCloud
     private
 
     def check_configuration!
-      fail TaxCloud::Errors::MissingConfig.new unless self.configuration
+      raise TaxCloud::Errors::MissingConfig.new unless self.configuration
       self.configuration.check!
     end
   end

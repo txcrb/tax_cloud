@@ -1,4 +1,4 @@
-# encoding: utf-8
+
 module TaxCloud #:nodoc:
   module Errors #:nodoc:
     # This error is raised when a configuration

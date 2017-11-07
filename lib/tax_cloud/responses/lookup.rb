@@ -20,13 +20,13 @@ module TaxCloud #:nodoc:
         self.cart_id = match('lookup_response/lookup_result/cart_id')
         # there can be on response or an array of responses
         cart_item_responses = match('lookup_response/lookup_result/cart_items_response/cart_item_response')
-        if cart_item_responses.is_a?(Array)
-          self.cart_items = cart_item_responses.map do |cart_item_response|
-            TaxCloud::Responses::CartItem.new(cart_item_response)
-          end
-        else
-          self.cart_items = [TaxCloud::Responses::CartItem.new(cart_item_responses)]
-        end
+        self.cart_items = if cart_item_responses.is_a?(Array)
+                            cart_item_responses.map do |cart_item_response|
+                              TaxCloud::Responses::CartItem.new(cart_item_response)
+                            end
+                          else
+                            [TaxCloud::Responses::CartItem.new(cart_item_responses)]
+                          end
       end
 
       # Total tax amount in this cart.
