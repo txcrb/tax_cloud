@@ -19,9 +19,11 @@ module TaxCloud #:nodoc:
     # Returns a verified TaxCloud::Address.
     def verify
       params = to_hash.downcase_keys
-      params = params.merge(
-        'uspsUserID' => TaxCloud.configuration.usps_username
-      ) if TaxCloud.configuration.usps_username
+      if TaxCloud.configuration.usps_username
+        params = params.merge(
+          'uspsUserID' => TaxCloud.configuration.usps_username
+        )
+      end
       response = TaxCloud.client.request(:verify_address, params)
       TaxCloud::Responses::VerifyAddress.parse(response)
     end
@@ -29,8 +31,8 @@ module TaxCloud #:nodoc:
     # Complete zip code.
     # Returns a 9-digit Zip Code, when available.
     def zip
-      return nil unless zip5 && zip5.length > 0
-      [zip5, zip4].select { |z| z && z.length > 0 }.join('-')
+      return nil unless zip5 && !zip5.empty?
+      [zip5, zip4].select { |z| z && !z.empty? }.join('-')
     end
 
     # Convert the object to a usable hash for SOAP requests

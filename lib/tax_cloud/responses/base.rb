@@ -49,7 +49,7 @@ module TaxCloud #:nodoc:
         chain.split('/').each do |key|
           current_value = current_value[key.to_sym]
           next if current_value
-          fail TaxCloud::Errors::UnexpectedSoapResponse.new(raw, key, chain)
+          raise TaxCloud::Errors::UnexpectedSoapResponse.new(raw, key, chain)
         end
         current_value
       end
@@ -75,7 +75,7 @@ module TaxCloud #:nodoc:
         elsif self.dsl[:error_number]
           return true if match(self.dsl[:error_number]) == '0'
         end
-        fail TaxCloud::Errors::ApiError.new(match(self.dsl[:error_message]), raw) if self.dsl[:error_message]
+        raise TaxCloud::Errors::ApiError.new(match(self.dsl[:error_message]), raw) if self.dsl[:error_message]
       end
     end
   end

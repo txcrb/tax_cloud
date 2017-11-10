@@ -1,4 +1,4 @@
-# encoding: utf-8
+
 module TaxCloud #:nodoc:
   module Errors #:nodoc:
     # Default parent TaxCloud error for all custom errors. This handles the base
@@ -32,7 +32,7 @@ module TaxCloud #:nodoc:
 
       private
 
-      BASE_KEY = 'taxcloud.errors.messages' #:nodoc:
+      BASE_KEY = 'taxcloud.errors.messages'.freeze #:nodoc:
 
       # Given the key of the specific error and the options hash, translate the
       # message.

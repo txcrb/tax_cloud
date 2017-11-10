@@ -1,3 +1,5 @@
+require 'bigdecimal'
+
 module TaxCloud #:nodoc:
   module Responses #:nodoc:
     # A single item in the response to a TaxCloud Lookup API call.
@@ -14,7 +16,7 @@ module TaxCloud #:nodoc:
       # [savon_response] SOAP response.
       def initialize(savon_response)
         self.cart_item_index = savon_response[:cart_item_index].to_i
-        self.tax_amount = savon_response[:tax_amount].to_f
+        self.tax_amount = BigDecimal.new(savon_response[:tax_amount])
       end
     end
   end
