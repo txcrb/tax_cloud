@@ -1,18 +1,18 @@
-= TaxCloud
+# TaxCloud
 
-{<img src="https://travis-ci.org/drewtempelmeyer/tax_cloud.png" />}[https://travis-ci.org/drewtempelmeyer/tax_cloud]
+[TaxCloud](http://www.taxcloud.com) is a free service to calculate sales tax and generate tax reports. The <tt>tax_cloud</tt> gem allows you to easily integrate with TaxCloud's API.
 
-TaxCloud[http://www.taxcloud.com] is a free service to calculate sales tax and generate tax reports. The <tt>tax_cloud</tt> gem allows you to easily integrate with TaxCloud's API.
+[Forked](https://github.com/drewtempelmeyer/tax_cloud) to add support for running this Gem on Ruby 1.9.3.  See issue [#39](https://github.com/drewtempelmeyer/tax_cloud/issues/39) on the original repo for more details.
 
-=== Getting Started
-Create a TaxCloud[http://www.taxcloud.com] merchant account at http://www.taxcloud.net. Add a website to your account under Locations[https://taxcloud.net/account/locations]. This will generate an API ID and API Key that you will need to use the service.
+### Getting Started
+Create a [TaxCloud](http://www.taxcloud.com) merchant account at http://www.taxcloud.net. Add a website to your account under [Locations](https://taxcloud.net/account/locations). This will generate an API ID and API Key that you will need to use the service.
 
-TaxCloud[http://www.taxcloud.com] also offers an optional address verification API. To use it, you need a USPS (United States Postal Service) Address API UserID. To obtain your USPS UserID:
+[TaxCloud](http://www.taxcloud.com) also offers an optional address verification API. To use it, you need a USPS (United States Postal Service) Address API UserID. To obtain your USPS UserID:
 1. Download and Install the USPS Shipping Assistant from http://www.usps.com/shippingassistant.
 2. Launch the USPS Shipping Assistant and go through the Shipping Assistant registration process.
 3. Once you have registered for your Shipping Assistant account, you can find your USPS Shipping Assistant UserID in the "About" box, in parentheses to the right of the name of the registered user.
 
-=== Setup
+### Setup
 Add the gem to your Gemfile.
 
     gem 'tax_cloud'
@@ -29,7 +29,7 @@ Configure your environment. For example, create an initializer in Rails in <tt>c
 
 The <tt>open_timeout</tt> and <tt>read_timeout</tt> options are used to specify waiting time for the TaxCloud web service response in seconds. Default values: <tt>open_timeout = 2</tt> and <tt>read_timeout = 2</tt>.
 
-=== Using TaxCloud
+### Using TaxCloud
 Define the destination and origin addresses using <tt>TaxCloud::Address</tt>.
 
     origin = TaxCloud::Address.new(
@@ -80,9 +80,9 @@ Later, you may need to mark some cart items as returned. TaxCloud will ignore an
       :quantity => 1)
     transaction.returned # returns "OK" or raises an error
 
-=== Verifying Addresses
+### Verifying Addresses
 
-TaxCloud[http://www.taxcloud.com] optionally integrates with the USPS Address API. An address can be verified, which can also yield a 9-digit zip code that helps determine a more accurate tax rate.
+[TaxCloud](http://www.taxcloud.com) optionally integrates with the USPS Address API. An address can be verified, which can also yield a 9-digit zip code that helps determine a more accurate tax rate.
 
     address = TaxCloud::Address.new({
       :address1 => '888 6th Ave',
@@ -96,8 +96,8 @@ TaxCloud[http://www.taxcloud.com] optionally integrates with the USPS Address AP
     verified_address.zip4 # 3502
     verified_address.zip # 10001-3502
 
-=== Tax Codes
-TaxCloud[http://www.taxcloud.com] maintains a list of all Taxability Information Codes or TICs, which can be found at https://taxcloud.net/tic.
+### Tax Codes
+[TaxCloud](http://www.taxcloud.com) maintains a list of all Taxability Information Codes or TICs, which can be found at https://taxcloud.net/tic.
 
 You can obtain all tax codes as well as lookup a tax code by ID.
 
@@ -119,10 +119,10 @@ Tax code constants are defined in <tt>tax_code_constants.rb</tt> and tax code gr
     TAXCLOUD_API_LOGIN_ID=... TAXCLOUD_API_KEY=... TAXCLOUD_USPS_USERNAME=... tax_cloud:tax_codes
     TAXCLOUD_API_LOGIN_ID=... TAXCLOUD_API_KEY=... TAXCLOUD_USPS_USERNAME=... tax_cloud:tax_code_groups
 
-=== Tax States
-TaxCloud manages a list of states in which you can calculate sales tax. The default setup will only have SSUTA (Streamlined Sales and Use Tax Agreement) states enabled. All other states will return $0 for tax values. To enable other states, go to https://taxcloud.net/account/states. You can find more information about SSUTA here[http://www.streamlinedsalestax.org/index.php?page=About-Us].
+### Tax States
+TaxCloud manages a list of states in which you can calculate sales tax. The default setup will only have SSUTA (Streamlined Sales and Use Tax Agreement) states enabled. All other states will return $0 for tax values. To enable other states, go to https://taxcloud.net/account/states. You can find more information about SSUTA [here](http://www.streamlinedsalestax.org/index.php?page=About-Us]).
 
-=== Running Tests
+# Running Tests
 * VCR and WebMock are used to replay requests and avoid hitting the API each time. To refresh the mocks, simply delete the <tt>test/cassettes</tt> directory.
 * Run tests.
     rake test
@@ -130,15 +130,16 @@ TaxCloud manages a list of states in which you can calculate sales tax. The defa
     TAXCLOUD_API_LOGIN_ID=... TAXCLOUD_API_KEY=... TAXCLOUD_USPS_USERNAME=... rake test
   The mocks will filter out your configuration details.
 
-=== Bugs, fixes, etc
+# Bugs, fixes, etc
 * Fork.
 * Write test(s).
 * Fix.
 * Commit.
 * Submit pull request.
 
-=== License
+# License
 
-Copyright Drew Tempelmeyer and contributors, 2011-2014.
+This gem is licensed under the [MIT license](LICENSE).
 
-This gem is licensed under the MIT license.
+# Acknowledgements
+Thanks for [Drew Tempelmeyer](https://github.com/drewtempelmeyer) and other [contributors](https://github.com/drewtempelmeyer/tax_cloud/graphs/contributors) for creating and maintaining this helpful gem.
