@@ -25,4 +25,4 @@ load 'vcr/tasks/vcr.rake'
 require 'rubocop/rake_task'
 RuboCop::RakeTask.new(:rubocop)
 
-task default: %i[rubocop test]
+task default: [:rubocop, :test]

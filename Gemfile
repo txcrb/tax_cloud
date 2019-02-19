@@ -3,7 +3,9 @@ source 'https://rubygems.org'
 gemspec
 
 group :development do
-  gem 'rubocop', '~>0.51.0'
+  # Rubocop 0.41.2 is the lastest version to support
+  # Ruby 1.9.3.
+  gem 'rubocop', '~>0.41.2'
 end
 
 group :test do

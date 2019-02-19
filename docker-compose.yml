@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app
+      - bundler-data:/usr/local/bundle
+
+volumes:
+  bundler-data:

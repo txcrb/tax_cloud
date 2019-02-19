@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.description = 'Calculate sales tax using the TaxCloud.net API'
   s.licenses    = ['MIT']
 
+  s.required_ruby_version = '>= 1.9.3'
   s.required_rubygems_version = '>= 1.3.6'
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test}/*`.split("\n")
