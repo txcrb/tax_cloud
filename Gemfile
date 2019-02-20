@@ -6,6 +6,7 @@ group :development do
   # Rubocop 0.41.2 is the lastest version to support
   # Ruby 1.9.3.
   gem 'rubocop', '~>0.41.2'
+  gem 'dotenv'
 end
 
 group :test do

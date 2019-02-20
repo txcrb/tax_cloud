@@ -122,13 +122,58 @@ Tax code constants are defined in <tt>tax_code_constants.rb</tt> and tax code gr
 ### Tax States
 TaxCloud manages a list of states in which you can calculate sales tax. The default setup will only have SSUTA (Streamlined Sales and Use Tax Agreement) states enabled. All other states will return $0 for tax values. To enable other states, go to https://taxcloud.net/account/states. You can find more information about SSUTA [here](http://www.streamlinedsalestax.org/index.php?page=About-Us]).
 
-# Running Tests
-* VCR and WebMock are used to replay requests and avoid hitting the API each time. To refresh the mocks, simply delete the <tt>test/cassettes</tt> directory.
-* Run tests.
-    rake test
-* If you need to record new requests against TaxCloud, set your keys first.
-    TAXCLOUD_API_LOGIN_ID=... TAXCLOUD_API_KEY=... TAXCLOUD_USPS_USERNAME=... rake test
-  The mocks will filter out your configuration details.
+# Developer Setup
+The project is setup to use [Docker](https://www.docker.com/) to run the tests and example programs.  Once you have Docker installed you can build the container via:
+
+````bash
+docker-compose build
+````
+
+Once the container is built you can run access the command line to run these tests or example programs via:
+
+````bash
+docker-compose run app bash
+````
+
+## Running the tests
+Run the test and Rubocop using the following command:
+
+````bash
+rake
+````
+
+If you want to just run the tests and not Rubocop:
+
+````bash
+rake test
+````
+
+[VCR](https://github.com/vcr/vcr) and WebMock are used to replay requests and avoid hitting the API each time. To refresh the mocks, simply delete the <tt>test/cassettes</tt> directory.  If you need to record new requests against TaxCloud, set your keys first.
+
+````bash
+TAXCLOUD_API_LOGIN_ID=... TAXCLOUD_API_KEY=... TAXCLOUD_USPS_USERNAME=... rake test
+````
+
+The mocks will filter out your configuration details.
+
+Note: The tests all pass but will raise a bunch of warnings.  See [issue #3](https://github.com/corgibytes/tax_cloud/issues/3) for more details.
+
+## Running the example programs
+The example programs run directly against TaxCloud (i.e. no VCR mocks).  Make sure you aren't running against a live TaxCloud site but a one that is in test mode.
+
+To run the example programs you need to copy the `.env.example` file to `.env` and update it with your TaxCloud credentials.  Then run the following command from the examples directory so it can find the .env file:
+
+````bash
+bundle exec ruby <example>.rb
+````
+
+For example, to run the lookups example:
+
+````bash
+bundle exec ruby lookup_example.rb
+````
+
+If you login to your TaxCloud account you will see the API activity caused by the example programs.
 
 # Bugs, fixes, etc
 * Fork.
