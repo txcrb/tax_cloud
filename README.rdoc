@@ -120,7 +120,7 @@ Tax code constants are defined in <tt>tax_code_constants.rb</tt> and tax code gr
     TAXCLOUD_API_LOGIN_ID=... TAXCLOUD_API_KEY=... TAXCLOUD_USPS_USERNAME=... tax_cloud:tax_code_groups
 
 === Tax States
-TaxCloud manages a list of states in which you can calculate sales tax. The default setup will only have SSUTA (Streamlined Sales and Use Tax Agreement) states enabled. All other states will return $0 for tax values. To enable other states, go to https://taxcloud.net/account/states. You can find more information about SSUTA here[http://www.streamlinedsalestax.org/index.php?page=About-Us].
+TaxCloud manages a list of states in which you can calculate sales tax. The default setup will only have SSUTA (Streamlined Sales and Use Tax Agreement) states enabled. All other states will return $0 for tax values. To enable other states, go to https://taxcloud.com/go/states-management/. You can find more information about SSUTA here[http://www.streamlinedsalestax.org/index.php?page=About-Us].
 
 === Running Tests
 * VCR and WebMock are used to replay requests and avoid hitting the API each time. To refresh the mocks, simply delete the <tt>test/cassettes</tt> directory.
