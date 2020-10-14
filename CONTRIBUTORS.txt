@@ -21,3 +21,6 @@ Contributors
 
 * Bradley Schaefer
   * Github: soulcutter
+
+* Gary Hepting
+  * Github: ghepting
