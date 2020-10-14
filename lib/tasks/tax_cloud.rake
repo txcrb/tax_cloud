@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'tax_cloud'
 
 namespace :tax_cloud do

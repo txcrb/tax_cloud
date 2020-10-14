@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TaxCloud #:nodoc:
   # A <tt>Client</tt> communicates with the TaxCloud service.
   class Client < Savon::Client
@@ -34,6 +36,7 @@ module TaxCloud #:nodoc:
     # Authorization hash to use with all SOAP requests
     def auth_params
       return {} unless TaxCloud.configuration
+
       {
         'apiLoginID' => TaxCloud.configuration.api_login_id,
         'apiKey' => TaxCloud.configuration.api_key
@@ -50,7 +53,7 @@ module TaxCloud #:nodoc:
     def safe
       yield
     rescue Savon::SOAPFault => e
-      raise TaxCloud::Errors::SoapError.new(e)
+      raise TaxCloud::Errors::SoapError, e
     end
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TaxCloud #:nodoc:
   # TaxCloud gem configuration.
   class Configuration
@@ -21,8 +23,8 @@ module TaxCloud #:nodoc:
     #
     # Will raise a TaxCloud::Errors::MissingConfigOption if any of the API login ID or the API key are missing.
     def check!
-      raise TaxCloud::Errors::MissingConfigOption.new('api_login_id') unless api_login_id && !api_login_id.strip.empty?
-      raise TaxCloud::Errors::MissingConfigOption.new('api_key') unless api_key && !api_key.strip.empty?
+      raise TaxCloud::Errors::MissingConfigOption, 'api_login_id' unless api_login_id && !api_login_id.strip.empty?
+      raise TaxCloud::Errors::MissingConfigOption, 'api_key' unless api_key && !api_key.strip.empty?
     end
   end
 end

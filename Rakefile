@@ -1,7 +1,11 @@
+# frozen_string_literal: true
+
 require 'bundler/gem_tasks'
 require 'rake/testtask'
 require 'rdoc/task'
 require 'vcr'
+
+README = 'README.rdoc'
 
 Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
@@ -10,7 +14,6 @@ Rake::TestTask.new(:test) do |test|
 end
 
 RDoc::Task.new do |rd|
-  README = 'README.rdoc'.freeze
   rd.main = README
   rd.rdoc_files.include(README, 'CHANGELOG.rdoc', 'LICENSE.rdoc', 'lib/**/*.rb')
   rd.rdoc_dir = 'doc'

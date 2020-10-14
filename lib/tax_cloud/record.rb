@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TaxCloud #:nodoc:
   # A generic TaxCloud record.
   class Record

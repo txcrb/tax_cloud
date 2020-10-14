@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :tax_cloud do
   desc 'Generate tax codes.'
   task tax_codes: :configure do
@@ -19,9 +21,9 @@ namespace :tax_cloud do
           f.write "    \# #{group.description}\n\n"
           tax_codes.each do |tax_code|
             code = tax_code.description.upcase
-            code.gsub! /[^A-Z0-9]/, '_'
-            code.gsub! /\_+$/, ''
-            code.gsub! /\_+/, '_'
+            code.gsub!(/[^A-Z0-9]/, '_')
+            code.gsub!(/_+$/, '')
+            code.gsub!(/_+/, '_')
             # avoid duplicates
             code_id = codes[code] ? "#{code}_#{codes[code]}" : code
             codes[code] = (codes[code] || 0) + 1
@@ -34,7 +36,7 @@ namespace :tax_cloud do
         f.write "end\n"
       end
       puts "Done, #{filename}."
-    rescue => e
+    rescue StandardError => e
       puts 'ERROR: Unable to generate a new list of tax codes.'
       puts e.message
       raise e

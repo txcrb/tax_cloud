@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'helper'
 
 class TestTaxCode < TestSetup
   def test_all
     VCR.use_cassette('get_tics') do
-      assert TaxCloud::TaxCodes.all.count > 0
+      assert TaxCloud::TaxCodes.all.count.positive?
     end
   end
 

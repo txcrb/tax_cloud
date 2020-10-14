@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 gemspec
 
 group :development do
-  gem 'rubocop', '~>0.51.0'
+  gem 'rubocop', '~> 0.93.1'
 end
 
 group :test do

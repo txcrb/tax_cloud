@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 module TaxCloud #:nodoc:
   module Errors #:nodoc:

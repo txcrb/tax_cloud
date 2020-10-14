@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'tax_cloud/responses/base'
 require 'tax_cloud/responses/generic'
 require 'tax_cloud/responses/ping'

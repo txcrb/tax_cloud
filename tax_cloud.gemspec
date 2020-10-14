@@ -1,4 +1,6 @@
-$LOAD_PATH.push File.expand_path('../lib', __FILE__)
+# frozen_string_literal: true
+
+$LOAD_PATH.push File.expand_path('lib', __dir__)
 require 'tax_cloud/version'
 
 Gem::Specification.new do |s|
@@ -12,6 +14,8 @@ Gem::Specification.new do |s|
   s.licenses    = ['MIT']
 
   s.required_rubygems_version = '>= 1.3.6'
+  s.required_ruby_version     = '>= 2.6.0'
+
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test}/*`.split("\n")
   s.require_paths = ['lib']

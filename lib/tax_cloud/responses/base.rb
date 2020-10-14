@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TaxCloud #:nodoc:
   module Responses #:nodoc:
     # A base TaxCloud SOAP response.
@@ -49,6 +51,7 @@ module TaxCloud #:nodoc:
         chain.split('/').each do |key|
           current_value = current_value[key.to_sym]
           next if current_value
+
           raise TaxCloud::Errors::UnexpectedSoapResponse.new(raw, key, chain)
         end
         current_value

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TaxCloud #:nodoc:
   module Responses #:nodoc:
     # A generic response to a TaxCloud API call.

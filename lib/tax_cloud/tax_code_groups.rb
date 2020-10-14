@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TaxCloud #:nodoc:
   class TaxCode
     # A TaxCloud::TaxCode::Group organizes tax codes in a logical group.
@@ -5,7 +7,7 @@ module TaxCloud #:nodoc:
       class << self
         # All tax code groups.
         def all
-          @tax_code_groups ||= begin
+          @all ||= begin
             response = TaxCloud.client.request :get_tic_groups
             tax_code_groups = TaxCloud::Responses::TaxCodeGroups.parse response
             Hash[tax_code_groups.map { |tax_code_group| [tax_code_group.group_id, tax_code_group] }]
