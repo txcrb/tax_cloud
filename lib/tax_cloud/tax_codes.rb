@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TaxCloud #:nodoc:
   class TaxCodes
     # General purpose tax code.
@@ -6,7 +8,7 @@ module TaxCloud #:nodoc:
     class << self
       # All tax codes
       def all
-        @tax_codes ||= begin
+        @all ||= begin
           response = TaxCloud.client.request :get_ti_cs
           tax_codes = TaxCloud::Responses::TaxCodes.parse response
           Hash[tax_codes.map { |tic| [tic.ticid, tic] }]

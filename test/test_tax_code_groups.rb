@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'helper'
 
 class TestTaxCodeGroups < TestSetup
   def test_all
     VCR.use_cassette('get_tic_groups') do
-      assert TaxCloud::TaxCode::Groups.all.count > 0
+      assert TaxCloud::TaxCode::Groups.all.count.positive?
     end
   end
 
@@ -20,7 +22,7 @@ class TestTaxCodeGroups < TestSetup
       TaxCloud::TaxCode::Groups[TaxCloud::TaxCode::Groups::SCHOOL_RELATED_PRODUCTS]
     end
     VCR.use_cassette('get_tics_by_group') do
-      assert tax_code_group.tax_codes.count > 0
+      assert tax_code_group.tax_codes.count.positive?
       tax_code = tax_code_group[TaxCloud::TaxCodes::SCHOOL_INSTRUCTIONAL_MATERIAL]
       assert_equal TaxCloud::TaxCodes::SCHOOL_INSTRUCTIONAL_MATERIAL, tax_code.ticid
       assert_equal 'School instructional material', tax_code.description

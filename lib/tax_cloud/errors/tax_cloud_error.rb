@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 module TaxCloud #:nodoc:
   module Errors #:nodoc:
@@ -32,7 +33,7 @@ module TaxCloud #:nodoc:
 
       private
 
-      BASE_KEY = 'taxcloud.errors.messages'.freeze #:nodoc:
+      BASE_KEY = 'taxcloud.errors.messages' #:nodoc:
 
       # Given the key of the specific error and the options hash, translate the
       # message.

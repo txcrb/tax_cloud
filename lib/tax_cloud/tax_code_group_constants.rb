@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TaxCloud
   class TaxCode
     # Tax Code Groups.

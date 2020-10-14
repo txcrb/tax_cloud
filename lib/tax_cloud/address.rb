@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TaxCloud #:nodoc:
   # An <tt>Address</tt> defines an address in the United States.
   class Address < Record
@@ -32,6 +34,7 @@ module TaxCloud #:nodoc:
     # Returns a 9-digit Zip Code, when available.
     def zip
       return nil unless zip5 && !zip5.empty?
+
       [zip5, zip4].select { |z| z && !z.empty? }.join('-')
     end
 

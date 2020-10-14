@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TaxCloud #:nodoc:
   # Lookup tax rate, authorize, and capture the information to be logged into TaxCloud.
   #

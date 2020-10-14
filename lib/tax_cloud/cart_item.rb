@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TaxCloud #:nodoc:
   # A <tt>CartItem</tt> defines a single line item for the purchase. Used to calculate the tax amount.
   class CartItem < Record

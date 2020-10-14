@@ -1,13 +1,12 @@
 === 0.4.0 (Next)
 
+* Add <tt>open_timeout</tt> and <tt>read_timeout</tt> options into configuration - @ka8725.
+* Switch to using BigDecimal for <tt>tax_amount</tt> to avoid floating point arithmetic errors - @paulhenrich.
+* Require ruby 2.6.0+
 * Upgrade to rubocop latest
   * Add `TargetRubyVersion: 2.6` to rubocop config (based on https://www.ruby-lang.org/en/downloads/branches/ oldest "normal maintenance" version)
   * Add `required_ruby_version` to gemspec
-
-=== 0.3.1 (Next)
-
-* Add <tt>open_timeout</tt> and <tt>read_timeout</tt> options into configuration - @ka8725.
-* Switch to using BigDecimal for <tt>tax_amount</tt> to avoid floating point arithmetic errors - @paulhenrich.
+  * addresses rubocop violations
 * Your contribution here.
 
 === 0.3.0 (1/9/2014)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TestSetup < Minitest::Test
   def default_test
     # placeholder to avoid error under Ruby 1.8.7

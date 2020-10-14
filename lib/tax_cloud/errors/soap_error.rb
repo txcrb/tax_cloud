@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 module TaxCloud #:nodoc:
   module Errors #:nodoc:
@@ -9,9 +10,9 @@ module TaxCloud #:nodoc:
       # Create the new error.
       # === Parameters
       # [e] SOAP response.
-      def initialize(e)
-        @fault = e
-        e.to_hash.tap do |fault|
+      def initialize(exception)
+        @fault = exception
+        exception.to_hash.tap do |fault|
           fault_code = fault[:fault][:faultcode]
           fault_string = parse_fault(fault[:fault][:faultstring])
           super(compose_message('soap_error',

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TaxCloud #:nodoc:
   module Responses #:nodoc:
     # Response to a TaxCloud getTICs API call.

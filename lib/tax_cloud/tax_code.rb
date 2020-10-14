@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TaxCloud #:nodoc:
   # A TIC (Taxability Information Code), otherwise known as a Tax Code.
   #
