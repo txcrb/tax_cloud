@@ -7,10 +7,10 @@ TaxCloud[http://www.taxcloud.com] is a free service to calculate sales tax and g
 === Getting Started
 Create a TaxCloud[http://www.taxcloud.com] merchant account at http://www.taxcloud.net. Add a website to your account under Locations[https://taxcloud.net/account/locations]. This will generate an API ID and API Key that you will need to use the service.
 
-TaxCloud[http://www.taxcloud.com] also offers an optional address verification API. To use it, you need a USPS (United States Postal Service) Address API UserID. To obtain your USPS UserID:
-1. Download and Install the USPS Shipping Assistant from http://www.usps.com/shippingassistant.
-2. Launch the USPS Shipping Assistant and go through the Shipping Assistant registration process.
-3. Once you have registered for your Shipping Assistant account, you can find your USPS Shipping Assistant UserID in the "About" box, in parentheses to the right of the name of the registered user.
+TaxCloud[http://www.taxcloud.com] also offers an optional address verification API. To use it, you need a USPS (United States Postal Service) Address API Username. To obtain your USPS Username:
+1. Go through the Web Tools API Portal registration process at https://registration.shippingapis.com/
+2. Once you have registered for your account, you will receive an email with your USPS username and password.
+3. Enter your USPS username in your TaxCloud initializer (see below).
 
 === Setup
 Add the gem to your Gemfile.
