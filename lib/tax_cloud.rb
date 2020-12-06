@@ -29,7 +29,7 @@ I18n.load_path << File.join(File.dirname(__FILE__), 'config', 'locales', 'en.yml
 # For information on configuring and using the TaxCloud API, look at the <tt>README</tt> file.
 module TaxCloud
   # WSDL location for TaxCloud API.
-  WSDL_URL = 'https://api.taxcloud.net/1.0/?wsdl'
+  WSDL_URL = 'https://asmx.taxcloud.com/1.0/?wsdl'
 
   # TaxCloud API version.
   API_VERSION = '1.0'
