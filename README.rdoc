@@ -1,6 +1,6 @@
 = TaxCloud
 
-{<img src="https://travis-ci.org/drewtempelmeyer/tax_cloud.png" />}[https://travis-ci.org/drewtempelmeyer/tax_cloud]
+{<img src="https://travis-ci.org/txcrb/tax_cloud.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/txcrb/tax_cloud]
 
 TaxCloud[http://www.taxcloud.com] is a free service to calculate sales tax and generate tax reports. The <tt>tax_cloud</tt> gem allows you to easily integrate with TaxCloud's API.
 
