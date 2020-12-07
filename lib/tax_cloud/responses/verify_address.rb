@@ -4,7 +4,7 @@ module TaxCloud #:nodoc:
   module Responses #:nodoc:
     # Response to a TaxCloud VerifyAddress API call.
     #
-    # See https://api.taxcloud.net/1.0/TaxCloud.asmx?op=VerifyAddress.
+    # See https://asmx.taxcloud.com/1.0/TaxCloud.asmx?op=VerifyAddress.
     class VerifyAddress < Base
       error_number 'verify_address_response/verify_address_result/err_number'
       error_message 'verify_address_response/verify_address_result/err_description'

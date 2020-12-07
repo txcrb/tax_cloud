@@ -4,7 +4,7 @@ module TaxCloud #:nodoc:
   module Responses #:nodoc:
     # Response to a TaxCloud getTICsByGroup API call.
     #
-    # See https://api.taxcloud.net/1.0/TaxCloud.asmx?op=GetTICsByGroup.
+    # See https://asmx.taxcloud.com/1.0/TaxCloud.asmx?op=GetTICsByGroup.
     class TaxCodesByGroup < Base
       response_type 'get_ti_cs_by_group_response/get_ti_cs_by_group_result/response_type'
       error_message 'get_ti_cs_by_group_response/get_ti_cs_by_group_result/messages/response_message/message'
