@@ -52,33 +52,37 @@ Define the destination and origin addresses using `TaxCloud::Address`.
 
 ```ruby
 origin = TaxCloud::Address.new(
-  :address1 => '162 East Avenue',
-  :address2 => 'Third Floor',
-  :city => 'Norwalk',
-  :state => 'CT',
-  :zip5 => '06851')
+  address1: '162 East Avenue',
+  address2: 'Third Floor',
+  city: 'Norwalk',
+  state: 'CT',
+  zip5: '06851'
+)
 destination = TaxCloud::Address.new(
-  :address1 => '3121 West Government Way',
-  :address2 => 'Suite 2B',
-  :city => 'Seattle',
-  :state => 'WA',
-  :zip5 => '98199')
+  address1: '3121 West Government Way',
+  address2: 'Suite 2B',
+  city: 'Seattle',
+  state: 'WA',
+  zip5: '98199'
+)
 ```
 
 Create your Transaction and set up your cart items
 
 ```ruby
 transaction = TaxCloud::Transaction.new(
-  :customer_id => '1',
-  :cart_id => '1',
-  :origin => origin,
-  :destination => destination)
+  customer_id: '1',
+  cart_id: '1',
+  origin: origin,
+  destination: destination
+)
 transaction.cart_items << TaxCloud::CartItem.new(
-  :index => 0,
-  :item_id => 'SKU-100',
-  :tic => TaxCloud::TaxCodes::GENERAL,
-  :price => 10.00,
-  :quantity => 1)
+  index: 0,
+  item_id: 'SKU-100',
+  tic: TaxCloud::TaxCodes::GENERAL,
+  price: 10.00,
+  quantity: 1
+)
 lookup = transaction.lookup # this will return a TaxCloud::Responses::Lookup instance
 lookup.tax_amount # total tax amount
 lookup.cart_items.each do |cart_item|
@@ -101,11 +105,12 @@ any cart items that you don't include.
 ```ruby
 transaction.order_id = 100
 transaction.cart_items << TaxCloud::CartItem.new(
-  :index => 0,
-  :item_id => 'SKU-100',
-  :tic => TaxCloud::TaxCodes::GENERAL,
-  :price => 10.00,
-  :quantity => 1)
+  index: 0,
+  item_id: 'SKU-100',
+  tic: TaxCloud::TaxCodes::GENERAL,
+  price: 10.00,
+  quantity: 1
+)
 transaction.returned # returns "OK" or raises an error
 ```
 
@@ -117,11 +122,11 @@ code that helps determine a more accurate tax rate.
 
 ```ruby
 address = TaxCloud::Address.new({
-  :address1 => '888 6th Ave',
-  :city => 'New York',
-  :state => 'New York',
-  :zip5 => '10001'
-})
+                                  address1: '888 6th Ave',
+                                  city: 'New York',
+                                  state: 'New York',
+                                  zip5: '10001'
+                                })
 
 verified_address = address.verify
 verified_address.zip5 # 10001
