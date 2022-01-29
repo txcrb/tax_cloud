@@ -10,11 +10,11 @@ class TestAddress < TestSetup
 
   def test_initialize
     assert_equal '888 6th Ave', @address.address1
-    assert_equal nil, @address.address2
+    assert_nil   @address.address2
     assert_equal 'New York', @address.city
     assert_equal 'New York', @address.state
     assert_equal '10001', @address.zip5
-    assert_equal nil, @address.zip4
+    assert_nil   @address.zip4
   end
 
   def test_zip
@@ -24,7 +24,7 @@ class TestAddress < TestSetup
     assert_equal '10001-1234', @address.zip
     # only 4-digit zip, which is invalid
     @address.zip5 = nil
-    assert_equal nil, @address.zip
+    assert_nil @address.zip
   end
 
   def test_address_respond_to_verify
@@ -36,7 +36,7 @@ class TestAddress < TestSetup
       verified = @address.verify
       assert_instance_of TaxCloud::Address, verified
       assert_equal '888 6TH AVE', verified.address1
-      assert_equal nil, verified.address2
+      assert_nil   verified.address2
       assert_equal 'NEW YORK', verified.city
       assert_equal 'NY', verified.state
       assert_equal '10001', verified.zip5
