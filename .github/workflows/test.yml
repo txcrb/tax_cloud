@@ -1,0 +1,18 @@
+# Reference https://github.com/actions/starter-workflows/blob/main/ci/ruby.yml
+name: test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ['2.6', '2.7', '3.0', '3.1']
+    name: test (${{ matrix.ruby-version }})
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - run: bundle exec rake test
+
