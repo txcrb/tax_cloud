@@ -5,6 +5,7 @@ AllCops:
   NewCops: enable
   Exclude:
     - vendor/**
+    - vendor/bundle/**/*
     - bin/**
 
 Style/NumericLiteralPrefix:
