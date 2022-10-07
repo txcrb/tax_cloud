@@ -2,6 +2,8 @@
 
 *   Update README, CHANGELOG, and LICENSE from RDoc to Markdown -
     @brchristian.
+*   Migrate from Travis CI to GitHub Actions -
+    @rchekaluk.
 *   Your contribution here.
 
 
