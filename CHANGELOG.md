@@ -4,6 +4,8 @@
     @brchristian.
 *   Migrate from Travis CI to GitHub Actions -
     @rchekaluk.
+*   Update WSDL endpoint URL as recommended by TaxCloud to
+    https://api.taxcloud.com/1.0/?wsdl - @mrmarcondes.
 *   Your contribution here.
 
 

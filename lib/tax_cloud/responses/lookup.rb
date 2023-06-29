@@ -4,7 +4,7 @@ module TaxCloud #:nodoc:
   module Responses #:nodoc:
     # Response to a TaxCloud Lookup API call.
     #
-    # See https://asmx.taxcloud.com/1.0/TaxCloud.asmx?op=Lookup.
+    # See https://api.taxcloud.com/1.0/TaxCloud.asmx?op=Lookup.
     class Lookup < Base
       # Cart ID.
       attr_accessor :cart_id

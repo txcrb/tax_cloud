@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://asmx.taxcloud.com/1.0/?wsdl
+    uri: https://api.taxcloud.com/1.0/?wsdl
     body:
       encoding: US-ASCII
       string: ''
@@ -719,17 +719,17 @@ http_interactions:
         part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
         \ <wsdl:service name=\"TaxCloud\">\r\n    <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">TaxCloud
         Web Service</wsdl:documentation>\r\n    <wsdl:port name=\"TaxCloudSoap\" binding=\"tns:TaxCloudSoap\">\r\n
-        \     <soap:address location=\"https://asmx.taxcloud.com/1.0/TaxCloud.asmx\"
+        \     <soap:address location=\"https://api.taxcloud.com/1.0/TaxCloud.asmx\"
         />\r\n    </wsdl:port>\r\n    <wsdl:port name=\"TaxCloudSoap12\" binding=\"tns:TaxCloudSoap12\">\r\n
-        \     <soap12:address location=\"https://asmx.taxcloud.com/1.0/TaxCloud.asmx\"
+        \     <soap12:address location=\"https://api.taxcloud.com/1.0/TaxCloud.asmx\"
         />\r\n    </wsdl:port>\r\n    <wsdl:port name=\"TaxCloudHttpPost\" binding=\"tns:TaxCloudHttpPost\">\r\n
-        \     <http:address location=\"https://asmx.taxcloud.com/1.0/TaxCloud.asmx\"
+        \     <http:address location=\"https://api.taxcloud.com/1.0/TaxCloud.asmx\"
         />\r\n    </wsdl:port>\r\n  </wsdl:service>\r\n</wsdl:definitions>"
     http_version:
   recorded_at: Thu, 09 Jan 2014 16:03:39 GMT
 - request:
     method: post
-    uri: https://asmx.taxcloud.com/1.0/TaxCloud.asmx
+    uri: https://api.taxcloud.com/1.0/TaxCloud.asmx
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"

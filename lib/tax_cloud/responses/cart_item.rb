@@ -6,7 +6,7 @@ module TaxCloud #:nodoc:
   module Responses #:nodoc:
     # A single item in the response to a TaxCloud Lookup API call.
     #
-    # See https://asmx.taxcloud.com/1.0/TaxCloud.asmx?op=Lookup.
+    # See https://api.taxcloud.com/1.0/TaxCloud.asmx?op=Lookup.
     class CartItem
       # The index of the cart item.
       attr_accessor :cart_item_index
