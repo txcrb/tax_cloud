@@ -1,4 +1,4 @@
-### 0.4.1 (Next)
+### 0.5.0 (7/21/2023)
 
 *   Update README, CHANGELOG, and LICENSE from RDoc to Markdown -
     @brchristian.
@@ -6,7 +6,6 @@
     @rchekaluk.
 *   Update WSDL endpoint URL as recommended by TaxCloud to
     https://api.taxcloud.com/1.0/?wsdl - @mrmarcondes.
-*   Your contribution here.
 
 
 ### 0.4.0 (12/7/2020)
