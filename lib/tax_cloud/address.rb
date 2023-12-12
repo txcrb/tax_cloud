@@ -19,9 +19,7 @@ module TaxCloud #:nodoc:
     # Verify this address.
     #
     # Returns a verified TaxCloud::Address.
-    def verify(options = {})
-      with_rdi = options.fetch(:with_rdi, false)
-
+    def verify(with_rdi: false)
       params = to_hash.downcase_keys
       if TaxCloud.configuration.usps_username
         params = params.merge(
