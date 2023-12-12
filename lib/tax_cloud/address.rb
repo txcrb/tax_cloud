@@ -15,11 +15,13 @@ module TaxCloud #:nodoc:
     attr_accessor :zip5
     # 4-digit Zip Code.
     attr_accessor :zip4
+    # RDI
+    attr_accessor :rdi
 
     # Verify this address.
     #
     # Returns a verified TaxCloud::Address.
-    def verify(with_rdi: false)
+    def verify
       params = to_hash.downcase_keys
       if TaxCloud.configuration.usps_username
         params = params.merge(
@@ -27,7 +29,7 @@ module TaxCloud #:nodoc:
         )
       end
       response = TaxCloud.client.request(:verify_address, params)
-      TaxCloud::Responses::VerifyAddress.parse(response, with_rdi)
+      TaxCloud::Responses::VerifyAddress.parse(response)
     end
 
     # Complete zip code.
