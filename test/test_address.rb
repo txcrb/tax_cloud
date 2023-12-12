@@ -35,9 +35,23 @@ class TestAddress < TestSetup
     VCR.use_cassette('verify good address') do
       verified = @address.verify
       assert_instance_of TaxCloud::Address, verified
-      assert_equal '888 6TH AVE', verified.address1
+      assert_equal '888 6th Ave', verified.address1
       assert_nil   verified.address2
-      assert_equal 'NEW YORK', verified.city
+      assert_equal 'New York', verified.city
+      assert_equal 'NY', verified.state
+      assert_equal '10001', verified.zip5
+      assert_equal '3502', verified.zip4
+    end
+  end
+
+  def test_verify_good_address_with_rdi_returned
+    VCR.use_cassette('verify good address') do
+      verified, rdi = @address.verify(with_rdi: true)
+      assert_instance_of TaxCloud::Address, verified
+      assert_equal 'Commercial', rdi
+      assert_equal '888 6th Ave', verified.address1
+      assert_nil   verified.address2
+      assert_equal 'New York', verified.city
       assert_equal 'NY', verified.state
       assert_equal '10001', verified.zip5
       assert_equal '3502', verified.zip4
@@ -51,6 +65,6 @@ class TestAddress < TestSetup
         bad_address.verify
       end
     end
-    assert_equal e.problem, 'Invalid Zip Code.'
+    assert_equal e.problem, 'Address has no delivery point value'
   end
 end

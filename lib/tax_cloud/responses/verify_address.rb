@@ -15,13 +15,14 @@ module TaxCloud #:nodoc:
         # === Parameters
         # [savon_response] SOAP response.
         #
-        # Returns a verified TaxCloud::Address.
-        def parse(savon_response)
+        # Returns a verified TaxCloud::Address and optionally the RDI.
+        def parse(savon_response, with_rdi = false)
           response = new(savon_response)
           result = response.match('verify_address_response/verify_address_result')
           result.delete(:err_number)
-          result.delete(:rdi)
-          TaxCloud::Address.new result
+          rdi = result.delete(:rdi)
+
+          with_rdi ? [TaxCloud::Address.new(result), rdi] : TaxCloud::Address.new(result)
         end
       end
     end

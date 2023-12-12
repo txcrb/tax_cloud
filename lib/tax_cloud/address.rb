@@ -5,7 +5,7 @@ module TaxCloud #:nodoc:
   class Address < Record
     # First line of address.
     attr_accessor :address1
-    # Second line of adress.
+    # Second line of address.
     attr_accessor :address2
     # City.
     attr_accessor :city
@@ -19,7 +19,9 @@ module TaxCloud #:nodoc:
     # Verify this address.
     #
     # Returns a verified TaxCloud::Address.
-    def verify
+    def verify(options = {})
+      with_rdi = options.fetch(:with_rdi, false)
+
       params = to_hash.downcase_keys
       if TaxCloud.configuration.usps_username
         params = params.merge(
@@ -27,7 +29,7 @@ module TaxCloud #:nodoc:
         )
       end
       response = TaxCloud.client.request(:verify_address, params)
-      TaxCloud::Responses::VerifyAddress.parse(response)
+      TaxCloud::Responses::VerifyAddress.parse(response, with_rdi)
     end
 
     # Complete zip code.
