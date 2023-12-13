@@ -4,77 +4,42 @@ http_interactions:
     method: get
     uri: https://api.taxcloud.com/1.0/?wsdl
     body:
-      encoding: UTF-8
+      encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - HTTPClient/1.0 (2.8.3, ruby 3.2.2 (2023-03-30))
       Accept:
-      - "*/*"
-      Date:
-      - Tue, 12 Dec 2023 14:19:26 GMT
+      - ! '*/*'
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
-      Content-Length:
-      - '121706'
-      Content-Type:
-      - text/xml; charset=utf-8
-      Date:
-      - Tue, 12 Dec 2023 14:19:26 GMT
       Cache-Control:
       - private, max-age=0
-      Strict-Transport-Sequrity:
-      - max-age=7776000
+      Content-Type:
+      - text/xml; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.0
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - TaxCloud
+      Date:
+      - Thu, 09 Jan 2014 16:03:25 GMT
+      Content-Length:
+      - '53946'
     body:
-      encoding: UTF-8
-      string: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<wsdl:definitions xmlns:tm=\"http://microsoft.com/wsdl/mime/textMatching/\"
-        xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\" xmlns:mime=\"http://schemas.xmlsoap.org/wsdl/mime/\"
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<wsdl:definitions xmlns:s=\"http://www.w3.org/2001/XMLSchema\"
+        xmlns:soap12=\"http://schemas.xmlsoap.org/wsdl/soap12/\" xmlns:mime=\"http://schemas.xmlsoap.org/wsdl/mime/\"
         xmlns:tns=\"http://taxcloud.net\" xmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\"
-        xmlns:s=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://schemas.xmlsoap.org/wsdl/soap12/\"
-        xmlns:http=\"http://schemas.xmlsoap.org/wsdl/http/\" targetNamespace=\"http://taxcloud.net\"
+        xmlns:tm=\"http://microsoft.com/wsdl/mime/textMatching/\" xmlns:http=\"http://schemas.xmlsoap.org/wsdl/http/\"
+        xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\" targetNamespace=\"http://taxcloud.net\"
         xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">\r\n  <wsdl:documentation
         xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">TaxCloud Web Service</wsdl:documentation>\r\n
         \ <wsdl:types>\r\n    <s:schema elementFormDefault=\"qualified\" targetNamespace=\"http://taxcloud.net\">\r\n
-        \     <s:element name=\"Health\">\r\n        <s:complexType />\r\n      </s:element>\r\n
-        \     <s:element name=\"HealthResponse\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
-        \           <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"HealthResult\"
-        type=\"tns:HttpStatusCode\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
-        \     </s:element>\r\n      <s:simpleType name=\"HttpStatusCode\">\r\n        <s:restriction
-        base=\"s:string\">\r\n          <s:enumeration value=\"Continue\" />\r\n          <s:enumeration
-        value=\"SwitchingProtocols\" />\r\n          <s:enumeration value=\"OK\" />\r\n
-        \         <s:enumeration value=\"Created\" />\r\n          <s:enumeration
-        value=\"Accepted\" />\r\n          <s:enumeration value=\"NonAuthoritativeInformation\"
-        />\r\n          <s:enumeration value=\"NoContent\" />\r\n          <s:enumeration
-        value=\"ResetContent\" />\r\n          <s:enumeration value=\"PartialContent\"
-        />\r\n          <s:enumeration value=\"MultipleChoices\" />\r\n          <s:enumeration
-        value=\"Ambiguous\" />\r\n          <s:enumeration value=\"MovedPermanently\"
-        />\r\n          <s:enumeration value=\"Moved\" />\r\n          <s:enumeration
-        value=\"Found\" />\r\n          <s:enumeration value=\"Redirect\" />\r\n          <s:enumeration
-        value=\"SeeOther\" />\r\n          <s:enumeration value=\"RedirectMethod\"
-        />\r\n          <s:enumeration value=\"NotModified\" />\r\n          <s:enumeration
-        value=\"UseProxy\" />\r\n          <s:enumeration value=\"Unused\" />\r\n
-        \         <s:enumeration value=\"TemporaryRedirect\" />\r\n          <s:enumeration
-        value=\"RedirectKeepVerb\" />\r\n          <s:enumeration value=\"BadRequest\"
-        />\r\n          <s:enumeration value=\"Unauthorized\" />\r\n          <s:enumeration
-        value=\"PaymentRequired\" />\r\n          <s:enumeration value=\"Forbidden\"
-        />\r\n          <s:enumeration value=\"NotFound\" />\r\n          <s:enumeration
-        value=\"MethodNotAllowed\" />\r\n          <s:enumeration value=\"NotAcceptable\"
-        />\r\n          <s:enumeration value=\"ProxyAuthenticationRequired\" />\r\n
-        \         <s:enumeration value=\"RequestTimeout\" />\r\n          <s:enumeration
-        value=\"Conflict\" />\r\n          <s:enumeration value=\"Gone\" />\r\n          <s:enumeration
-        value=\"LengthRequired\" />\r\n          <s:enumeration value=\"PreconditionFailed\"
-        />\r\n          <s:enumeration value=\"RequestEntityTooLarge\" />\r\n          <s:enumeration
-        value=\"RequestUriTooLong\" />\r\n          <s:enumeration value=\"UnsupportedMediaType\"
-        />\r\n          <s:enumeration value=\"RequestedRangeNotSatisfiable\" />\r\n
-        \         <s:enumeration value=\"ExpectationFailed\" />\r\n          <s:enumeration
-        value=\"UpgradeRequired\" />\r\n          <s:enumeration value=\"InternalServerError\"
-        />\r\n          <s:enumeration value=\"NotImplemented\" />\r\n          <s:enumeration
-        value=\"BadGateway\" />\r\n          <s:enumeration value=\"ServiceUnavailable\"
-        />\r\n          <s:enumeration value=\"GatewayTimeout\" />\r\n          <s:enumeration
-        value=\"HttpVersionNotSupported\" />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n
         \     <s:element name=\"VerifyAddress\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
         \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"uspsUserID\"
         type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
@@ -83,28 +48,25 @@ http_interactions:
         minOccurs=\"0\" maxOccurs=\"1\" name=\"city\" type=\"s:string\" />\r\n            <s:element
         minOccurs=\"0\" maxOccurs=\"1\" name=\"state\" type=\"s:string\" />\r\n            <s:element
         minOccurs=\"0\" maxOccurs=\"1\" name=\"zip5\" type=\"s:string\" />\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"zip4\" type=\"s:string\" />\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"apiLoginID\" type=\"s:string\" />\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"apiKey\" type=\"s:string\"
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"zip4\" type=\"s:string\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"VerifyAddressResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"VerifyAddressResult\" type=\"tns:VerifiedAddress\"
         />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:element name=\"VerifyAddressResponse\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"VerifyAddressResult\" type=\"tns:VerifiedAddress\" />\r\n          </s:sequence>\r\n
-        \       </s:complexType>\r\n      </s:element>\r\n      <s:complexType name=\"VerifiedAddress\">\r\n
-        \       <s:complexContent mixed=\"false\">\r\n          <s:extension base=\"tns:Address\">\r\n
-        \           <s:sequence>\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"rdi\" type=\"s:string\" />\r\n              <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"ErrNumber\" type=\"s:string\" />\r\n              <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"ErrDescription\" type=\"s:string\"
-        />\r\n            </s:sequence>\r\n          </s:extension>\r\n        </s:complexContent>\r\n
-        \     </s:complexType>\r\n      <s:complexType name=\"Address\">\r\n        <s:sequence>\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Address1\" type=\"s:string\"
-        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Address2\"
+        \     <s:complexType name=\"VerifiedAddress\">\r\n        <s:complexContent
+        mixed=\"false\">\r\n          <s:extension base=\"tns:Address\">\r\n            <s:sequence>\r\n
+        \             <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"ErrNumber\"
+        type=\"s:string\" />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"ErrDescription\" type=\"s:string\" />\r\n            </s:sequence>\r\n
+        \         </s:extension>\r\n        </s:complexContent>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"Address\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Address1\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Address2\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"City\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"State\"
         type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"City\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"State\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"Zip5\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"Zip4\" type=\"s:string\" />\r\n        </s:sequence>\r\n
+        name=\"Zip5\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Zip4\" type=\"s:string\" />\r\n        </s:sequence>\r\n
         \     </s:complexType>\r\n      <s:element name=\"LookupForDate\">\r\n        <s:complexType>\r\n
         \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
         name=\"apiLoginID\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
@@ -115,11 +77,11 @@ http_interactions:
         type=\"tns:ArrayOfCartItem\" />\r\n            <s:element minOccurs=\"0\"
         maxOccurs=\"1\" name=\"origin\" type=\"tns:Address\" />\r\n            <s:element
         minOccurs=\"0\" maxOccurs=\"1\" name=\"destination\" type=\"tns:Address\"
-        />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"useDate\"
-        type=\"s:dateTime\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"deliveredBySeller\"
+        type=\"s:boolean\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
         name=\"exemptCert\" type=\"tns:ExemptionCertificate\" />\r\n            <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"deliveredBySeller\" type=\"s:boolean\"
-        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"useDate\" type=\"s:dateTime\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
         \     <s:complexType name=\"ArrayOfCartItem\">\r\n        <s:sequence>\r\n
         \         <s:element minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"CartItem\"
         nillable=\"true\" type=\"tns:CartItem\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
@@ -129,8 +91,7 @@ http_interactions:
         minOccurs=\"1\" maxOccurs=\"1\" name=\"TIC\" nillable=\"true\" type=\"s:int\"
         />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"Price\"
         type=\"s:double\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
-        name=\"Qty\" type=\"s:float\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"Tax\" type=\"s:string\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        name=\"Qty\" type=\"s:float\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
         \     <s:complexType name=\"ExemptionCertificate\">\r\n        <s:sequence>\r\n
         \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"CertificateID\"
         type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
@@ -148,42 +109,98 @@ http_interactions:
         type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
         name=\"PurchaserAddress2\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
         maxOccurs=\"1\" name=\"PurchaserCity\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"PurchaserState\" type=\"s:string\"
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"PurchaserState\" type=\"tns:State\"
         />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"PurchaserZip\"
         type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"PurchaserTaxID\" type=\"tns:TaxID\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"PurchaserBusinessType\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"PurchaserBusinessTypeOtherValue\" type=\"s:string\"
-        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"PurchaserExemptionReason\"
-        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"PurchaserExemptionReasonValue\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"CreatedDate\" type=\"s:dateTime\" />\r\n
-        \       </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType name=\"ArrayOfExemptState\">\r\n
-        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"unbounded\"
-        name=\"ExemptState\" nillable=\"true\" type=\"tns:ExemptState\" />\r\n        </s:sequence>\r\n
+        name=\"PurchaserTaxID\" type=\"tns:TaxID\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"PurchaserBusinessType\" type=\"tns:BusinessType\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"PurchaserBusinessTypeOtherValue\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"PurchaserExemptionReason\" type=\"tns:ExemptionReason\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"PurchaserExemptionReasonValue\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"CreatedDate\"
+        type=\"s:dateTime\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"ArrayOfExemptState\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"ExemptState\"
+        nillable=\"true\" type=\"tns:ExemptState\" />\r\n        </s:sequence>\r\n
         \     </s:complexType>\r\n      <s:complexType name=\"ExemptState\">\r\n        <s:sequence>\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"StateAbbr\" type=\"s:string\"
-        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"StateAbbreviation\"
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"StateAbbr\" type=\"tns:State\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"ReasonForExemption\"
         type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"ReasonForExemption\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"IdentificationNumber\" type=\"s:string\" />\r\n        </s:sequence>\r\n
-        \     </s:complexType>\r\n      <s:complexType name=\"TaxID\">\r\n        <s:sequence>\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"TaxType\" type=\"s:string\"
+        name=\"IdentificationNumber\" type=\"s:string\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:simpleType name=\"State\">\r\n        <s:restriction
+        base=\"s:string\">\r\n          <s:enumeration value=\"AL\" />\r\n          <s:enumeration
+        value=\"AK\" />\r\n          <s:enumeration value=\"AZ\" />\r\n          <s:enumeration
+        value=\"AR\" />\r\n          <s:enumeration value=\"CA\" />\r\n          <s:enumeration
+        value=\"CO\" />\r\n          <s:enumeration value=\"CT\" />\r\n          <s:enumeration
+        value=\"DE\" />\r\n          <s:enumeration value=\"DC\" />\r\n          <s:enumeration
+        value=\"FL\" />\r\n          <s:enumeration value=\"GA\" />\r\n          <s:enumeration
+        value=\"HI\" />\r\n          <s:enumeration value=\"ID\" />\r\n          <s:enumeration
+        value=\"IL\" />\r\n          <s:enumeration value=\"IN\" />\r\n          <s:enumeration
+        value=\"IA\" />\r\n          <s:enumeration value=\"KS\" />\r\n          <s:enumeration
+        value=\"KY\" />\r\n          <s:enumeration value=\"LA\" />\r\n          <s:enumeration
+        value=\"ME\" />\r\n          <s:enumeration value=\"MD\" />\r\n          <s:enumeration
+        value=\"MA\" />\r\n          <s:enumeration value=\"MI\" />\r\n          <s:enumeration
+        value=\"MN\" />\r\n          <s:enumeration value=\"MS\" />\r\n          <s:enumeration
+        value=\"MO\" />\r\n          <s:enumeration value=\"MT\" />\r\n          <s:enumeration
+        value=\"NE\" />\r\n          <s:enumeration value=\"NV\" />\r\n          <s:enumeration
+        value=\"NH\" />\r\n          <s:enumeration value=\"NJ\" />\r\n          <s:enumeration
+        value=\"NM\" />\r\n          <s:enumeration value=\"NY\" />\r\n          <s:enumeration
+        value=\"NC\" />\r\n          <s:enumeration value=\"ND\" />\r\n          <s:enumeration
+        value=\"OH\" />\r\n          <s:enumeration value=\"OK\" />\r\n          <s:enumeration
+        value=\"OR\" />\r\n          <s:enumeration value=\"PA\" />\r\n          <s:enumeration
+        value=\"RI\" />\r\n          <s:enumeration value=\"SC\" />\r\n          <s:enumeration
+        value=\"SD\" />\r\n          <s:enumeration value=\"TN\" />\r\n          <s:enumeration
+        value=\"TX\" />\r\n          <s:enumeration value=\"UT\" />\r\n          <s:enumeration
+        value=\"VT\" />\r\n          <s:enumeration value=\"VA\" />\r\n          <s:enumeration
+        value=\"WA\" />\r\n          <s:enumeration value=\"WV\" />\r\n          <s:enumeration
+        value=\"WI\" />\r\n          <s:enumeration value=\"WY\" />\r\n        </s:restriction>\r\n
+        \     </s:simpleType>\r\n      <s:complexType name=\"TaxID\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"TaxType\" type=\"tns:TaxIDType\"
         />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"IDNumber\"
         type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
         name=\"StateOfIssue\" type=\"s:string\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
-        \     <s:element name=\"LookupForDateResponse\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"LookupForDateResult\" type=\"tns:LookupRsp\" />\r\n          </s:sequence>\r\n
-        \       </s:complexType>\r\n      </s:element>\r\n      <s:complexType name=\"LookupRsp\">\r\n
-        \       <s:complexContent mixed=\"false\">\r\n          <s:extension base=\"tns:ResponseBase\">\r\n
-        \           <s:sequence>\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"CartID\" type=\"s:string\" />\r\n              <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"CartItemsResponse\" type=\"tns:ArrayOfCartItemResponse\"
-        />\r\n            </s:sequence>\r\n          </s:extension>\r\n        </s:complexContent>\r\n
-        \     </s:complexType>\r\n      <s:complexType name=\"ResponseBase\">\r\n
-        \       <s:sequence>\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
-        name=\"ResponseType\" type=\"tns:MessageType\" />\r\n          <s:element
+        \     <s:simpleType name=\"TaxIDType\">\r\n        <s:restriction base=\"s:string\">\r\n
+        \         <s:enumeration value=\"SSN\" />\r\n          <s:enumeration value=\"FEIN\"
+        />\r\n          <s:enumeration value=\"StateIssued\" />\r\n          <s:enumeration
+        value=\"ForeignDiplomat\" />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n
+        \     <s:simpleType name=\"BusinessType\">\r\n        <s:restriction base=\"s:string\">\r\n
+        \         <s:enumeration value=\"AccommodationAndFoodServices\" />\r\n          <s:enumeration
+        value=\"Agricultural_Forestry_Fishing_Hunting\" />\r\n          <s:enumeration
+        value=\"Construction\" />\r\n          <s:enumeration value=\"FinanceAndInsurance\"
+        />\r\n          <s:enumeration value=\"Information_PublishingAndCommunications\"
+        />\r\n          <s:enumeration value=\"Manufacturing\" />\r\n          <s:enumeration
+        value=\"Mining\" />\r\n          <s:enumeration value=\"RealEstate\" />\r\n
+        \         <s:enumeration value=\"RentalAndLeasing\" />\r\n          <s:enumeration
+        value=\"RetailTrade\" />\r\n          <s:enumeration value=\"TransportationAndWarehousing\"
+        />\r\n          <s:enumeration value=\"Utilities\" />\r\n          <s:enumeration
+        value=\"WholesaleTrade\" />\r\n          <s:enumeration value=\"BusinessServices\"
+        />\r\n          <s:enumeration value=\"ProfessionalServices\" />\r\n          <s:enumeration
+        value=\"EducationAndHealthCareServices\" />\r\n          <s:enumeration value=\"NonprofitOrganization\"
+        />\r\n          <s:enumeration value=\"Government\" />\r\n          <s:enumeration
+        value=\"NotABusiness\" />\r\n          <s:enumeration value=\"Other\" />\r\n
+        \       </s:restriction>\r\n      </s:simpleType>\r\n      <s:simpleType name=\"ExemptionReason\">\r\n
+        \       <s:restriction base=\"s:string\">\r\n          <s:enumeration value=\"FederalGovernmentDepartment\"
+        />\r\n          <s:enumeration value=\"StateOrLocalGovernmentName\" />\r\n
+        \         <s:enumeration value=\"TribalGovernmentName\" />\r\n          <s:enumeration
+        value=\"ForeignDiplomat\" />\r\n          <s:enumeration value=\"CharitableOrganization\"
+        />\r\n          <s:enumeration value=\"ReligiousOrEducationalOrganization\"
+        />\r\n          <s:enumeration value=\"Resale\" />\r\n          <s:enumeration
+        value=\"AgriculturalProduction\" />\r\n          <s:enumeration value=\"IndustrialProductionOrManufacturing\"
+        />\r\n          <s:enumeration value=\"DirectPayPermit\" />\r\n          <s:enumeration
+        value=\"DirectMail\" />\r\n          <s:enumeration value=\"Other\" />\r\n
+        \       </s:restriction>\r\n      </s:simpleType>\r\n      <s:element name=\"LookupForDateResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"LookupForDateResult\" type=\"tns:LookupRsp\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"LookupRsp\">\r\n        <s:complexContent mixed=\"false\">\r\n
+        \         <s:extension base=\"tns:ResponseBase\">\r\n            <s:sequence>\r\n
+        \             <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"CartID\" type=\"s:string\"
+        />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"CartItemsResponse\"
+        type=\"tns:ArrayOfCartItemResponse\" />\r\n            </s:sequence>\r\n          </s:extension>\r\n
+        \       </s:complexContent>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"ResponseBase\">\r\n        <s:sequence>\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"ResponseType\" type=\"tns:MessageType\" />\r\n          <s:element
         minOccurs=\"0\" maxOccurs=\"1\" name=\"Messages\" type=\"tns:ArrayOfResponseMessage\"
         />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:simpleType
         name=\"MessageType\">\r\n        <s:restriction base=\"s:string\">\r\n          <s:enumeration
@@ -214,9 +231,9 @@ http_interactions:
         type=\"tns:ArrayOfCartItem\" />\r\n            <s:element minOccurs=\"0\"
         maxOccurs=\"1\" name=\"origin\" type=\"tns:Address\" />\r\n            <s:element
         minOccurs=\"0\" maxOccurs=\"1\" name=\"destination\" type=\"tns:Address\"
-        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"exemptCert\"
-        type=\"tns:ExemptionCertificate\" />\r\n            <s:element minOccurs=\"1\"
-        maxOccurs=\"1\" name=\"deliveredBySeller\" type=\"s:boolean\" />\r\n          </s:sequence>\r\n
+        />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"deliveredBySeller\"
+        type=\"s:boolean\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"exemptCert\" type=\"tns:ExemptionCertificate\" />\r\n          </s:sequence>\r\n
         \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"LookupResponse\">\r\n
         \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
         minOccurs=\"0\" maxOccurs=\"1\" name=\"LookupResult\" type=\"tns:LookupRsp\"
@@ -244,11 +261,9 @@ http_interactions:
         minOccurs=\"0\" maxOccurs=\"1\" name=\"cartID\" type=\"s:string\" />\r\n            <s:element
         minOccurs=\"0\" maxOccurs=\"1\" name=\"orderID\" type=\"s:string\" />\r\n
         \           <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"dateAuthorized\"
-        nillable=\"true\" type=\"s:dateTime\" />\r\n            <s:element minOccurs=\"1\"
-        maxOccurs=\"1\" name=\"dateCaptured\" nillable=\"true\" type=\"s:dateTime\"
-        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"comment\"
-        type=\"s:string\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
-        \     </s:element>\r\n      <s:element name=\"AuthorizedWithCaptureResponse\">\r\n
+        type=\"s:dateTime\" />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"dateCaptured\" type=\"s:dateTime\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"AuthorizedWithCaptureResponse\">\r\n
         \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
         minOccurs=\"0\" maxOccurs=\"1\" name=\"AuthorizedWithCaptureResult\" type=\"tns:AuthorizedRsp\"
         />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
@@ -256,28 +271,12 @@ http_interactions:
         \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"apiLoginID\"
         type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
         name=\"apiKey\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"orderID\" type=\"s:string\" />\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"comment\" type=\"s:string\" />\r\n
-        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:element name=\"CapturedResponse\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"CapturedResult\" type=\"tns:CapturedRsp\" />\r\n          </s:sequence>\r\n
-        \       </s:complexType>\r\n      </s:element>\r\n      <s:complexType name=\"CapturedRsp\">\r\n
-        \       <s:complexContent mixed=\"false\">\r\n          <s:extension base=\"tns:ResponseBase\"
-        />\r\n        </s:complexContent>\r\n      </s:complexType>\r\n      <s:element
-        name=\"ReturnedCreditMemo\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"apiLoginID\"
-        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"apiKey\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"orderID\" type=\"s:string\" />\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"cartItems\" type=\"tns:ArrayOfCartItem\"
-        />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"returnedDate\"
-        type=\"s:dateTime\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
-        \     </s:element>\r\n      <s:element name=\"ReturnedCreditMemoResponse\">\r\n
+        maxOccurs=\"1\" name=\"orderID\" type=\"s:string\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"CapturedResponse\">\r\n
         \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"ReturnedCreditMemoResult\" type=\"tns:ReturnedRsp\"
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"CapturedResult\" type=\"tns:CapturedRsp\"
         />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:complexType name=\"ReturnedRsp\">\r\n        <s:complexContent mixed=\"false\">\r\n
+        \     <s:complexType name=\"CapturedRsp\">\r\n        <s:complexContent mixed=\"false\">\r\n
         \         <s:extension base=\"tns:ResponseBase\" />\r\n        </s:complexContent>\r\n
         \     </s:complexType>\r\n      <s:element name=\"Returned\">\r\n        <s:complexType>\r\n
         \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
@@ -286,185 +285,23 @@ http_interactions:
         minOccurs=\"0\" maxOccurs=\"1\" name=\"orderID\" type=\"s:string\" />\r\n
         \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"cartItems\"
         type=\"tns:ArrayOfCartItem\" />\r\n            <s:element minOccurs=\"1\"
-        maxOccurs=\"1\" name=\"returnedDate\" type=\"s:dateTime\" />\r\n            <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"returnCoDeliveryFeeWhenNoCartItems\"
-        type=\"s:boolean\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
-        \     </s:element>\r\n      <s:element name=\"ReturnedResponse\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"ReturnedResult\" type=\"tns:ReturnedRsp\" />\r\n          </s:sequence>\r\n
-        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"ReturnedPro\">\r\n
+        maxOccurs=\"1\" name=\"returnedDate\" type=\"s:dateTime\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"ReturnedResponse\">\r\n
         \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"apiLoginID\" type=\"s:string\" />\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"apiKey\" type=\"s:string\"
-        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"orderID\"
-        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"cartItems\" type=\"tns:ArrayOfCartItem\" />\r\n            <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"returnedDate\" type=\"s:dateTime\"
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"ReturnedResult\" type=\"tns:ReturnedRsp\"
         />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:element name=\"ReturnedProResponse\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"ReturnedProResult\" type=\"tns:ReturnedRsp\" />\r\n          </s:sequence>\r\n
-        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"OrderDetails\">\r\n
-        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"apiLoginID\" type=\"s:string\" />\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"apiKey\" type=\"s:string\"
-        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"orderID\"
-        type=\"s:string\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
-        \     </s:element>\r\n      <s:element name=\"OrderDetailsResponse\">\r\n
-        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"OrderDetailsResult\" type=\"tns:OrderDetailsRsp\"
-        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:complexType name=\"OrderDetailsRsp\">\r\n        <s:complexContent
-        mixed=\"false\">\r\n          <s:extension base=\"tns:ResponseBase\">\r\n
-        \           <s:sequence>\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"CartItems\" type=\"tns:ArrayOfCartItemDetailsResponse\" />\r\n              <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"OrderID\" type=\"s:string\" />\r\n
-        \             <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"LookupDate\"
-        type=\"s:string\" />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"AuthorizedDate\" type=\"s:string\" />\r\n              <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"CapturedDate\" type=\"s:string\" />\r\n              <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"ReturnedDate\" type=\"s:string\" />\r\n
-        \             <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"ExemptionCertificateID\"
-        type=\"s:string\" />\r\n            </s:sequence>\r\n          </s:extension>\r\n
-        \       </s:complexContent>\r\n      </s:complexType>\r\n      <s:complexType
-        name=\"ArrayOfCartItemDetailsResponse\">\r\n        <s:sequence>\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"CartItemDetailsResponse\" nillable=\"true\"
-        type=\"tns:CartItemDetailsResponse\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
-        \     <s:complexType name=\"CartItemDetailsResponse\">\r\n        <s:sequence>\r\n
-        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"CartItemIndex\"
-        type=\"s:int\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"ItemID\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"TIC\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"Price\" type=\"s:double\" />\r\n          <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"ItemQty\" type=\"s:float\" />\r\n          <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"SubTotal\" type=\"s:double\" />\r\n
-        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"TaxAmount\" type=\"s:double\"
-        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"CapturedDate\"
-        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"ReturnedDate\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"TaxType\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"StateName\" type=\"s:string\" />\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"StateCode\" type=\"s:string\"
-        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"StateRate\"
-        nillable=\"true\" type=\"s:decimal\" />\r\n          <s:element minOccurs=\"1\"
-        maxOccurs=\"1\" name=\"StateTax\" nillable=\"true\" type=\"s:double\" />\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"CountyName\" type=\"s:string\"
-        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"CountyCode\"
-        type=\"s:string\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
-        name=\"CountyRate\" nillable=\"true\" type=\"s:decimal\" />\r\n          <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"CountyTax\" nillable=\"true\" type=\"s:double\"
-        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"CityName\"
-        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"CityCode\" type=\"s:string\" />\r\n          <s:element minOccurs=\"1\"
-        maxOccurs=\"1\" name=\"CityRate\" nillable=\"true\" type=\"s:decimal\" />\r\n
-        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"CityTax\" nillable=\"true\"
-        type=\"s:double\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"OtherName\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"OtherCode\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"OtherRate\" nillable=\"true\" type=\"s:decimal\"
-        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"OtherTax\"
-        nillable=\"true\" type=\"s:double\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
-        \     <s:element name=\"AddTransactions\">\r\n        <s:complexType>\r\n
+        \     <s:complexType name=\"ReturnedRsp\">\r\n        <s:complexContent mixed=\"false\">\r\n
+        \         <s:extension base=\"tns:ResponseBase\" />\r\n        </s:complexContent>\r\n
+        \     </s:complexType>\r\n      <s:element name=\"GetTICGroups\">\r\n        <s:complexType>\r\n
         \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
         name=\"apiLoginID\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"apiKey\" type=\"s:string\" />\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"transactions\" type=\"tns:ArrayOfTransaction\"
-        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:complexType name=\"ArrayOfTransaction\">\r\n        <s:sequence>\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"Transaction\"
-        nillable=\"true\" type=\"tns:Transaction\" />\r\n        </s:sequence>\r\n
-        \     </s:complexType>\r\n      <s:complexType name=\"Transaction\">\r\n        <s:sequence>\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"customerID\" type=\"s:string\"
-        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"cartID\"
-        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"orderID\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"cartItems\" type=\"tns:ArrayOfTransactionCartItem\"
-        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"origin\"
-        type=\"tns:Address\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"destination\" type=\"tns:Address\" />\r\n          <s:element minOccurs=\"1\"
-        maxOccurs=\"1\" name=\"deliveredBySeller\" type=\"s:boolean\" />\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"exemptCert\" type=\"tns:ExemptionCertificate\"
-        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"dateTransaction\"
-        type=\"s:dateTime\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
-        name=\"dateAuthorized\" type=\"s:dateTime\" />\r\n          <s:element minOccurs=\"1\"
-        maxOccurs=\"1\" name=\"dateCaptured\" type=\"s:dateTime\" />\r\n        </s:sequence>\r\n
-        \     </s:complexType>\r\n      <s:complexType name=\"ArrayOfTransactionCartItem\">\r\n
-        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"unbounded\"
-        name=\"TransactionCartItem\" nillable=\"true\" type=\"tns:TransactionCartItem\"
-        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
-        name=\"TransactionCartItem\">\r\n        <s:complexContent mixed=\"false\">\r\n
-        \         <s:extension base=\"tns:CartItem\">\r\n            <s:sequence>\r\n
-        \             <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"Rate\" type=\"s:double\"
-        />\r\n            </s:sequence>\r\n          </s:extension>\r\n        </s:complexContent>\r\n
-        \     </s:complexType>\r\n      <s:element name=\"AddTransactionsResponse\">\r\n
+        maxOccurs=\"1\" name=\"apiKey\" type=\"s:string\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"GetTICGroupsResponse\">\r\n
         \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"AddTransactionsResult\" type=\"tns:AddTransactionsRsp\"
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"GetTICGroupsResult\" type=\"tns:GetTICGroupsRsp\"
         />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:complexType name=\"AddTransactionsRsp\">\r\n        <s:complexContent
-        mixed=\"false\">\r\n          <s:extension base=\"tns:ResponseBase\" />\r\n
-        \       </s:complexContent>\r\n      </s:complexType>\r\n      <s:element
-        name=\"CreatePlatformAccount\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"apiLoginID\"
-        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"apiKey\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"CompanyName\" type=\"s:string\" />\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"Email\" type=\"s:string\" />\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"FirstName\" type=\"s:string\" />\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"LastName\" type=\"s:string\"
-        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:element name=\"CreatePlatformAccountResponse\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"CreatePlatformAccountResult\" type=\"tns:CreatePlatformAccountResp\"
-        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:complexType name=\"CreatePlatformAccountResp\">\r\n        <s:complexContent
+        \     <s:complexType name=\"GetTICGroupsRsp\">\r\n        <s:complexContent
         mixed=\"false\">\r\n          <s:extension base=\"tns:ResponseBase\">\r\n
-        \           <s:sequence>\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"NewAccountApiID\" type=\"s:string\" />\r\n              <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"NewAccountApiKey\" type=\"s:string\"
-        />\r\n              <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"NewAccountTaxCloudAccountID\"
-        type=\"s:int\" />\r\n            </s:sequence>\r\n          </s:extension>\r\n
-        \       </s:complexContent>\r\n      </s:complexType>\r\n      <s:element
-        name=\"GetLocations\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"apiLoginID\"
-        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"apiKey\" type=\"s:string\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
-        \     </s:element>\r\n      <s:element name=\"GetLocationsResponse\">\r\n
-        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"GetLocationsResult\" type=\"tns:GetLocationsResp\"
-        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:complexType name=\"GetLocationsResp\">\r\n        <s:complexContent
-        mixed=\"false\">\r\n          <s:extension base=\"tns:ResponseBase\">\r\n
-        \           <s:sequence>\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"Locations\" type=\"tns:ArrayOfLocation\" />\r\n            </s:sequence>\r\n
-        \         </s:extension>\r\n        </s:complexContent>\r\n      </s:complexType>\r\n
-        \     <s:complexType name=\"ArrayOfLocation\">\r\n        <s:sequence>\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"Location\"
-        nillable=\"true\" type=\"tns:Location\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
-        \     <s:complexType name=\"Location\">\r\n        <s:sequence>\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"LocationID\" type=\"s:string\" />\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Name\" type=\"s:string\"
-        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"PrimaryBusinessAddress\"
-        type=\"s:boolean\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
-        name=\"MailingAddress\" type=\"s:boolean\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"Created\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"Address1\" type=\"s:string\" />\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Address2\" type=\"s:string\"
-        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"City\" type=\"s:string\"
-        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"State\"
-        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"Zip5\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"Zip4\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"Country\" type=\"s:string\" />\r\n
-        \       </s:sequence>\r\n      </s:complexType>\r\n      <s:element name=\"GetTICGroups\">\r\n
-        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"apiLoginID\" type=\"s:string\" />\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"apiKey\" type=\"s:string\"
-        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:element name=\"GetTICGroupsResponse\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"GetTICGroupsResult\" type=\"tns:GetTICGroupsRsp\" />\r\n          </s:sequence>\r\n
-        \       </s:complexType>\r\n      </s:element>\r\n      <s:complexType name=\"GetTICGroupsRsp\">\r\n
-        \       <s:complexContent mixed=\"false\">\r\n          <s:extension base=\"tns:ResponseBase\">\r\n
         \           <s:sequence>\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
         name=\"TICGroups\" type=\"tns:ArrayOfTICGroup\" />\r\n            </s:sequence>\r\n
         \         </s:extension>\r\n        </s:complexContent>\r\n      </s:complexType>\r\n
@@ -559,362 +396,40 @@ http_interactions:
         \     </s:element>\r\n      <s:complexType name=\"PingRsp\">\r\n        <s:complexContent
         mixed=\"false\">\r\n          <s:extension base=\"tns:ResponseBase\" />\r\n
         \       </s:complexContent>\r\n      </s:complexType>\r\n      <s:element
-        name=\"LookupWithRate\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"apiLoginID\"
-        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"apiKey\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"customerID\" type=\"s:string\" />\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"cartID\" type=\"s:string\" />\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"cartItems\" type=\"tns:ArrayOfCartItem\"
-        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"origin\"
-        type=\"tns:Address\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"destination\" type=\"tns:Address\" />\r\n            <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"exemptCert\" type=\"tns:ExemptionCertificate\" />\r\n
-        \           <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"deliveredBySeller\"
-        type=\"s:boolean\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
-        \     </s:element>\r\n      <s:element name=\"LookupWithRateResponse\">\r\n
-        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"LookupWithRateResult\" type=\"tns:LookupWithRateRsp\"
-        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:complexType name=\"LookupWithRateRsp\">\r\n        <s:complexContent
-        mixed=\"false\">\r\n          <s:extension base=\"tns:ResponseBase\">\r\n
-        \           <s:sequence>\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"CartID\" type=\"s:string\" />\r\n              <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"CartItemsRateResponse\" type=\"tns:ArrayOfCartItemRateResponse\"
-        />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"SalesTaxRates\"
-        type=\"tns:SalesTaxRates\" />\r\n            </s:sequence>\r\n          </s:extension>\r\n
-        \       </s:complexContent>\r\n      </s:complexType>\r\n      <s:complexType
-        name=\"ArrayOfCartItemRateResponse\">\r\n        <s:sequence>\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"CartItemRateResponse\" nillable=\"true\"
-        type=\"tns:CartItemRateResponse\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
-        \     <s:complexType name=\"CartItemRateResponse\">\r\n        <s:sequence>\r\n
-        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"CartItemIndex\"
-        type=\"s:int\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
-        name=\"TaxAmount\" type=\"s:float\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"Rate\" type=\"s:string\" />\r\n        </s:sequence>\r\n
-        \     </s:complexType>\r\n      <s:complexType name=\"SalesTaxRates\">\r\n
-        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"description\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"FIPSCode1\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"FIPSRate1\" type=\"s:decimal\" />\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FIPSCode2\" type=\"s:string\"
-        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"FIPSRate2\"
-        type=\"s:decimal\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"FIPSCode3\" type=\"s:string\" />\r\n          <s:element minOccurs=\"1\"
-        maxOccurs=\"1\" name=\"FIPSRate3\" type=\"s:decimal\" />\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"FIPSCode4\" type=\"s:string\" />\r\n
-        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"FIPSRate4\" type=\"s:decimal\"
-        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FIPSCode5\"
-        type=\"s:string\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
-        name=\"FIPSRate5\" type=\"s:decimal\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"FIPSCode6\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"FIPSRate6\" type=\"s:decimal\" />\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FIPSCode7\" type=\"s:string\"
-        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"FIPSRate7\"
-        type=\"s:decimal\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"FIPSCode8\" type=\"s:string\" />\r\n          <s:element minOccurs=\"1\"
-        maxOccurs=\"1\" name=\"FIPSRate8\" type=\"s:decimal\" />\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"FIPSCode9\" type=\"s:string\" />\r\n
-        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"FIPSRate9\" type=\"s:decimal\"
-        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FIPSCode10\"
-        type=\"s:string\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
-        name=\"FIPSRate10\" type=\"s:decimal\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"FIPSCode11\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"FIPSRate11\" type=\"s:decimal\" />\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FIPSCode12\" type=\"s:string\"
-        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"FIPSRate12\"
-        type=\"s:decimal\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"FIPSCode13\" type=\"s:string\" />\r\n          <s:element minOccurs=\"1\"
-        maxOccurs=\"1\" name=\"FIPSRate13\" type=\"s:decimal\" />\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"FIPSCode14\" type=\"s:string\" />\r\n
-        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"FIPSRate14\" type=\"s:decimal\"
-        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FIPSCode15\"
-        type=\"s:string\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
-        name=\"FIPSRate15\" type=\"s:decimal\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"FIPSCode16\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"FIPSRate16\" type=\"s:decimal\" />\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FIPSCode17\" type=\"s:string\"
-        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"FIPSRate17\"
-        type=\"s:decimal\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"FIPSCode18\" type=\"s:string\" />\r\n          <s:element minOccurs=\"1\"
-        maxOccurs=\"1\" name=\"FIPSRate18\" type=\"s:decimal\" />\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"FIPSCode19\" type=\"s:string\" />\r\n
-        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"FIPSRate19\" type=\"s:decimal\"
-        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FIPSCode20\"
-        type=\"s:string\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
-        name=\"FIPSRate20\" type=\"s:decimal\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
-        \     <s:element name=\"LookupForDateWithRate\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"apiLoginID\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"apiKey\" type=\"s:string\" />\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"customerID\" type=\"s:string\" />\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"cartID\" type=\"s:string\"
-        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"cartItems\"
-        type=\"tns:ArrayOfCartItem\" />\r\n            <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"origin\" type=\"tns:Address\" />\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"destination\" type=\"tns:Address\"
-        />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"useDate\"
-        type=\"s:dateTime\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"exemptCert\" type=\"tns:ExemptionCertificate\" />\r\n            <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"deliveredBySeller\" type=\"s:boolean\"
-        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:element name=\"LookupForDateWithRateResponse\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"LookupForDateWithRateResult\" type=\"tns:LookupWithRateRsp\" />\r\n
-        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:element name=\"LookupMultiAddress\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"apiLoginID\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"apiKey\" type=\"s:string\" />\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"customerID\" type=\"s:string\" />\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"cartID\" type=\"s:string\"
-        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"cartItems\"
-        type=\"tns:ArrayOfCartItemMultiAddress\" />\r\n            <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"exemptCert\" type=\"tns:ExemptionCertificate\" />\r\n
-        \           <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"deliveredBySeller\"
-        type=\"s:boolean\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
-        \     </s:element>\r\n      <s:complexType name=\"ArrayOfCartItemMultiAddress\">\r\n
-        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"unbounded\"
-        name=\"CartItemMultiAddress\" nillable=\"true\" type=\"tns:CartItemMultiAddress\"
-        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
-        name=\"CartItemMultiAddress\">\r\n        <s:sequence>\r\n          <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"Index\" type=\"s:int\" />\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"ItemID\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"TIC\" nillable=\"true\" type=\"s:int\"
-        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"Price\"
-        type=\"s:double\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
-        name=\"Qty\" type=\"s:float\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"Tax\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"Origin\" type=\"tns:Address\" />\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"Destination\" type=\"tns:Address\"
-        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:element
-        name=\"LookupMultiAddressResponse\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"LookupMultiAddressResult\"
-        type=\"tns:LookupRsp\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
-        \     </s:element>\r\n      <s:element name=\"LookupForDateMultiAddress\">\r\n
-        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"apiLoginID\" type=\"s:string\" />\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"apiKey\" type=\"s:string\"
-        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"customerID\"
-        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"cartID\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"cartItems\" type=\"tns:ArrayOfCartItemMultiAddress\"
-        />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"useDate\"
-        type=\"s:dateTime\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"exemptCert\" type=\"tns:ExemptionCertificate\" />\r\n            <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"deliveredBySeller\" type=\"s:boolean\"
-        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:element name=\"LookupForDateMultiAddressResponse\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"LookupForDateMultiAddressResult\" type=\"tns:LookupRsp\" />\r\n          </s:sequence>\r\n
-        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"AuthorizedWithCaptureMultiAddress\">\r\n
-        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"apiLoginID\" type=\"s:string\" />\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"apiKey\" type=\"s:string\"
-        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"customerID\"
-        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"cartID\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"orderID\" type=\"s:string\" />\r\n            <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"dateAuthorized\" nillable=\"true\"
-        type=\"s:dateTime\" />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
-        name=\"dateCaptured\" nillable=\"true\" type=\"s:dateTime\" />\r\n          </s:sequence>\r\n
-        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"AuthorizedWithCaptureMultiAddressResponse\">\r\n
-        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"AuthorizedWithCaptureMultiAddressResult\"
-        type=\"tns:AuthorizedRsp\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
-        \     </s:element>\r\n      <s:element name=\"ReturnedMultiAddress\">\r\n
-        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"apiLoginID\" type=\"s:string\" />\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"apiKey\" type=\"s:string\"
-        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"orderID\"
-        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"cartItems\" type=\"tns:ArrayOfCartItemMultiAddress\" />\r\n            <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"returnedDate\" type=\"s:dateTime\"
-        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:element name=\"ReturnedMultiAddressResponse\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"ReturnedMultiAddressResult\" type=\"tns:ReturnedRsp\" />\r\n          </s:sequence>\r\n
-        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"LookupEx\">\r\n
-        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"apiLoginID\" type=\"s:string\" />\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"apiKey\" type=\"s:string\"
-        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"customerID\"
-        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"cartID\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"cartItems\" type=\"tns:ArrayOfCartItem\" />\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"origin\" type=\"tns:Address\" />\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"destination\"
-        type=\"tns:Address\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"exemptCert\" type=\"tns:ExemptionCertificate\" />\r\n            <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"deliveredBySeller\" type=\"s:boolean\"
-        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:element name=\"LookupExResponse\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"LookupExResult\" type=\"tns:LookupExRsp\" />\r\n          </s:sequence>\r\n
-        \       </s:complexType>\r\n      </s:element>\r\n      <s:complexType name=\"LookupExRsp\">\r\n
-        \       <s:complexContent mixed=\"false\">\r\n          <s:extension base=\"tns:ResponseBase\">\r\n
-        \           <s:sequence>\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"CartID\" type=\"s:string\" />\r\n              <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"CartItemsResponse\" type=\"tns:ArrayOfCartItemResponse\"
-        />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"ExTax\"
-        type=\"tns:ArrayOfExTaxItem\" />\r\n            </s:sequence>\r\n          </s:extension>\r\n
-        \       </s:complexContent>\r\n      </s:complexType>\r\n      <s:complexType
-        name=\"ArrayOfExTaxItem\">\r\n        <s:sequence>\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"ExTaxItem\" nillable=\"true\"
-        type=\"tns:ExTaxItem\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
-        \     <s:complexType name=\"ExTaxItem\">\r\n        <s:sequence>\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"Label\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"Amount\" type=\"s:double\" />\r\n        </s:sequence>\r\n
-        \     </s:complexType>\r\n      <s:element name=\"LookupForDateEx\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"apiLoginID\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"apiKey\" type=\"s:string\" />\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"customerID\" type=\"s:string\" />\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"cartID\" type=\"s:string\"
-        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"cartItems\"
-        type=\"tns:ArrayOfCartItem\" />\r\n            <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"origin\" type=\"tns:Address\" />\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"destination\" type=\"tns:Address\"
-        />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"useDate\"
-        type=\"s:dateTime\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"exemptCert\" type=\"tns:ExemptionCertificate\" />\r\n            <s:element
-        minOccurs=\"1\" maxOccurs=\"1\" name=\"deliveredBySeller\" type=\"s:boolean\"
-        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:element name=\"LookupForDateExResponse\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"LookupForDateExResult\" type=\"tns:LookupExRsp\" />\r\n          </s:sequence>\r\n
-        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"TICSpecialHandlingByDate\">\r\n
-        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"apiLoginID\" type=\"s:string\" />\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"apiKey\" type=\"s:string\"
-        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"stateAbbrev\"
-        type=\"s:string\" />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
-        name=\"targetDate\" type=\"s:dateTime\" />\r\n          </s:sequence>\r\n
-        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"TICSpecialHandlingByDateResponse\">\r\n
-        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"TICSpecialHandlingByDateResult\" type=\"tns:TICSpecialHandlingRsp\"
-        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:complexType name=\"TICSpecialHandlingRsp\">\r\n        <s:complexContent
-        mixed=\"false\">\r\n          <s:extension base=\"tns:ResponseBase\">\r\n
-        \           <s:sequence>\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"TicItems\" type=\"tns:ArrayOfTicItem\" />\r\n            </s:sequence>\r\n
-        \         </s:extension>\r\n        </s:complexContent>\r\n      </s:complexType>\r\n
-        \     <s:complexType name=\"ArrayOfTicItem\">\r\n        <s:sequence>\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"TicItem\"
-        nillable=\"true\" type=\"tns:TicItem\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
-        \     <s:complexType name=\"TicItem\">\r\n        <s:sequence>\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"StateAbbr\" type=\"s:string\" />\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"JurFIPSCode\"
-        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"TIC\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"BeginDate\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"EndDate\" type=\"s:string\" />\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"PercentTaxable\"
-        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"Rate\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"ExemptUnder\" type=\"s:string\" />\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"ExemptOver\" type=\"s:string\" />\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"TaxablePortionOver\"
-        type=\"s:string\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
-        \     <s:element name=\"TICSpecialHandlingByDateForList\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"apiLoginID\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
-        maxOccurs=\"1\" name=\"apiKey\" type=\"s:string\" />\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"stateAbbrev\" type=\"s:string\" />\r\n
-        \           <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"targetDate\"
-        type=\"s:dateTime\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"TICList\" type=\"s:string\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
-        \     </s:element>\r\n      <s:element name=\"TICSpecialHandlingByDateForListResponse\">\r\n
-        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"TICSpecialHandlingByDateForListResult\"
-        type=\"tns:TICSpecialHandlingRsp\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
-        \     </s:element>\r\n      <s:element name=\"MerchantUSStateInformation\">\r\n
-        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"apiLoginID\" type=\"s:string\" />\r\n
-        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"apiKey\" type=\"s:string\"
-        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:element name=\"MerchantUSStateInformationResponse\">\r\n        <s:complexType>\r\n
-        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"MerchantUSStateInformationResult\" type=\"tns:WhereAmICollectingTaxRsp\"
-        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
-        \     <s:complexType name=\"WhereAmICollectingTaxRsp\">\r\n        <s:complexContent
-        mixed=\"false\">\r\n          <s:extension base=\"tns:ResponseBase\">\r\n
-        \           <s:sequence>\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
-        name=\"StateItems\" type=\"tns:ArrayOfStateItem\" />\r\n            </s:sequence>\r\n
-        \         </s:extension>\r\n        </s:complexContent>\r\n      </s:complexType>\r\n
-        \     <s:complexType name=\"ArrayOfStateItem\">\r\n        <s:sequence>\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"StateItem\"
-        nillable=\"true\" type=\"tns:StateItem\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
-        \     <s:complexType name=\"StateItem\">\r\n        <s:sequence>\r\n          <s:element
-        minOccurs=\"0\" maxOccurs=\"1\" name=\"StateAbbr\" type=\"s:string\" />\r\n
-        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Collecting\" type=\"s:string\"
-        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:element
-        name=\"HttpStatusCode\" type=\"tns:HttpStatusCode\" />\r\n      <s:element
         name=\"VerifiedAddress\" nillable=\"true\" type=\"tns:VerifiedAddress\" />\r\n
         \     <s:element name=\"AuthorizedRsp\" nillable=\"true\" type=\"tns:AuthorizedRsp\"
         />\r\n      <s:element name=\"CapturedRsp\" nillable=\"true\" type=\"tns:CapturedRsp\"
-        />\r\n      <s:element name=\"OrderDetailsRsp\" nillable=\"true\" type=\"tns:OrderDetailsRsp\"
-        />\r\n      <s:element name=\"CreatePlatformAccountResp\" nillable=\"true\"
-        type=\"tns:CreatePlatformAccountResp\" />\r\n      <s:element name=\"GetLocationsResp\"
-        nillable=\"true\" type=\"tns:GetLocationsResp\" />\r\n      <s:element name=\"GetTICGroupsRsp\"
-        nillable=\"true\" type=\"tns:GetTICGroupsRsp\" />\r\n      <s:element name=\"GetTICsRsp\"
-        nillable=\"true\" type=\"tns:GetTICsRsp\" />\r\n      <s:element name=\"DeleteCertificateRsp\"
-        nillable=\"true\" type=\"tns:DeleteCertificateRsp\" />\r\n      <s:element
-        name=\"GetCertificatesRsp\" nillable=\"true\" type=\"tns:GetCertificatesRsp\"
+        />\r\n      <s:element name=\"GetTICGroupsRsp\" nillable=\"true\" type=\"tns:GetTICGroupsRsp\"
+        />\r\n      <s:element name=\"GetTICsRsp\" nillable=\"true\" type=\"tns:GetTICsRsp\"
+        />\r\n      <s:element name=\"DeleteCertificateRsp\" nillable=\"true\" type=\"tns:DeleteCertificateRsp\"
+        />\r\n      <s:element name=\"GetCertificatesRsp\" nillable=\"true\" type=\"tns:GetCertificatesRsp\"
         />\r\n      <s:element name=\"PingRsp\" nillable=\"true\" type=\"tns:PingRsp\"
-        />\r\n      <s:element name=\"TICSpecialHandlingRsp\" nillable=\"true\" type=\"tns:TICSpecialHandlingRsp\"
-        />\r\n      <s:element name=\"WhereAmICollectingTaxRsp\" nillable=\"true\"
-        type=\"tns:WhereAmICollectingTaxRsp\" />\r\n    </s:schema>\r\n  </wsdl:types>\r\n
-        \ <wsdl:message name=\"HealthSoapIn\">\r\n    <wsdl:part name=\"parameters\"
-        element=\"tns:Health\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"HealthSoapOut\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:HealthResponse\" />\r\n  </wsdl:message>\r\n
-        \ <wsdl:message name=\"VerifyAddressSoapIn\">\r\n    <wsdl:part name=\"parameters\"
-        element=\"tns:VerifyAddress\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"VerifyAddressSoapOut\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:VerifyAddressResponse\" />\r\n
-        \ </wsdl:message>\r\n  <wsdl:message name=\"LookupForDateSoapIn\">\r\n    <wsdl:part
-        name=\"parameters\" element=\"tns:LookupForDate\" />\r\n  </wsdl:message>\r\n
-        \ <wsdl:message name=\"LookupForDateSoapOut\">\r\n    <wsdl:part name=\"parameters\"
-        element=\"tns:LookupForDateResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"LookupSoapIn\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:Lookup\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"LookupSoapOut\">\r\n    <wsdl:part
-        name=\"parameters\" element=\"tns:LookupResponse\" />\r\n  </wsdl:message>\r\n
-        \ <wsdl:message name=\"AuthorizedSoapIn\">\r\n    <wsdl:part name=\"parameters\"
-        element=\"tns:Authorized\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"AuthorizedSoapOut\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:AuthorizedResponse\" />\r\n
-        \ </wsdl:message>\r\n  <wsdl:message name=\"AuthorizedWithCaptureSoapIn\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:AuthorizedWithCapture\" />\r\n
-        \ </wsdl:message>\r\n  <wsdl:message name=\"AuthorizedWithCaptureSoapOut\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:AuthorizedWithCaptureResponse\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"CapturedSoapIn\">\r\n    <wsdl:part
-        name=\"parameters\" element=\"tns:Captured\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"CapturedSoapOut\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:CapturedResponse\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"ReturnedCreditMemoSoapIn\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:ReturnedCreditMemo\" />\r\n
-        \ </wsdl:message>\r\n  <wsdl:message name=\"ReturnedCreditMemoSoapOut\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:ReturnedCreditMemoResponse\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"ReturnedSoapIn\">\r\n    <wsdl:part
+        />\r\n    </s:schema>\r\n  </wsdl:types>\r\n  <wsdl:message name=\"VerifyAddressSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:VerifyAddress\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"VerifyAddressSoapOut\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:VerifyAddressResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"LookupForDateSoapIn\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:LookupForDate\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"LookupForDateSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:LookupForDateResponse\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"LookupSoapIn\">\r\n    <wsdl:part
+        name=\"parameters\" element=\"tns:Lookup\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"LookupSoapOut\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:LookupResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"AuthorizedSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:Authorized\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"AuthorizedSoapOut\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:AuthorizedResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"AuthorizedWithCaptureSoapIn\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:AuthorizedWithCapture\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"AuthorizedWithCaptureSoapOut\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:AuthorizedWithCaptureResponse\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"CapturedSoapIn\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:Captured\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"CapturedSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:CapturedResponse\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"ReturnedSoapIn\">\r\n    <wsdl:part
         name=\"parameters\" element=\"tns:Returned\" />\r\n  </wsdl:message>\r\n  <wsdl:message
         name=\"ReturnedSoapOut\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:ReturnedResponse\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"ReturnedProSoapIn\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:ReturnedPro\" />\r\n  </wsdl:message>\r\n
-        \ <wsdl:message name=\"ReturnedProSoapOut\">\r\n    <wsdl:part name=\"parameters\"
-        element=\"tns:ReturnedProResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"OrderDetailsSoapIn\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:OrderDetails\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"OrderDetailsSoapOut\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:OrderDetailsResponse\" />\r\n
-        \ </wsdl:message>\r\n  <wsdl:message name=\"AddTransactionsSoapIn\">\r\n    <wsdl:part
-        name=\"parameters\" element=\"tns:AddTransactions\" />\r\n  </wsdl:message>\r\n
-        \ <wsdl:message name=\"AddTransactionsSoapOut\">\r\n    <wsdl:part name=\"parameters\"
-        element=\"tns:AddTransactionsResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"CreatePlatformAccountSoapIn\">\r\n    <wsdl:part name=\"parameters\"
-        element=\"tns:CreatePlatformAccount\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"CreatePlatformAccountSoapOut\">\r\n    <wsdl:part name=\"parameters\"
-        element=\"tns:CreatePlatformAccountResponse\" />\r\n  </wsdl:message>\r\n
-        \ <wsdl:message name=\"GetLocationsSoapIn\">\r\n    <wsdl:part name=\"parameters\"
-        element=\"tns:GetLocations\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetLocationsSoapOut\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:GetLocationsResponse\" />\r\n
-        \ </wsdl:message>\r\n  <wsdl:message name=\"GetTICGroupsSoapIn\">\r\n    <wsdl:part
-        name=\"parameters\" element=\"tns:GetTICGroups\" />\r\n  </wsdl:message>\r\n
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetTICGroupsSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetTICGroups\" />\r\n  </wsdl:message>\r\n
         \ <wsdl:message name=\"GetTICGroupsSoapOut\">\r\n    <wsdl:part name=\"parameters\"
         element=\"tns:GetTICGroupsResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
         name=\"GetTICsSoapIn\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:GetTICs\"
@@ -938,104 +453,49 @@ http_interactions:
         />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"PingSoapIn\">\r\n    <wsdl:part
         name=\"parameters\" element=\"tns:Ping\" />\r\n  </wsdl:message>\r\n  <wsdl:message
         name=\"PingSoapOut\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:PingResponse\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"LookupWithRateSoapIn\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:LookupWithRate\" />\r\n  </wsdl:message>\r\n
-        \ <wsdl:message name=\"LookupWithRateSoapOut\">\r\n    <wsdl:part name=\"parameters\"
-        element=\"tns:LookupWithRateResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"LookupForDateWithRateSoapIn\">\r\n    <wsdl:part name=\"parameters\"
-        element=\"tns:LookupForDateWithRate\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"LookupForDateWithRateSoapOut\">\r\n    <wsdl:part name=\"parameters\"
-        element=\"tns:LookupForDateWithRateResponse\" />\r\n  </wsdl:message>\r\n
-        \ <wsdl:message name=\"LookupMultiAddressSoapIn\">\r\n    <wsdl:part name=\"parameters\"
-        element=\"tns:LookupMultiAddress\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"LookupMultiAddressSoapOut\">\r\n    <wsdl:part name=\"parameters\"
-        element=\"tns:LookupMultiAddressResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"LookupForDateMultiAddressSoapIn\">\r\n    <wsdl:part name=\"parameters\"
-        element=\"tns:LookupForDateMultiAddress\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"LookupForDateMultiAddressSoapOut\">\r\n    <wsdl:part name=\"parameters\"
-        element=\"tns:LookupForDateMultiAddressResponse\" />\r\n  </wsdl:message>\r\n
-        \ <wsdl:message name=\"AuthorizedWithCaptureMultiAddressSoapIn\">\r\n    <wsdl:part
-        name=\"parameters\" element=\"tns:AuthorizedWithCaptureMultiAddress\" />\r\n
-        \ </wsdl:message>\r\n  <wsdl:message name=\"AuthorizedWithCaptureMultiAddressSoapOut\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:AuthorizedWithCaptureMultiAddressResponse\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"ReturnedMultiAddressSoapIn\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:ReturnedMultiAddress\" />\r\n
-        \ </wsdl:message>\r\n  <wsdl:message name=\"ReturnedMultiAddressSoapOut\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:ReturnedMultiAddressResponse\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"LookupExSoapIn\">\r\n    <wsdl:part
-        name=\"parameters\" element=\"tns:LookupEx\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"LookupExSoapOut\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:LookupExResponse\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"LookupForDateExSoapIn\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:LookupForDateEx\" />\r\n
-        \ </wsdl:message>\r\n  <wsdl:message name=\"LookupForDateExSoapOut\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:LookupForDateExResponse\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"TICSpecialHandlingByDateSoapIn\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:TICSpecialHandlingByDate\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"TICSpecialHandlingByDateSoapOut\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:TICSpecialHandlingByDateResponse\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"TICSpecialHandlingByDateForListSoapIn\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:TICSpecialHandlingByDateForList\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"TICSpecialHandlingByDateForListSoapOut\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:TICSpecialHandlingByDateForListResponse\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"MerchantUSStateInformationSoapIn\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:MerchantUSStateInformation\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"MerchantUSStateInformationSoapOut\">\r\n
-        \   <wsdl:part name=\"parameters\" element=\"tns:MerchantUSStateInformationResponse\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"HealthHttpPostIn\" />\r\n
-        \ <wsdl:message name=\"HealthHttpPostOut\">\r\n    <wsdl:part name=\"Body\"
-        element=\"tns:HttpStatusCode\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"VerifyAddressHttpPostIn\">\r\n    <wsdl:part name=\"uspsUserID\" type=\"s:string\"
-        />\r\n    <wsdl:part name=\"address1\" type=\"s:string\" />\r\n    <wsdl:part
-        name=\"address2\" type=\"s:string\" />\r\n    <wsdl:part name=\"city\" type=\"s:string\"
-        />\r\n    <wsdl:part name=\"state\" type=\"s:string\" />\r\n    <wsdl:part
-        name=\"zip5\" type=\"s:string\" />\r\n    <wsdl:part name=\"zip4\" type=\"s:string\"
-        />\r\n    <wsdl:part name=\"apiLoginID\" type=\"s:string\" />\r\n    <wsdl:part
-        name=\"apiKey\" type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"VerifyAddressHttpPostOut\">\r\n    <wsdl:part name=\"Body\" element=\"tns:VerifiedAddress\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"AuthorizedHttpPostIn\">\r\n
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"VerifyAddressHttpPostIn\">\r\n
+        \   <wsdl:part name=\"uspsUserID\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"address1\" type=\"s:string\" />\r\n    <wsdl:part name=\"address2\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"city\" type=\"s:string\" />\r\n
+        \   <wsdl:part name=\"state\" type=\"s:string\" />\r\n    <wsdl:part name=\"zip5\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"zip4\" type=\"s:string\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"VerifyAddressHttpPostOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:VerifiedAddress\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"AuthorizedHttpPostIn\">\r\n    <wsdl:part name=\"apiLoginID\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\" type=\"s:string\" />\r\n
+        \   <wsdl:part name=\"customerID\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"cartID\" type=\"s:string\" />\r\n    <wsdl:part name=\"orderID\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"dateAuthorized\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"AuthorizedHttpPostOut\">\r\n    <wsdl:part name=\"Body\"
+        element=\"tns:AuthorizedRsp\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"AuthorizedWithCaptureHttpPostIn\">\r\n
         \   <wsdl:part name=\"apiLoginID\" type=\"s:string\" />\r\n    <wsdl:part
         name=\"apiKey\" type=\"s:string\" />\r\n    <wsdl:part name=\"customerID\"
         type=\"s:string\" />\r\n    <wsdl:part name=\"cartID\" type=\"s:string\" />\r\n
         \   <wsdl:part name=\"orderID\" type=\"s:string\" />\r\n    <wsdl:part name=\"dateAuthorized\"
-        type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"AuthorizedHttpPostOut\">\r\n
+        type=\"s:string\" />\r\n    <wsdl:part name=\"dateCaptured\" type=\"s:string\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"AuthorizedWithCaptureHttpPostOut\">\r\n
         \   <wsdl:part name=\"Body\" element=\"tns:AuthorizedRsp\" />\r\n  </wsdl:message>\r\n
         \ <wsdl:message name=\"CapturedHttpPostIn\">\r\n    <wsdl:part name=\"apiLoginID\"
         type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\" type=\"s:string\" />\r\n
-        \   <wsdl:part name=\"orderID\" type=\"s:string\" />\r\n    <wsdl:part name=\"comment\"
-        type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"CapturedHttpPostOut\">\r\n
-        \   <wsdl:part name=\"Body\" element=\"tns:CapturedRsp\" />\r\n  </wsdl:message>\r\n
-        \ <wsdl:message name=\"OrderDetailsHttpPostIn\">\r\n    <wsdl:part name=\"apiLoginID\"
-        type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\" type=\"s:string\" />\r\n
         \   <wsdl:part name=\"orderID\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
-        \ <wsdl:message name=\"OrderDetailsHttpPostOut\">\r\n    <wsdl:part name=\"Body\"
-        element=\"tns:OrderDetailsRsp\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"CreatePlatformAccountHttpPostIn\">\r\n    <wsdl:part name=\"apiLoginID\"
-        type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\" type=\"s:string\" />\r\n
-        \   <wsdl:part name=\"CompanyName\" type=\"s:string\" />\r\n    <wsdl:part
-        name=\"Email\" type=\"s:string\" />\r\n    <wsdl:part name=\"FirstName\" type=\"s:string\"
-        />\r\n    <wsdl:part name=\"LastName\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
-        \ <wsdl:message name=\"CreatePlatformAccountHttpPostOut\">\r\n    <wsdl:part
-        name=\"Body\" element=\"tns:CreatePlatformAccountResp\" />\r\n  </wsdl:message>\r\n
-        \ <wsdl:message name=\"GetLocationsHttpPostIn\">\r\n    <wsdl:part name=\"apiLoginID\"
-        type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\" type=\"s:string\" />\r\n
-        \ </wsdl:message>\r\n  <wsdl:message name=\"GetLocationsHttpPostOut\">\r\n
-        \   <wsdl:part name=\"Body\" element=\"tns:GetLocationsResp\" />\r\n  </wsdl:message>\r\n
-        \ <wsdl:message name=\"GetTICGroupsHttpPostIn\">\r\n    <wsdl:part name=\"apiLoginID\"
-        type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\" type=\"s:string\" />\r\n
-        \ </wsdl:message>\r\n  <wsdl:message name=\"GetTICGroupsHttpPostOut\">\r\n
-        \   <wsdl:part name=\"Body\" element=\"tns:GetTICGroupsRsp\" />\r\n  </wsdl:message>\r\n
-        \ <wsdl:message name=\"GetTICsHttpPostIn\">\r\n    <wsdl:part name=\"apiLoginID\"
-        type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\" type=\"s:string\" />\r\n
-        \ </wsdl:message>\r\n  <wsdl:message name=\"GetTICsHttpPostOut\">\r\n    <wsdl:part
-        name=\"Body\" element=\"tns:GetTICsRsp\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"GetTICsByGroupHttpPostIn\">\r\n    <wsdl:part name=\"apiLoginID\" type=\"s:string\"
-        />\r\n    <wsdl:part name=\"apiKey\" type=\"s:string\" />\r\n    <wsdl:part
-        name=\"ticGroup\" type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"GetTICsByGroupHttpPostOut\">\r\n    <wsdl:part name=\"Body\" element=\"tns:GetTICsRsp\"
-        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"DeleteExemptCertificateHttpPostIn\">\r\n
+        \ <wsdl:message name=\"CapturedHttpPostOut\">\r\n    <wsdl:part name=\"Body\"
+        element=\"tns:CapturedRsp\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetTICGroupsHttpPostIn\">\r\n
         \   <wsdl:part name=\"apiLoginID\" type=\"s:string\" />\r\n    <wsdl:part
-        name=\"apiKey\" type=\"s:string\" />\r\n    <wsdl:part name=\"certificateID\"
-        type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"DeleteExemptCertificateHttpPostOut\">\r\n
+        name=\"apiKey\" type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"GetTICGroupsHttpPostOut\">\r\n    <wsdl:part name=\"Body\" element=\"tns:GetTICGroupsRsp\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetTICsHttpPostIn\">\r\n
+        \   <wsdl:part name=\"apiLoginID\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"apiKey\" type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"GetTICsHttpPostOut\">\r\n    <wsdl:part name=\"Body\" element=\"tns:GetTICsRsp\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetTICsByGroupHttpPostIn\">\r\n
+        \   <wsdl:part name=\"apiLoginID\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"apiKey\" type=\"s:string\" />\r\n    <wsdl:part name=\"ticGroup\" type=\"s:string\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetTICsByGroupHttpPostOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:GetTICsRsp\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"DeleteExemptCertificateHttpPostIn\">\r\n    <wsdl:part
+        name=\"apiLoginID\" type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"certificateID\" type=\"s:string\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"DeleteExemptCertificateHttpPostOut\">\r\n
         \   <wsdl:part name=\"Body\" element=\"tns:DeleteCertificateRsp\" />\r\n  </wsdl:message>\r\n
         \ <wsdl:message name=\"GetExemptCertificatesHttpPostIn\">\r\n    <wsdl:part
         name=\"apiLoginID\" type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\"
@@ -1045,233 +505,65 @@ http_interactions:
         \ <wsdl:message name=\"PingHttpPostIn\">\r\n    <wsdl:part name=\"apiLoginID\"
         type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\" type=\"s:string\" />\r\n
         \ </wsdl:message>\r\n  <wsdl:message name=\"PingHttpPostOut\">\r\n    <wsdl:part
-        name=\"Body\" element=\"tns:PingRsp\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"TICSpecialHandlingByDateHttpPostIn\">\r\n    <wsdl:part name=\"apiLoginID\"
-        type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\" type=\"s:string\" />\r\n
-        \   <wsdl:part name=\"stateAbbrev\" type=\"s:string\" />\r\n    <wsdl:part
-        name=\"targetDate\" type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"TICSpecialHandlingByDateHttpPostOut\">\r\n    <wsdl:part name=\"Body\"
-        element=\"tns:TICSpecialHandlingRsp\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"TICSpecialHandlingByDateForListHttpPostIn\">\r\n    <wsdl:part name=\"apiLoginID\"
-        type=\"s:string\" />\r\n    <wsdl:part name=\"apiKey\" type=\"s:string\" />\r\n
-        \   <wsdl:part name=\"stateAbbrev\" type=\"s:string\" />\r\n    <wsdl:part
-        name=\"targetDate\" type=\"s:string\" />\r\n    <wsdl:part name=\"TICList\"
-        type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"TICSpecialHandlingByDateForListHttpPostOut\">\r\n
-        \   <wsdl:part name=\"Body\" element=\"tns:TICSpecialHandlingRsp\" />\r\n
-        \ </wsdl:message>\r\n  <wsdl:message name=\"MerchantUSStateInformationHttpPostIn\">\r\n
-        \   <wsdl:part name=\"apiLoginID\" type=\"s:string\" />\r\n    <wsdl:part
-        name=\"apiKey\" type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message
-        name=\"MerchantUSStateInformationHttpPostOut\">\r\n    <wsdl:part name=\"Body\"
-        element=\"tns:WhereAmICollectingTaxRsp\" />\r\n  </wsdl:message>\r\n  <wsdl:portType
-        name=\"TaxCloudSoap\">\r\n    <wsdl:operation name=\"Health\">\r\n      <wsdl:documentation
-        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Instance status check</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:HealthSoapIn\" />\r\n      <wsdl:output message=\"tns:HealthSoapOut\"
-        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"VerifyAddress\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Verify
-        an address. Note: No longer requires valid USPS ID - Use '000CLOUD0000' as
-        the uspsUserID.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:VerifyAddressSoapIn\"
-        />\r\n      <wsdl:output message=\"tns:VerifyAddressSoapOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"LookupForDate\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Perform
-        a Lookup for a specific date.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:LookupForDateSoapIn\"
+        name=\"Body\" element=\"tns:PingRsp\" />\r\n  </wsdl:message>\r\n  <wsdl:portType
+        name=\"TaxCloudSoap\">\r\n    <wsdl:operation name=\"VerifyAddress\">\r\n
+        \     <wsdl:input message=\"tns:VerifyAddressSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:VerifyAddressSoapOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"LookupForDate\">\r\n      <wsdl:input message=\"tns:LookupForDateSoapIn\"
         />\r\n      <wsdl:output message=\"tns:LookupForDateSoapOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"Lookup\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Determine
-        applicable sales or use tax for items being purchased.</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:LookupSoapIn\" />\r\n      <wsdl:output message=\"tns:LookupSoapOut\"
-        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"Authorized\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Mark
-        a previous Lookup as Authorized - do this AFTER authorizing with payment processor.</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:AuthorizedSoapIn\" />\r\n      <wsdl:output
-        message=\"tns:AuthorizedSoapOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"AuthorizedWithCapture\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Mark
-        a previous Lookup as Authorized and Captured - do this AFTER capturing payment
-        with payment processor.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:AuthorizedWithCaptureSoapIn\"
+        \   <wsdl:operation name=\"Lookup\">\r\n      <wsdl:input message=\"tns:LookupSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:LookupSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"Authorized\">\r\n      <wsdl:input message=\"tns:AuthorizedSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:AuthorizedSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"AuthorizedWithCapture\">\r\n      <wsdl:input message=\"tns:AuthorizedWithCaptureSoapIn\"
         />\r\n      <wsdl:output message=\"tns:AuthorizedWithCaptureSoapOut\" />\r\n
-        \   </wsdl:operation>\r\n    <wsdl:operation name=\"Captured\">\r\n      <wsdl:documentation
-        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Mark a previous Lookup as
-        Captured - do this AFTER calling Authorized API and after capturing payment
-        with payment processor.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:CapturedSoapIn\"
-        />\r\n      <wsdl:output message=\"tns:CapturedSoapOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"ReturnedCreditMemo\">\r\n      <wsdl:documentation
-        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Return a previously Captured
-        transaction. Supports entire order returns as well as individual item returns
-        and even partial item-level returns.</wsdl:documentation>\r\n      <wsdl:input
-        message=\"tns:ReturnedCreditMemoSoapIn\" />\r\n      <wsdl:output message=\"tns:ReturnedCreditMemoSoapOut\"
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"Captured\">\r\n      <wsdl:input
+        message=\"tns:CapturedSoapIn\" />\r\n      <wsdl:output message=\"tns:CapturedSoapOut\"
         />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"Returned\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Return
-        a previously Captured transaction. Supports entire order returns as well as
-        individual item returns and even partial item-level returns.</wsdl:documentation>\r\n
         \     <wsdl:input message=\"tns:ReturnedSoapIn\" />\r\n      <wsdl:output
         message=\"tns:ReturnedSoapOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"ReturnedPro\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Return
-        or adjust a previously Captured transaction. [Additional License Required]</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:ReturnedProSoapIn\" />\r\n      <wsdl:output
-        message=\"tns:ReturnedProSoapOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"OrderDetails\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Review
-        Jurisdiction Details for a Captured Order</wsdl:documentation>\r\n      <wsdl:input
-        message=\"tns:OrderDetailsSoapIn\" />\r\n      <wsdl:output message=\"tns:OrderDetailsSoapOut\"
-        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"AddTransactions\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Add
-        a batch of transactions from offline sources.</wsdl:documentation>\r\n      <wsdl:input
-        message=\"tns:AddTransactionsSoapIn\" />\r\n      <wsdl:output message=\"tns:AddTransactionsSoapOut\"
-        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"CreatePlatformAccount\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Provision
-        a new TaxCloud Account [Additional License Required]</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:CreatePlatformAccountSoapIn\" />\r\n      <wsdl:output
-        message=\"tns:CreatePlatformAccountSoapOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"GetLocations\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Retrieve
-        your Locations (addresses) saved in TaxCloud.</wsdl:documentation>\r\n      <wsdl:input
-        message=\"tns:GetLocationsSoapIn\" />\r\n      <wsdl:output message=\"tns:GetLocationsSoapOut\"
-        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"GetTICGroups\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Retrieve
-        TIC Groups</wsdl:documentation>\r\n      <wsdl:input message=\"tns:GetTICGroupsSoapIn\"
+        name=\"GetTICGroups\">\r\n      <wsdl:input message=\"tns:GetTICGroupsSoapIn\"
         />\r\n      <wsdl:output message=\"tns:GetTICGroupsSoapOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"GetTICs\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Get
-        all TICs</wsdl:documentation>\r\n      <wsdl:input message=\"tns:GetTICsSoapIn\"
+        \   <wsdl:operation name=\"GetTICs\">\r\n      <wsdl:input message=\"tns:GetTICsSoapIn\"
         />\r\n      <wsdl:output message=\"tns:GetTICsSoapOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"GetTICsByGroup\">\r\n      <wsdl:documentation
-        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Get TICs in a group.</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:GetTICsByGroupSoapIn\" />\r\n      <wsdl:output
-        message=\"tns:GetTICsByGroupSoapOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"AddExemptCertificate\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Save
-        an Entity Exemption Certificate</wsdl:documentation>\r\n      <wsdl:input
-        message=\"tns:AddExemptCertificateSoapIn\" />\r\n      <wsdl:output message=\"tns:AddExemptCertificateSoapOut\"
-        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"DeleteExemptCertificate\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Remove
-        an Entity Exemption Certificate</wsdl:documentation>\r\n      <wsdl:input
-        message=\"tns:DeleteExemptCertificateSoapIn\" />\r\n      <wsdl:output message=\"tns:DeleteExemptCertificateSoapOut\"
-        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"GetExemptCertificates\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Get
-        previously saved Entity Exemption Certificates for a given customerID</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:GetExemptCertificatesSoapIn\" />\r\n      <wsdl:output
-        message=\"tns:GetExemptCertificatesSoapOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"Ping\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Hello
-        world? Is your implementation communicating with TaxCloud using a valid API
-        ID and API Key?</wsdl:documentation>\r\n      <wsdl:input message=\"tns:PingSoapIn\"
-        />\r\n      <wsdl:output message=\"tns:PingSoapOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"LookupWithRate\">\r\n      <wsdl:documentation
-        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Determine applicable sales
-        or use tax for items being purchased.</wsdl:documentation>\r\n      <wsdl:input
-        message=\"tns:LookupWithRateSoapIn\" />\r\n      <wsdl:output message=\"tns:LookupWithRateSoapOut\"
-        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"LookupForDateWithRate\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Perform
-        a Lookup for a specific date.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:LookupForDateWithRateSoapIn\"
-        />\r\n      <wsdl:output message=\"tns:LookupForDateWithRateSoapOut\" />\r\n
-        \   </wsdl:operation>\r\n    <wsdl:operation name=\"LookupMultiAddress\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Determine
-        applicable sales or use tax for items being purchased.</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:LookupMultiAddressSoapIn\" />\r\n      <wsdl:output
-        message=\"tns:LookupMultiAddressSoapOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"LookupForDateMultiAddress\">\r\n      <wsdl:documentation
-        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Perform a Lookup for a specific
-        date.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:LookupForDateMultiAddressSoapIn\"
-        />\r\n      <wsdl:output message=\"tns:LookupForDateMultiAddressSoapOut\"
-        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"AuthorizedWithCaptureMultiAddress\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Mark
-        a previous Lookup as Authorized and Captured - do this AFTER capturing payment
-        with payment processor.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:AuthorizedWithCaptureMultiAddressSoapIn\"
-        />\r\n      <wsdl:output message=\"tns:AuthorizedWithCaptureMultiAddressSoapOut\"
-        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"ReturnedMultiAddress\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Return
-        a previously Captured transaction. Supports entire order returns as well as
-        individual item returns and even partial item-level returns.</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:ReturnedMultiAddressSoapIn\" />\r\n      <wsdl:output
-        message=\"tns:ReturnedMultiAddressSoapOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"LookupEx\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Determine
-        applicable sales or use tax for items being purchased.</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:LookupExSoapIn\" />\r\n      <wsdl:output
-        message=\"tns:LookupExSoapOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"LookupForDateEx\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Perform
-        a Lookup for a specific date.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:LookupForDateExSoapIn\"
-        />\r\n      <wsdl:output message=\"tns:LookupForDateExSoapOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"TICSpecialHandlingByDate\">\r\n      <wsdl:documentation
-        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Returns the TICs that have
-        special handling for a particular state and date</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:TICSpecialHandlingByDateSoapIn\" />\r\n      <wsdl:output
-        message=\"tns:TICSpecialHandlingByDateSoapOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"TICSpecialHandlingByDateForList\">\r\n      <wsdl:documentation
-        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Returns the TICs that have
-        special handling for a particular state and date</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:TICSpecialHandlingByDateForListSoapIn\" />\r\n
-        \     <wsdl:output message=\"tns:TICSpecialHandlingByDateForListSoapOut\"
-        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"MerchantUSStateInformation\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Returns
-        a list of states with information about whether this account is collecting
-        tax in that state or not</wsdl:documentation>\r\n      <wsdl:input message=\"tns:MerchantUSStateInformationSoapIn\"
-        />\r\n      <wsdl:output message=\"tns:MerchantUSStateInformationSoapOut\"
+        \   <wsdl:operation name=\"GetTICsByGroup\">\r\n      <wsdl:input message=\"tns:GetTICsByGroupSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:GetTICsByGroupSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"AddExemptCertificate\">\r\n      <wsdl:input message=\"tns:AddExemptCertificateSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:AddExemptCertificateSoapOut\" />\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"DeleteExemptCertificate\">\r\n
+        \     <wsdl:input message=\"tns:DeleteExemptCertificateSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:DeleteExemptCertificateSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetExemptCertificates\">\r\n      <wsdl:input message=\"tns:GetExemptCertificatesSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:GetExemptCertificatesSoapOut\" />\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"Ping\">\r\n      <wsdl:input
+        message=\"tns:PingSoapIn\" />\r\n      <wsdl:output message=\"tns:PingSoapOut\"
         />\r\n    </wsdl:operation>\r\n  </wsdl:portType>\r\n  <wsdl:portType name=\"TaxCloudHttpPost\">\r\n
-        \   <wsdl:operation name=\"Health\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Instance
-        status check</wsdl:documentation>\r\n      <wsdl:input message=\"tns:HealthHttpPostIn\"
-        />\r\n      <wsdl:output message=\"tns:HealthHttpPostOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"VerifyAddress\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Verify
-        an address. Note: No longer requires valid USPS ID - Use '000CLOUD0000' as
-        the uspsUserID.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:VerifyAddressHttpPostIn\"
+        \   <wsdl:operation name=\"VerifyAddress\">\r\n      <wsdl:input message=\"tns:VerifyAddressHttpPostIn\"
         />\r\n      <wsdl:output message=\"tns:VerifyAddressHttpPostOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"Authorized\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Mark
-        a previous Lookup as Authorized - do this AFTER authorizing with payment processor.</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:AuthorizedHttpPostIn\" />\r\n      <wsdl:output
-        message=\"tns:AuthorizedHttpPostOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"Captured\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Mark
-        a previous Lookup as Captured - do this AFTER calling Authorized API and after
-        capturing payment with payment processor.</wsdl:documentation>\r\n      <wsdl:input
-        message=\"tns:CapturedHttpPostIn\" />\r\n      <wsdl:output message=\"tns:CapturedHttpPostOut\"
-        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"OrderDetails\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Review
-        Jurisdiction Details for a Captured Order</wsdl:documentation>\r\n      <wsdl:input
-        message=\"tns:OrderDetailsHttpPostIn\" />\r\n      <wsdl:output message=\"tns:OrderDetailsHttpPostOut\"
-        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"CreatePlatformAccount\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Provision
-        a new TaxCloud Account [Additional License Required]</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:CreatePlatformAccountHttpPostIn\" />\r\n      <wsdl:output
-        message=\"tns:CreatePlatformAccountHttpPostOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"GetLocations\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Retrieve
-        your Locations (addresses) saved in TaxCloud.</wsdl:documentation>\r\n      <wsdl:input
-        message=\"tns:GetLocationsHttpPostIn\" />\r\n      <wsdl:output message=\"tns:GetLocationsHttpPostOut\"
-        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"GetTICGroups\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Retrieve
-        TIC Groups</wsdl:documentation>\r\n      <wsdl:input message=\"tns:GetTICGroupsHttpPostIn\"
+        \   <wsdl:operation name=\"Authorized\">\r\n      <wsdl:input message=\"tns:AuthorizedHttpPostIn\"
+        />\r\n      <wsdl:output message=\"tns:AuthorizedHttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"AuthorizedWithCapture\">\r\n      <wsdl:input message=\"tns:AuthorizedWithCaptureHttpPostIn\"
+        />\r\n      <wsdl:output message=\"tns:AuthorizedWithCaptureHttpPostOut\"
+        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"Captured\">\r\n
+        \     <wsdl:input message=\"tns:CapturedHttpPostIn\" />\r\n      <wsdl:output
+        message=\"tns:CapturedHttpPostOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetTICGroups\">\r\n      <wsdl:input message=\"tns:GetTICGroupsHttpPostIn\"
         />\r\n      <wsdl:output message=\"tns:GetTICGroupsHttpPostOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"GetTICs\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Get
-        all TICs</wsdl:documentation>\r\n      <wsdl:input message=\"tns:GetTICsHttpPostIn\"
+        \   <wsdl:operation name=\"GetTICs\">\r\n      <wsdl:input message=\"tns:GetTICsHttpPostIn\"
         />\r\n      <wsdl:output message=\"tns:GetTICsHttpPostOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"GetTICsByGroup\">\r\n      <wsdl:documentation
-        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Get TICs in a group.</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:GetTICsByGroupHttpPostIn\" />\r\n      <wsdl:output
-        message=\"tns:GetTICsByGroupHttpPostOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"DeleteExemptCertificate\">\r\n      <wsdl:documentation
-        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Remove an Entity Exemption
-        Certificate</wsdl:documentation>\r\n      <wsdl:input message=\"tns:DeleteExemptCertificateHttpPostIn\"
-        />\r\n      <wsdl:output message=\"tns:DeleteExemptCertificateHttpPostOut\"
-        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"GetExemptCertificates\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Get
-        previously saved Entity Exemption Certificates for a given customerID</wsdl:documentation>\r\n
+        \   <wsdl:operation name=\"GetTICsByGroup\">\r\n      <wsdl:input message=\"tns:GetTICsByGroupHttpPostIn\"
+        />\r\n      <wsdl:output message=\"tns:GetTICsByGroupHttpPostOut\" />\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"DeleteExemptCertificate\">\r\n
+        \     <wsdl:input message=\"tns:DeleteExemptCertificateHttpPostIn\" />\r\n
+        \     <wsdl:output message=\"tns:DeleteExemptCertificateHttpPostOut\" />\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetExemptCertificates\">\r\n
         \     <wsdl:input message=\"tns:GetExemptCertificatesHttpPostIn\" />\r\n      <wsdl:output
         message=\"tns:GetExemptCertificatesHttpPostOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"Ping\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Hello
-        world? Is your implementation communicating with TaxCloud using a valid API
-        ID and API Key?</wsdl:documentation>\r\n      <wsdl:input message=\"tns:PingHttpPostIn\"
+        \   <wsdl:operation name=\"Ping\">\r\n      <wsdl:input message=\"tns:PingHttpPostIn\"
         />\r\n      <wsdl:output message=\"tns:PingHttpPostOut\" />\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"TICSpecialHandlingByDate\">\r\n      <wsdl:documentation
-        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Returns the TICs that have
-        special handling for a particular state and date</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:TICSpecialHandlingByDateHttpPostIn\" />\r\n
-        \     <wsdl:output message=\"tns:TICSpecialHandlingByDateHttpPostOut\" />\r\n
-        \   </wsdl:operation>\r\n    <wsdl:operation name=\"TICSpecialHandlingByDateForList\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Returns
-        the TICs that have special handling for a particular state and date</wsdl:documentation>\r\n
-        \     <wsdl:input message=\"tns:TICSpecialHandlingByDateForListHttpPostIn\"
-        />\r\n      <wsdl:output message=\"tns:TICSpecialHandlingByDateForListHttpPostOut\"
-        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"MerchantUSStateInformation\">\r\n
-        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Returns
-        a list of states with information about whether this account is collecting
-        tax in that state or not</wsdl:documentation>\r\n      <wsdl:input message=\"tns:MerchantUSStateInformationHttpPostIn\"
-        />\r\n      <wsdl:output message=\"tns:MerchantUSStateInformationHttpPostOut\"
-        />\r\n    </wsdl:operation>\r\n  </wsdl:portType>\r\n  <wsdl:binding name=\"TaxCloudSoap\"
-        type=\"tns:TaxCloudSoap\">\r\n    <soap:binding transport=\"http://schemas.xmlsoap.org/soap/http\"
-        />\r\n    <wsdl:operation name=\"Health\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/Health\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"VerifyAddress\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/VerifyAddress\"
+        \ </wsdl:portType>\r\n  <wsdl:binding name=\"TaxCloudSoap\" type=\"tns:TaxCloudSoap\">\r\n
+        \   <soap:binding transport=\"http://schemas.xmlsoap.org/soap/http\" />\r\n
+        \   <wsdl:operation name=\"VerifyAddress\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/VerifyAddress\"
         style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
         />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
         />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
@@ -1295,31 +587,7 @@ http_interactions:
         style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
         />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
         />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"ReturnedCreditMemo\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/ReturnedCreditMemo\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
         name=\"Returned\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/Returned\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"ReturnedPro\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/ReturnedPro\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"OrderDetails\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/OrderDetails\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"AddTransactions\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/AddTransactions\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"CreatePlatformAccount\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/CreatePlatformAccount\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"GetLocations\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/GetLocations\"
         style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
         />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
         />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
@@ -1350,57 +618,9 @@ http_interactions:
         name=\"Ping\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/Ping\"
         style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
         />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"LookupWithRate\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/LookupWithRate\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"LookupForDateWithRate\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/LookupForDateWithRate\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"LookupMultiAddress\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/LookupMultiAddress\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"LookupForDateMultiAddress\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/LookupForDateMultiAddress\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"AuthorizedWithCaptureMultiAddress\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/AuthorizedWithCaptureMultiAddress\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"ReturnedMultiAddress\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/ReturnedMultiAddress\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"LookupEx\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/LookupEx\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"LookupForDateEx\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/LookupForDateEx\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"TICSpecialHandlingByDate\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/TICSpecialHandlingByDate\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"TICSpecialHandlingByDateForList\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/TICSpecialHandlingByDateForList\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"MerchantUSStateInformation\">\r\n      <soap:operation soapAction=\"http://taxcloud.net/MerchantUSStateInformation\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
         />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
         \ <wsdl:binding name=\"TaxCloudSoap12\" type=\"tns:TaxCloudSoap\">\r\n    <soap12:binding
         transport=\"http://schemas.xmlsoap.org/soap/http\" />\r\n    <wsdl:operation
-        name=\"Health\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/Health\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
         name=\"VerifyAddress\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/VerifyAddress\"
         style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
         />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
@@ -1425,31 +645,7 @@ http_interactions:
         style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
         />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
         />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"ReturnedCreditMemo\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/ReturnedCreditMemo\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
         name=\"Returned\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/Returned\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"ReturnedPro\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/ReturnedPro\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"OrderDetails\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/OrderDetails\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"AddTransactions\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/AddTransactions\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"CreatePlatformAccount\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/CreatePlatformAccount\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"GetLocations\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/GetLocations\"
         style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
         />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
         />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
@@ -1480,77 +676,21 @@ http_interactions:
         name=\"Ping\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/Ping\"
         style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
         />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"LookupWithRate\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/LookupWithRate\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"LookupForDateWithRate\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/LookupForDateWithRate\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"LookupMultiAddress\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/LookupMultiAddress\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"LookupForDateMultiAddress\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/LookupForDateMultiAddress\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"AuthorizedWithCaptureMultiAddress\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/AuthorizedWithCaptureMultiAddress\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"ReturnedMultiAddress\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/ReturnedMultiAddress\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"LookupEx\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/LookupEx\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"LookupForDateEx\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/LookupForDateEx\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"TICSpecialHandlingByDate\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/TICSpecialHandlingByDate\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"TICSpecialHandlingByDateForList\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/TICSpecialHandlingByDateForList\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"MerchantUSStateInformation\">\r\n      <soap12:operation soapAction=\"http://taxcloud.net/MerchantUSStateInformation\"
-        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
         />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
         \ <wsdl:binding name=\"TaxCloudHttpPost\" type=\"tns:TaxCloudHttpPost\">\r\n
-        \   <http:binding verb=\"POST\" />\r\n    <wsdl:operation name=\"Health\">\r\n
-        \     <http:operation location=\"/Health\" />\r\n      <wsdl:input>\r\n        <mime:content
+        \   <http:binding verb=\"POST\" />\r\n    <wsdl:operation name=\"VerifyAddress\">\r\n
+        \     <http:operation location=\"/VerifyAddress\" />\r\n      <wsdl:input>\r\n
+        \       <mime:content type=\"application/x-www-form-urlencoded\" />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"Authorized\">\r\n      <http:operation
+        location=\"/Authorized\" />\r\n      <wsdl:input>\r\n        <mime:content
         type=\"application/x-www-form-urlencoded\" />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n
         \       <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n
-        \   <wsdl:operation name=\"VerifyAddress\">\r\n      <http:operation location=\"/VerifyAddress\"
-        />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
-        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"Authorized\">\r\n      <http:operation location=\"/Authorized\" />\r\n
-        \     <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
-        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"Captured\">\r\n      <http:operation location=\"/Captured\" />\r\n
-        \     <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
-        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"OrderDetails\">\r\n      <http:operation location=\"/OrderDetails\"
-        />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
-        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"CreatePlatformAccount\">\r\n      <http:operation location=\"/CreatePlatformAccount\"
-        />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
-        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"GetLocations\">\r\n      <http:operation location=\"/GetLocations\"
+        \   <wsdl:operation name=\"AuthorizedWithCapture\">\r\n      <http:operation
+        location=\"/AuthorizedWithCapture\" />\r\n      <wsdl:input>\r\n        <mime:content
+        type=\"application/x-www-form-urlencoded\" />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n
+        \       <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"Captured\">\r\n      <http:operation location=\"/Captured\"
         />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
         />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
         part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
@@ -1576,75 +716,57 @@ http_interactions:
         \   </wsdl:operation>\r\n    <wsdl:operation name=\"Ping\">\r\n      <http:operation
         location=\"/Ping\" />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
         />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
-        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"TICSpecialHandlingByDate\">\r\n      <http:operation location=\"/TICSpecialHandlingByDate\"
-        />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
-        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"TICSpecialHandlingByDateForList\">\r\n      <http:operation location=\"/TICSpecialHandlingByDateForList\"
-        />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
-        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
-        name=\"MerchantUSStateInformation\">\r\n      <http:operation location=\"/MerchantUSStateInformation\"
-        />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
-        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
         part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
         \ <wsdl:service name=\"TaxCloud\">\r\n    <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">TaxCloud
         Web Service</wsdl:documentation>\r\n    <wsdl:port name=\"TaxCloudSoap\" binding=\"tns:TaxCloudSoap\">\r\n
-        \     <soap:address location=\"https://api.taxcloud.com/1.0/\" />\r\n    </wsdl:port>\r\n
-        \   <wsdl:port name=\"TaxCloudSoap12\" binding=\"tns:TaxCloudSoap12\">\r\n
-        \     <soap12:address location=\"https://api.taxcloud.com/1.0/\" />\r\n    </wsdl:port>\r\n
-        \   <wsdl:port name=\"TaxCloudHttpPost\" binding=\"tns:TaxCloudHttpPost\">\r\n
-        \     <http:address location=\"https://api.taxcloud.com/1.0/\" />\r\n    </wsdl:port>\r\n
-        \ </wsdl:service>\r\n</wsdl:definitions>"
-  recorded_at: Tue, 12 Dec 2023 14:19:28 GMT
+        \     <soap:address location=\"https://api.taxcloud.com/1.0/TaxCloud.asmx\"
+        />\r\n    </wsdl:port>\r\n    <wsdl:port name=\"TaxCloudSoap12\" binding=\"tns:TaxCloudSoap12\">\r\n
+        \     <soap12:address location=\"https://api.taxcloud.com/1.0/TaxCloud.asmx\"
+        />\r\n    </wsdl:port>\r\n    <wsdl:port name=\"TaxCloudHttpPost\" binding=\"tns:TaxCloudHttpPost\">\r\n
+        \     <http:address location=\"https://api.taxcloud.com/1.0/TaxCloud.asmx\"
+        />\r\n    </wsdl:port>\r\n  </wsdl:service>\r\n</wsdl:definitions>"
+    http_version:
+  recorded_at: Thu, 09 Jan 2014 16:03:39 GMT
 - request:
     method: post
-    uri: https://api.taxcloud.com/1.0/
+    uri: https://api.taxcloud.com/1.0/TaxCloud.asmx
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://taxcloud.net"
-        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
-        xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
-        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema"
-        xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
-        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"><env:Body><tns:VerifyAddress><tns:address1>888
-        6th Ave</tns:address1><tns:address2 xsi:nil="true"/><tns:city>New York</tns:city><tns:state>New
-        York</tns:state><tns:zip5>10001</tns:zip5><tns:zip4 xsi:nil="true"/><tns:uspsUserID>usps-username</tns:uspsUserID><tns:apiLoginID>api-login-id</tns:apiLoginID><tns:apiKey>api-key</tns:apiKey></tns:VerifyAddress></env:Body></env:Envelope>
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://taxcloud.net"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://taxcloud.net"><env:Body><ins0:VerifyAddress><wsdl:apiLoginId>api-login-id</wsdl:apiLoginId><wsdl:apiKey>api-key</wsdl:apiKey><ins0:uspsUserID>usps-username</ins0:uspsUserID><ins0:address1>888
+        6th Ave</ins0:address1><ins0:address2 xsi:nil="true"/><ins0:city>New York</ins0:city><ins0:state>New
+        York</ins0:state><ins0:zip5>10001</ins0:zip5><ins0:zip4 xsi:nil="true"/></ins0:VerifyAddress></env:Body></env:Envelope>
     headers:
-      User-Agent:
-      - HTTPClient/1.0 (2.8.3, ruby 3.2.2 (2023-03-30))
-      Accept:
-      - "*/*"
-      Date:
-      - Tue, 12 Dec 2023 14:19:28 GMT
       Soapaction:
-      - '"http://taxcloud.net/VerifyAddress"'
+      - ! '"http://taxcloud.net/VerifyAddress"'
       Content-Type:
       - text/xml;charset=UTF-8
-      Content-Length:
-      - '1052'
   response:
     status:
       code: 200
       message: OK
     headers:
-      Content-Length:
-      - '514'
-      Content-Type:
-      - text/xml; charset=utf-8
-      Date:
-      - Tue, 12 Dec 2023 14:19:29 GMT
       Cache-Control:
       - private, max-age=0
-      Strict-Transport-Sequrity:
-      - max-age=7776000
+      Content-Type:
+      - text/xml; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.0
+      X-Aspnet-Version:
+      - 2.0.50727
+      X-Powered-By:
+      - TaxCloud
+      Date:
+      - Sat, 17 Sep 2011 19:21:55 GMT
+      Content-Length:
+      - '493'
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><VerifyAddressResponse
-        xmlns="http://taxcloud.net"><VerifyAddressResult><Address1>888 6th Ave</Address1><City>New
-        York</City><State>NY</State><Zip5>10001</Zip5><Zip4>3502</Zip4><rdi>Commercial</rdi><ErrNumber>0</ErrNumber></VerifyAddressResult></VerifyAddressResponse></soap:Body></soap:Envelope>
-  recorded_at: Tue, 12 Dec 2023 14:19:29 GMT
-recorded_with: VCR 6.2.0
+        xmlns="http://taxcloud.net"><VerifyAddressResult><Address1>888 6TH AVE</Address1><City>NEW
+        YORK</City><State>NY</State><Zip5>10001</Zip5><Zip4>3502</Zip4><ErrNumber>0</ErrNumber></VerifyAddressResult></VerifyAddressResponse></soap:Body></soap:Envelope>
+    http_version: '1.1'
+  recorded_at: Fri, 23 Nov 2012 15:41:40 GMT
+recorded_with: VCR 2.3.0

@@ -15,7 +15,7 @@ module TaxCloud #:nodoc:
     attr_accessor :zip5
     # 4-digit Zip Code.
     attr_accessor :zip4
-    # RDI
+    # Residential delivery indicator
     attr_accessor :rdi
 
     # Verify this address.

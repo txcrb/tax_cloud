@@ -20,7 +20,7 @@ module TaxCloud #:nodoc:
           response = new(savon_response)
           result = response.match('verify_address_response/verify_address_result')
           result.delete(:err_number)
-          TaxCloud::Address.new(result)
+          TaxCloud::Address.new result
         end
       end
     end
