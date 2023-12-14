@@ -1,4 +1,4 @@
-### 0.6.0 (12/13/2023)
+### 0.6.0 (Next)
 
 *   Add Residential Delivery Indicator (rdi) to `TaxCloud::Address` on successful address verification - @nononoy.
 
