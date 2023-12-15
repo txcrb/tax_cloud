@@ -5,7 +5,7 @@ module TaxCloud #:nodoc:
   class Address < Record
     # First line of address.
     attr_accessor :address1
-    # Second line of adress.
+    # Second line of address.
     attr_accessor :address2
     # City.
     attr_accessor :city
@@ -15,6 +15,8 @@ module TaxCloud #:nodoc:
     attr_accessor :zip5
     # 4-digit Zip Code.
     attr_accessor :zip4
+    # Residential delivery indicator
+    attr_accessor :rdi
 
     # Verify this address.
     #
