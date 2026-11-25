@@ -30,6 +30,14 @@ class TestTransaction < TestSetup
     end
   end
 
+  def test_lookup_without_cart_items
+    @transaction.cart_items = []
+    e = assert_raises TaxCloud::Errors::MissingCartItems do
+      @transaction.lookup
+    end
+    assert_equal 'Missing cart items.', e.problem
+  end
+
   def test_authorized
     VCR.use_cassette('authorized') do
       @transaction.lookup

@@ -28,7 +28,10 @@ module TaxCloud #:nodoc:
 
     # Lookup the tax rate for the transaction.
     # The returned information is based on the originating address, destination address, and cart items.
+    # Raises <tt>TaxCloud::Errors::MissingCartItems</tt> without calling TaxCloud when there are no cart items.
     def lookup
+      raise TaxCloud::Errors::MissingCartItems if cart_items.nil? || cart_items.empty?
+
       request_params = {
         'customerID' => customer_id,
         'cartID' => cart_id,
