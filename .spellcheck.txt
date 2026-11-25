@@ -5,6 +5,7 @@ apiLoginID
 AuthorizedWithCapture
 BigDecimal
 brchristian
+Bundler
 cartID
 CartItem
 cartItems
@@ -33,6 +34,7 @@ Hepting
 httpi
 initializer
 ItemID
+JRuby
 linter
 linters
 md
@@ -47,6 +49,7 @@ Norwalk
 orderID
 params
 paulhenrich
+Rakefile
 rb
 rchekaluk
 rdi
@@ -55,6 +58,7 @@ README
 returnedDate
 RuboCop
 rubocop
+RubyGems
 Savon
 savon
 Schaefer
@@ -68,6 +72,7 @@ Taxability
 TaxCloud
 taxcloud
 TaxCloud's
+TaxCloudRelease
 TaxCode
 TaxCodes
 Tempelmeyer

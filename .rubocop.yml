@@ -71,3 +71,11 @@ Style/Documentation:
     - Exclude
   Exclude:
   - test/**/*
+
+# The release test runs a release in a fixture and verifies the tag, the next development commit, and their files together.
+Metrics/MethodLength:
+  inherit_mode:
+    merge:
+    - Exclude
+  Exclude:
+  - test/test_release.rb
