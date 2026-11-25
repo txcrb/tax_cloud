@@ -19,6 +19,10 @@ en:
           summary: "A configuration option was not provided when configuring TaxCloud."
           resolution: "Review your `TaxCloud.configure` code. Are you using an environment
           variable that has not been set?"
+        missing_cart_items:
+          message: "Missing cart items."
+          summary: "A transaction lookup requires at least one cart item."
+          resolution: "Add at least one `TaxCloud::CartItem` to the transaction's `cart_items` before calling `lookup`."
         soap_error:
           message: "%{message}"
           summary: "The server returned a %{code} error."
