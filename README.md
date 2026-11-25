@@ -162,7 +162,7 @@ The `usps_username` option enables [address verification](#verifying-addresses).
 
 ## Contributing
 
-See [CONTRIBUTING](CONTRIBUTING.md), [CHANGELOG](CHANGELOG.md), and [CONTRIBUTORS](CONTRIBUTORS.txt).
+See [CONTRIBUTING](CONTRIBUTING.md), [CHANGELOG](CHANGELOG.md), [RELEASING](RELEASING.md), and [CONTRIBUTORS](CONTRIBUTORS.txt).
 
 ## License
 
