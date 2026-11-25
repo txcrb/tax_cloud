@@ -2,5 +2,5 @@
 
 module TaxCloud #:nodoc:
   # The version of the <tt>tax_cloud</tt> gem.
-  VERSION = '0.7.0'
+  VERSION = '0.7.1'
 end

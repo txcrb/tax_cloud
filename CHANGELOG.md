@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.1 (Next)
+
+* Your contribution here.
+
 ## 0.7.0 (2026/11/25)
 
 * [#58](https://github.com/txcrb/tax_cloud/pull/58): Test on Ruby 2.6, 3.4, and 4.0 with current GitHub Actions, unpin Rake, which fails to load on Ruby 4.0, and keep Rack below 3 for httpi on Ruby 2.x - [@dblock](https://github.com/dblock).
