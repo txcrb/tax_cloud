@@ -1,0 +1,15 @@
+name: Danger
+
+on:
+  pull_request:
+    types: [opened, reopened, edited, synchronize]
+
+jobs:
+  danger:
+    uses: danger/danger-pr-comment/.github/workflows/danger-run.yml@v0.3.0
+    secrets: inherit
+    with:
+      ruby-version: '4.0'
+      bundler-cache: true
+      # Diff against the merge commit's first parent, so stacked pull requests check only their own changes.
+      danger-args: dry_run --base=HEAD^1

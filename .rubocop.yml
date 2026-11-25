@@ -79,3 +79,11 @@ Metrics/MethodLength:
     - Exclude
   Exclude:
   - test/test_release.rb
+
+# GitHub workflow files use dashes, for example danger-comment.yml.
+Naming/FileName:
+  inherit_mode:
+    merge:
+      - Exclude
+  Exclude:
+    - ".github/workflows/*.yml"

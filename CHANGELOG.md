@@ -7,6 +7,7 @@
 * [#60](https://github.com/txcrb/tax_cloud/pull/60): Run CI pushes only on the default branch, cancel superseded pull request runs, and bound job times - [@dblock](https://github.com/dblock).
 * [#62](https://github.com/txcrb/tax_cloud/pull/62): Release with ruby-gem-release through a manually dispatched GitHub Actions workflow and RubyGems Trusted Publishing - [@dblock](https://github.com/dblock).
 * [#64](https://github.com/txcrb/tax_cloud/pull/64): Raise `TaxCloud::Errors::MissingCartItems` when looking up a transaction without cart items - [@dblock](https://github.com/dblock).
+* [#65](https://github.com/txcrb/tax_cloud/pull/65): Check pull requests with Danger, including CHANGELOG entries with danger-changelog, and report results in a pull request comment with danger-pr-comment - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ## 0.6.0 (2023/12/15)
