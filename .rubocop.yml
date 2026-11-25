@@ -1,13 +1,73 @@
-inherit_from: .rubocop_todo.yml
+plugins:
+- rubocop-md
+- rubocop-prose
+- rubocop-rake
+- rubocop-spellcheck
+- rubocop-yaml
+
+inherit_from: ".rubocop_todo.yml"
 
 AllCops:
-  TargetRubyVersion: 2.6
   NewCops: enable
+  TargetRubyVersion: 2.6
+  SuggestExtensions: false
+  inherit_mode:
+    merge:
+    - Include
+  Include:
+  - ".github/**/*.yml"
+  - ".rubocop.yml"
   Exclude:
-    - vendor/**
-    - vendor/bundle/**/*
-    - bin/**
+  - bin/**/*
+  - pkg/**/*
+  - test/cassettes/**/*
+  - vendor/**/*
+
+YAML/Lint/InvalidSyntax:
+  Include:
+  - "**/*.yml"
+  - "**/*.yaml"
+
+YAML/Lint/DuplicateKey:
+  Include:
+  - "**/*.yml"
+  - "**/*.yaml"
 
 Style/NumericLiteralPrefix:
-  Enabled: true
   EnforcedOctalStyle: zero_only
+
+Markdown/HeadingCapitalization:
+  inherit_mode:
+    merge:
+    - Exclude
+  Enabled: true
+  Style: title_case
+  Exclude:
+  - CHANGELOG.md
+
+Prose/MaxLength:
+  inherit_mode:
+    merge:
+    - Exclude
+  Max: false
+  Exclude:
+  # A plain-text list with one contributor detail per line, not paragraphs.
+  - CONTRIBUTORS.txt
+
+Spellcheck:
+  DictionaryFiles:
+    en:
+    - gem:rubocop-spellcheck/data/en/en.dic
+    - ".spellcheck.txt"
+Spellcheck/Spelling:
+  Exclude:
+  # Generated from TaxCloud API descriptions by the tax_cloud:tax_codes and tax_cloud:tax_code_groups Rake tasks.
+  - lib/tax_cloud/tax_code_constants.rb
+  - lib/tax_cloud/tax_code_group_constants.rb
+
+Style/Documentation:
+  inherit_mode:
+    merge:
+    - Exclude
+  Exclude:
+  - test/**/*

@@ -4,7 +4,7 @@ module TaxCloud #:nodoc:
   module Errors #:nodoc:
     # This error is raised when a SOAP call fails.
     class SoapError < TaxCloudError
-      # Original SOAP failt.
+      # Original SOAP fault.
       attr_reader :fault
 
       # Create the new error.

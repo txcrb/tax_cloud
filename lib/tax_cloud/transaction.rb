@@ -98,7 +98,7 @@ module TaxCloud #:nodoc:
     # Marks any included cart items as returned.
     #
     # === Options
-    # [returned_date] The date the return occured. Default is today.
+    # [returned_date] The date the return occurred. Default is today.
     def returned(options = {})
       options = { returned_date: Date.today }.merge(options)
       request_params = {
