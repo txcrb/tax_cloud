@@ -55,7 +55,7 @@ Document any external behavior in the [README](README.md).
 
 ## Update Changelog
 
-Add a line to [CHANGELOG](CHANGELOG.md) under *Next*. Make it look like every other line, including your name and link to your GitHub account.
+Add a line to [CHANGELOG](CHANGELOG.md) under *Next*. Make it look like every other line, including your name and link to your GitHub account. [Danger](https://danger.systems) checks the entry on every pull request and reports problems in a pull request comment.
 
 ## Commit Changes
 

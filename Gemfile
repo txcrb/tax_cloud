@@ -7,6 +7,9 @@ gemspec
 group :development do
   if RUBY_ENGINE == 'ruby' && Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('3.3')
     gem 'commonmarker', '~> 2.10', require: false
+    gem 'danger', '~> 9.6', require: false
+    gem 'danger-changelog', '~> 0.10', require: false
+    gem 'danger-pr-comment', '~> 0.3', require: false
     gem 'rubocop', '~> 1.92'
     gem 'rubocop-md', '~> 3.0', require: false
     gem 'rubocop-prose', '~> 0.2', require: false
