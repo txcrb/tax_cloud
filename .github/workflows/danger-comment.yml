@@ -16,3 +16,4 @@ jobs:
     secrets: inherit
     with:
       base-branch: '*'
+      comment-empty: false

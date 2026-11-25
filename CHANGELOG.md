@@ -3,6 +3,7 @@
 ## 0.7.1 (Next)
 
 * [#66](https://github.com/txcrb/tax_cloud/pull/66): Link every released CHANGELOG entry to its pull request and author, and check the whole CHANGELOG with danger-changelog - [@dblock](https://github.com/dblock).
+* [#67](https://github.com/txcrb/tax_cloud/pull/67): Require new CHANGELOG entries to be added under the unreleased section again, and skip Danger comments when there is nothing to report - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ## 0.7.0 (2026/11/25)
