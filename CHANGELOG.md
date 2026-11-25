@@ -2,6 +2,7 @@
 
 ## 0.7.1 (Next)
 
+* [#66](https://github.com/txcrb/tax_cloud/pull/66): Link every released CHANGELOG entry to its pull request and author, and check the whole CHANGELOG with danger-changelog - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ## 0.7.0 (2026/11/25)
@@ -15,64 +16,60 @@
 
 ## 0.6.0 (2023/12/15)
 
-* Add Residential Delivery Indicator (rdi) to `TaxCloud::Address` on successful address verification - @nononoy.
+* [#57](https://github.com/txcrb/tax_cloud/pull/57): Add Residential Delivery Indicator (rdi) to `TaxCloud::Address` on successful address verification - [@nononoy](https://github.com/nononoy).
 
 ## 0.5.0 (2023/7/21)
 
-* Update README, CHANGELOG, and LICENSE from RDoc to Markdown - @brchristian.
-* Migrate from Travis CI to GitHub Actions - @rchekaluk.
-* Update WSDL endpoint URL as recommended by TaxCloud to https://api.taxcloud.com/1.0/?wsdl - @mrmarcondes.
+* [#49](https://github.com/txcrb/tax_cloud/pull/49): Update README, CHANGELOG, and LICENSE from RDoc to Markdown - [@brchristian](https://github.com/brchristian).
+* [#54](https://github.com/txcrb/tax_cloud/pull/54): Migrate from Travis CI to GitHub Actions - [@rchekaluk](https://github.com/rchekaluk).
+* [#55](https://github.com/txcrb/tax_cloud/pull/55): Update WSDL endpoint URL as recommended by TaxCloud to https://api.taxcloud.com/1.0/?wsdl - [@mrmarcondes](https://github.com/mrmarcondes).
 
 ## 0.4.0 (2020/12/7)
 
-* Add `open_timeout` and `read_timeout` options into configuration - @ka8725.
-* Switch to using BigDecimal for `tax_amount` to avoid floating point arithmetic errors - @paulhenrich.
-* Require Ruby 2.6.0+.
-* Upgrade to RuboCop latest:
-  * Add `TargetRubyVersion: 2.6` to RuboCop config (based on https://www.ruby-lang.org/en/downloads/branches/ oldest "normal maintenance" version).
-  * Add `required_ruby_version` to gemspec.
-  * Address RuboCop violations.
-* Update WSDL endpoint URL as recommended by TaxCloud to https://asmx.taxcloud.com/1.0/?wsdl - @brchristian.
+* [#25](https://github.com/txcrb/tax_cloud/pull/25): Add `open_timeout` and `read_timeout` options into configuration - [@ka8725](https://github.com/ka8725).
+* [#35](https://github.com/txcrb/tax_cloud/pull/35): Switch to using BigDecimal for `tax_amount` to avoid floating point arithmetic errors - [@paulhenrich](https://github.com/paulhenrich).
+* [#43](https://github.com/txcrb/tax_cloud/pull/43): Require Ruby 2.6.0+, upgrade RuboCop with `TargetRubyVersion: 2.6`, add `required_ruby_version` to the gemspec, and address RuboCop violations - [@ghepting](https://github.com/ghepting).
+* [#45](https://github.com/txcrb/tax_cloud/pull/45): Update WSDL endpoint URL as recommended by TaxCloud to https://asmx.taxcloud.com/1.0/?wsdl - [@brchristian](https://github.com/brchristian).
 
 ## 0.3.0 (2014/1/9)
 
-* [#19](https://github.com/txcrb/tax_cloud/issues/19): Support Savon 2 - @drewtempelmeyer.
-* Implemented RuboCop, Ruby style linter - @dblock.
-* Ruby 1.8.7 and 1.9.2 are no longer supported - @dblock.
+* [#19](https://github.com/txcrb/tax_cloud/issues/19): Support Savon 2 - [@drewtempelmeyer](https://github.com/drewtempelmeyer).
+* Implemented RuboCop, Ruby style linter - [@dblock](https://github.com/dblock).
+* Ruby 1.8.7 and 1.9.2 are no longer supported - [@dblock](https://github.com/dblock).
 
 ## 0.2.2 (2013/4/29)
 
-* Relaxed third-party gem dependency versions - @mperham.
+* [#18](https://github.com/txcrb/tax_cloud/pull/18): Relaxed third-party gem dependency versions - [@mperham](https://github.com/mperham).
 
 ## 0.2.1 (2013/3/3)
 
-* Fixed date formatting in API requests with localized applications - @soulcutter.
+* [#15](https://github.com/txcrb/tax_cloud/pull/15): Fixed date formatting in API requests with localized applications - [@soulcutter](https://github.com/soulcutter).
 
 ## 0.2.0 (2012/11/26)
 
-* The gem is now licensed under the MIT license - @dblock.
-* Raise specialized configuration and SOAP errors - @dblock.
-* Added `TaxCloud::Client.ping` - @dblock.
-* Returning a verified `TaxCloud::Address` from `TaxCloud::Address.verify` - @dblock.
-* Added `TaxCloud::Address.zip` that returns a 9-digit address zip code, when available - @dblock.
-* Returning a `TaxCloud::Responses::Lookup` from `TaxCloud::Transaction.lookup` - @dblock.
-* Returning transaction state, i.e. `"OK"` from all other TaxCloud transactions. Exceptions are raised on error - @dblock.
-* Added support for tax codes and tax code groups lookup with `TaxCloud::TaxCodes` and `TaxCloud::TaxCode::Groups` - @dblock.
+* [#8](https://github.com/txcrb/tax_cloud/pull/8): The gem is now licensed under the MIT license - [@dblock](https://github.com/dblock).
+* [#5](https://github.com/txcrb/tax_cloud/pull/5): Raise specialized configuration and SOAP errors - [@dblock](https://github.com/dblock).
+* [#6](https://github.com/txcrb/tax_cloud/pull/6): Added `TaxCloud::Client.ping` - [@dblock](https://github.com/dblock).
+* [#6](https://github.com/txcrb/tax_cloud/pull/6): Returning a verified `TaxCloud::Address` from `TaxCloud::Address.verify` - [@dblock](https://github.com/dblock).
+* [#13](https://github.com/txcrb/tax_cloud/pull/13): Added `TaxCloud::Address.zip` that returns a 9-digit address zip code, when available - [@dblock](https://github.com/dblock).
+* [#6](https://github.com/txcrb/tax_cloud/pull/6): Returning a `TaxCloud::Responses::Lookup` from `TaxCloud::Transaction.lookup` - [@dblock](https://github.com/dblock).
+* [#6](https://github.com/txcrb/tax_cloud/pull/6): Returning transaction state, i.e. `"OK"`, from all other TaxCloud transactions and raising exceptions on error - [@dblock](https://github.com/dblock).
+* [#7](https://github.com/txcrb/tax_cloud/pull/7): Added support for tax codes and tax code groups lookup with `TaxCloud::TaxCodes` and `TaxCloud::TaxCode::Groups` - [@dblock](https://github.com/dblock).
 
 ## 0.1.5 (2012/5/9)
 
-* Fixed compatibility with Ruby 1.8.7 and 1.9.3, removed super from constructors for classes which inherit from `Object` - @gfmurphy.
+* [#3](https://github.com/txcrb/tax_cloud/pull/3): Fixed compatibility with Ruby 1.8.7 and 1.9.3, removed super from constructors for classes which inherit from `Object` - [@gfmurphy](https://github.com/gfmurphy).
 
 ## 0.1.4 (2011/10/20)
 
-* Upgraded RDoc - @drewtempelmeyer.
-* Fixed `.gemspec` dependency declaration for Savon - @drewtempelmeyer.
+* Upgraded RDoc - [@drewtempelmeyer](https://github.com/drewtempelmeyer).
+* Fixed `.gemspec` dependency declaration for Savon - [@drewtempelmeyer](https://github.com/drewtempelmeyer).
 
 ## 0.1.3 (2011/9/19)
 
-* Added support for the "returned" request - @danielmorrison.
-* Refactored tests to use VCR and WebMock - @danielmorrison.
+* [#1](https://github.com/txcrb/tax_cloud/pull/1): Added support for the "returned" request - [@danielmorrison](https://github.com/danielmorrison).
+* [#1](https://github.com/txcrb/tax_cloud/pull/1): Refactored tests to use VCR and WebMock - [@danielmorrison](https://github.com/danielmorrison).
 
 ## 0.1.0 (2011/8/23)
 
-* Initial public release - @drewtempelmeyer.
+* Initial public release - [@drewtempelmeyer](https://github.com/drewtempelmeyer).

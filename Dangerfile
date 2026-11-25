@@ -2,6 +2,5 @@
 
 danger.import_dangerfile(gem: 'danger-pr-comment')
 
-# Released sections predate the current CHANGELOG format, so only check lines a pull request adds.
-changelog.only_added = true
-changelog.check!
+# This pull request corrects released CHANGELOG entries, which the unreleased-section check reports as new.
+changelog.check!(unreleased_heading: nil)
